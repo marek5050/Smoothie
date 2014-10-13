@@ -21,19 +21,14 @@
 @synthesize persistentStoreCoordinator = _persistentStoreCoordinator;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
-    self.window.backgroundColor = [UIColor whiteColor];
-    NSLog(@"Hello World");
+   // self.window.backgroundColor = [UIColor whiteColor];
     
     [Parse setApplicationId:@"R9epVqOIe1Nr93JBOdoDFwixPpdGgJ1lsx2xQQxC"
                   clientKey:@"H3pAAulLEdtElgRwvx2fBaPKAR0ZAjGh1SrGgeg7"];
 
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
     
-    [self.window setRootViewController:[[ViewController alloc] init]];
-    
-    [self.window makeKeyAndVisible];
     return YES;
 }
 

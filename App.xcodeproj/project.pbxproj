@@ -28,6 +28,7 @@
 		A276FB5919D3345100276AE9 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A276FB5819D3345100276AE9 /* StoreKit.framework */; };
 		A276FB5B19D3345600276AE9 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A276FB5A19D3345600276AE9 /* SystemConfiguration.framework */; };
 		A28FCA0F19D3353000F9FB01 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A28FCA0E19D3353000F9FB01 /* ViewController.m */; };
+		C37F67A219EDFEF300A47B4F /* LaunchPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C37F67A119EDFEF300A47B4F /* LaunchPageViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +83,8 @@
 		A276FB5A19D3345600276AE9 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		A28FCA0D19D3353000F9FB01 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		A28FCA0E19D3353000F9FB01 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		C37F67A019EDFEF300A47B4F /* LaunchPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LaunchPageViewController.h; sourceTree = "<group>"; };
+		C37F67A119EDFEF300A47B4F /* LaunchPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LaunchPageViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +149,8 @@
 				A251692919D32DF00041C7B9 /* App.xcdatamodeld */,
 				A251692219D32DF00041C7B9 /* Supporting Files */,
 				A251694219D32EC20041C7B9 /* Storyboard.storyboard */,
+				C37F67A019EDFEF300A47B4F /* LaunchPageViewController.h */,
+				C37F67A119EDFEF300A47B4F /* LaunchPageViewController.m */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -302,6 +307,7 @@
 				A251692B19D32DF00041C7B9 /* App.xcdatamodeld in Sources */,
 				A28FCA0F19D3353000F9FB01 /* ViewController.m in Sources */,
 				A251692519D32DF00041C7B9 /* main.m in Sources */,
+				C37F67A219EDFEF300A47B4F /* LaunchPageViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

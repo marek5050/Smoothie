@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8767794C19F0347C0031D63A /* addPropertyController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8767794B19F0347C0031D63A /* addPropertyController.m */; };
+		8767794F19F03B780031D63A /* SettingsControllerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8767794E19F03B780031D63A /* SettingsControllerViewController.m */; };
 		A251692519D32DF00041C7B9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A251692419D32DF00041C7B9 /* main.m */; };
 		A251692819D32DF00041C7B9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A251692719D32DF00041C7B9 /* AppDelegate.m */; };
 		A251692B19D32DF00041C7B9 /* App.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A251692919D32DF00041C7B9 /* App.xcdatamodeld */; };
@@ -56,6 +58,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8767794A19F0347C0031D63A /* addPropertyController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = addPropertyController.h; sourceTree = "<group>"; };
+		8767794B19F0347C0031D63A /* addPropertyController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = addPropertyController.m; sourceTree = "<group>"; };
+		8767794D19F03B780031D63A /* SettingsControllerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsControllerViewController.h; sourceTree = "<group>"; };
+		8767794E19F03B780031D63A /* SettingsControllerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsControllerViewController.m; sourceTree = "<group>"; };
 		A251691F19D32DF00041C7B9 /* App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = App.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A251692319D32DF00041C7B9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A251692419D32DF00041C7B9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -151,6 +157,10 @@
 				A251694219D32EC20041C7B9 /* Storyboard.storyboard */,
 				C37F67A019EDFEF300A47B4F /* LaunchPageViewController.h */,
 				C37F67A119EDFEF300A47B4F /* LaunchPageViewController.m */,
+				8767794A19F0347C0031D63A /* addPropertyController.h */,
+				8767794B19F0347C0031D63A /* addPropertyController.m */,
+				8767794D19F03B780031D63A /* SettingsControllerViewController.h */,
+				8767794E19F03B780031D63A /* SettingsControllerViewController.m */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -303,7 +313,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8767794C19F0347C0031D63A /* addPropertyController.m in Sources */,
 				A251692819D32DF00041C7B9 /* AppDelegate.m in Sources */,
+				8767794F19F03B780031D63A /* SettingsControllerViewController.m in Sources */,
 				A251692B19D32DF00041C7B9 /* App.xcdatamodeld in Sources */,
 				A28FCA0F19D3353000F9FB01 /* ViewController.m in Sources */,
 				A251692519D32DF00041C7B9 /* main.m in Sources */,

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="wCl-s6-8x6">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="14A329f" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="wCl-s6-8x6">
     <dependencies>
-        <deployment defaultVersion="1792" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+        <deployment defaultVersion="1808" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -29,16 +29,23 @@
                                 <state key="normal" title="Login with Google">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="authButtonClicked:" destination="d99-kC-LMG" eventType="touchUpInside" id="iDR-TI-Xe7"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.13563800406831059" green="0.29166390857458546" blue="0.46830417798913049" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
+                    <navigationItem key="navigationItem" id="YoK-KX-Oti"/>
+                    <connections>
+                        <segue destination="l5G-xc-UdQ" kind="push" identifier="LoggedIn" id="7Iy-MQ-8uG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tcH-p1-mZK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="71" y="356"/>
+            <point key="canvasLocation" x="455" y="376"/>
         </scene>
-        <!--Launch Page View Controller - Account-->
+        <!--Account-->
         <scene sceneID="aua-x3-9gR">
             <objects>
                 <viewController id="l5G-xc-UdQ" customClass="LaunchPageViewController" sceneMemberID="viewController">
@@ -106,7 +113,7 @@
             </objects>
             <point key="canvasLocation" x="1010" y="356"/>
         </scene>
-        <!--View Controller - <Property Name>-->
+        <!--<Property Name>-->
         <scene sceneID="C25-O7-ySO">
             <objects>
                 <viewController id="M50-9t-mkr" sceneMemberID="viewController">
@@ -119,7 +126,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="&lt;Property Name>" id="87i-RH-qZU">
+                    <navigationItem key="navigationItem" title="&lt;Property Name&gt;" id="87i-RH-qZU">
                         <barButtonItem key="rightBarButtonItem" title="More" id="mqN-sk-ckc"/>
                     </navigationItem>
                 </viewController>
@@ -127,7 +134,7 @@
             </objects>
             <point key="canvasLocation" x="1621" y="-346"/>
         </scene>
-        <!--Settings Controller View Controller - Settings-->
+        <!--Settings-->
         <scene sceneID="h4J-v0-dc5">
             <objects>
                 <viewController id="1BH-7U-7J9" customClass="SettingsControllerViewController" sceneMemberID="viewController">
@@ -201,7 +208,7 @@
             </objects>
             <point key="canvasLocation" x="1346" y="1357"/>
         </scene>
-        <!--View Controller - Color Scheme-->
+        <!--Color Scheme-->
         <scene sceneID="Lld-2B-qP7">
             <objects>
                 <viewController id="f3g-F0-29M" sceneMemberID="viewController">
@@ -215,7 +222,6 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="73S-z7-bzc">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="yZS-V6-Dx8">
@@ -237,7 +243,7 @@
             </objects>
             <point key="canvasLocation" x="1880" y="1064"/>
         </scene>
-        <!--View Controller - Help-->
+        <!--Help-->
         <scene sceneID="lSe-g2-P02">
             <objects>
                 <viewController id="v9b-jE-R7Q" sceneMemberID="viewController">
@@ -251,7 +257,6 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="bfy-Qo-cih">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="NAM-2S-7le">
@@ -273,7 +278,7 @@
             </objects>
             <point key="canvasLocation" x="1880" y="1801"/>
         </scene>
-        <!--Add Property Controller - Add Property-->
+        <!--Add Property-->
         <scene sceneID="ZXV-td-YhL">
             <objects>
                 <viewController id="3qr-Bb-vR4" customClass="addPropertyController" sceneMemberID="viewController">
@@ -342,12 +347,12 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="l5G-xc-UdQ" kind="relationship" relationship="rootViewController" id="rpm-a8-sMg"/>
+                        <segue destination="d99-kC-LMG" kind="relationship" relationship="rootViewController" id="PRK-Pr-w9J"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eS4-7I-Pbh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="525" y="356"/>
+            <point key="canvasLocation" x="-91" y="368"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

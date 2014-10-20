@@ -74,6 +74,8 @@
 		A250176A19F5CAAB00C31AA8 /* GTMGatherInputStream.h in Sources */ = {isa = PBXBuildFile; fileRef = A250175A19F5CAAB00C31AA8 /* GTMGatherInputStream.h */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		A250176B19F5CAAB00C31AA8 /* GTMReadMonitorInputStream.h in Sources */ = {isa = PBXBuildFile; fileRef = A250175B19F5CAAB00C31AA8 /* GTMReadMonitorInputStream.h */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		A250176C19F5CAAB00C31AA8 /* GTMMIMEDocument.h in Sources */ = {isa = PBXBuildFile; fileRef = A250175C19F5CAAB00C31AA8 /* GTMMIMEDocument.h */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		A250176F19F5CCA000C31AA8 /* GTMOAuth2ViewTouch.xib in Resources */ = {isa = PBXBuildFile; fileRef = A250176E19F5CCA000C31AA8 /* GTMOAuth2ViewTouch.xib */; };
+		A250177119F5CCA600C31AA8 /* GTMOAuth2Window.xib in Resources */ = {isa = PBXBuildFile; fileRef = A250177019F5CCA600C31AA8 /* GTMOAuth2Window.xib */; };
 		A251692519D32DF00041C7B9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A251692419D32DF00041C7B9 /* main.m */; };
 		A251692819D32DF00041C7B9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A251692719D32DF00041C7B9 /* AppDelegate.m */; };
 		A251692B19D32DF00041C7B9 /* App.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A251692919D32DF00041C7B9 /* App.xcdatamodeld */; };
@@ -192,6 +194,8 @@
 		A250175A19F5CAAB00C31AA8 /* GTMGatherInputStream.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GTMGatherInputStream.h; sourceTree = "<group>"; };
 		A250175B19F5CAAB00C31AA8 /* GTMReadMonitorInputStream.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GTMReadMonitorInputStream.h; sourceTree = "<group>"; };
 		A250175C19F5CAAB00C31AA8 /* GTMMIMEDocument.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GTMMIMEDocument.h; sourceTree = "<group>"; };
+		A250176E19F5CCA000C31AA8 /* GTMOAuth2ViewTouch.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GTMOAuth2ViewTouch.xib; sourceTree = "<group>"; };
+		A250177019F5CCA600C31AA8 /* GTMOAuth2Window.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GTMOAuth2Window.xib; sourceTree = "<group>"; };
 		A251691F19D32DF00041C7B9 /* App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = App.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A251692319D32DF00041C7B9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A251692419D32DF00041C7B9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -259,6 +263,8 @@
 			isa = PBXGroup;
 			children = (
 				A250174D19F5CAAB00C31AA8 /* GTMHTTPFetcher.m */,
+				A250177019F5CCA600C31AA8 /* GTMOAuth2Window.xib */,
+				A250176E19F5CCA000C31AA8 /* GTMOAuth2ViewTouch.xib */,
 				A250174E19F5CAAB00C31AA8 /* GTMHTTPFetcherLogging.m */,
 				A250174F19F5CAAB00C31AA8 /* GTMHTTPUploadFetcher.m */,
 				A250175019F5CAAB00C31AA8 /* GTMHTTPFetcher.h */,
@@ -499,6 +505,8 @@
 			files = (
 				A251692D19D32DF00041C7B9 /* Images.xcassets in Resources */,
 				A251694319D32EC20041C7B9 /* Storyboard.storyboard in Resources */,
+				A250176F19F5CCA000C31AA8 /* GTMOAuth2ViewTouch.xib in Resources */,
+				A250177119F5CCA600C31AA8 /* GTMOAuth2Window.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -20,8 +20,13 @@ NSString * const kGTLAuthScopeDriveFile = @"https://www.googleapis.com/auth/driv
 @interface ViewController ()
 
 @property BOOL isAuthorized;
-@property (strong,nonatomic) UIButton *authButton;
+
+
+//@property (weak, nonatomic) IBOutlet UIButton *authButton;
+@property (weak,nonatomic) UIButton *authButton;
+
 - (IBAction)authButtonClicked:(id)sender;
+
 - (void)viewController:(GTMOAuth2ViewControllerTouch *)viewController
       finishedWithAuth:(GTMOAuth2Authentication *)auth
                  error:(NSError *)error;
@@ -48,7 +53,7 @@ NSString * const kGTLAuthScopeDriveFile = @"https://www.googleapis.com/auth/driv
     //    [[self driveService] setAuthorizer:auth];
     //    self.authButton.titleLabel.text = @"Sign Out";
     //    self.authButton setitle = @"Sign out";
-    [self performSegueWithIdentifier:@"LoggedIn" sender:self];
+    //[self performSegueWithIdentifier:@"LoggedIn" sender:self];
     self.isAuthorized = YES;
     //   [self toggleActionButtons:YES];
     // [self loadDriveFiles];

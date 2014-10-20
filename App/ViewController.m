@@ -53,7 +53,7 @@ NSString * const kGTLAuthScopeDriveFile = @"https://www.googleapis.com/auth/driv
     //    [[self driveService] setAuthorizer:auth];
     //    self.authButton.titleLabel.text = @"Sign Out";
     //    self.authButton setitle = @"Sign out";
-    //[self performSegueWithIdentifier:@"LoggedIn" sender:self];
+    [self performSegueWithIdentifier:@"LoggedIn" sender:self];
     self.isAuthorized = YES;
     //   [self toggleActionButtons:YES];
     // [self loadDriveFiles];

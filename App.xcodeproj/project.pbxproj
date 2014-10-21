@@ -95,6 +95,55 @@
 		A276FB5719D3344D00276AE9 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A276FB5619D3344D00276AE9 /* Social.framework */; };
 		A276FB5919D3345100276AE9 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A276FB5819D3345100276AE9 /* StoreKit.framework */; };
 		A276FB5B19D3345600276AE9 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A276FB5A19D3345600276AE9 /* SystemConfiguration.framework */; };
+		A27B286C19F70C51007080FB /* GTLQueryAnalytics.m in Sources */ = {isa = PBXBuildFile; fileRef = A27B286A19F70C51007080FB /* GTLQueryAnalytics.m */; };
+		A27B28CB19F70C66007080FB /* GTLAnalyticsWebPropertySummary.m in Sources */ = {isa = PBXBuildFile; fileRef = A27B286D19F70C65007080FB /* GTLAnalyticsWebPropertySummary.m */; };
+		A27B28CC19F70C66007080FB /* GTLAnalyticsWebPropertyRef.m in Sources */ = {isa = PBXBuildFile; fileRef = A27B286F19F70C65007080FB /* GTLAnalyticsWebPropertyRef.m */; };
+		A27B28CD19F70C66007080FB /* GTLAnalyticsWebproperty.m in Sources */ = {isa = PBXBuildFile; fileRef = A27B287119F70C65007080FB /* GTLAnalyticsWebproperty.m */; };
+		A27B28CE19F70C66007080FB /* GTLAnalyticsWebproperties.m in Sources */ = {isa = PBXBuildFile; fileRef = A27B287319F70C65007080FB /* GTLAnalyticsWebproperties.m */; };
+		A27B28CF19F70C66007080FB /* GTLAnalyticsUserRef.m in Sources */ = {isa = PBXBuildFile; fileRef = A27B287519F70C65007080FB /* GTLAnalyticsUserRef.m */; };
+		A27B28D019F70C66007080FB /* GTLAnalyticsUploads.m in Sources */ = {isa = PBXBuildFile; fileRef = A27B287719F70C65007080FB /* GTLAnalyticsUploads.m */; };
+		A27B28D119F70C66007080FB /* GTLAnalyticsUpload.m in Sources */ = {isa = PBXBuildFile; fileRef = A27B287919F70C65007080FB /* GTLAnalyticsUpload.m */; };
+		A27B28D219F70C66007080FB /* GTLAnalyticsUnsampledReports.m in Sources */ = {isa = PBXBuildFile; fileRef = A27B287B19F70C65007080FB /* GTLAnalyticsUnsampledReports.m */; };
+		A27B28D319F70C66007080FB /* GTLAnalyticsUnsampledReport.m in Sources */ = {isa = PBXBuildFile; fileRef = A27B287D19F70C65007080FB /* GTLAnalyticsUnsampledReport.m */; };
+		A27B28D419F70C66007080FB /* GTLAnalyticsSegments.m in Sources */ = {isa = PBXBuildFile; fileRef = A27B287F19F70C65007080FB /* GTLAnalyticsSegments.m */; };
+		A27B28D519F70C66007080FB /* GTLAnalyticsSegment.m in Sources */ = {isa = PBXBuildFile; fileRef = A27B288119F70C65007080FB /* GTLAnalyticsSegment.m */; };
+		A27B28D619F70C66007080FB /* GTLAnalyticsRealtimeData.m in Sources */ = {isa = PBXBuildFile; fileRef = A27B288319F70C65007080FB /* GTLAnalyticsRealtimeData.m */; };
+		A27B28D719F70C66007080FB /* GTLAnalyticsProfileSummary.m in Sources */ = {isa = PBXBuildFile; fileRef = A27B288519F70C65007080FB /* GTLAnalyticsProfileSummary.m */; };
+		A27B28D819F70C66007080FB /* GTLAnalyticsProfiles.m in Sources */ = {isa = PBXBuildFile; fileRef = A27B288719F70C65007080FB /* GTLAnalyticsProfiles.m */; };
+		A27B28D919F70C66007080FB /* GTLAnalyticsProfileRef.m in Sources */ = {isa = PBXBuildFile; fileRef = A27B288919F70C65007080FB /* GTLAnalyticsProfileRef.m */; };
+		A27B28DA19F70C66007080FB /* GTLAnalyticsProfileFilterLinks.m in Sources */ = {isa = PBXBuildFile; fileRef = A27B288B19F70C65007080FB /* GTLAnalyticsProfileFilterLinks.m */; };
+		A27B28DB19F70C66007080FB /* GTLAnalyticsProfileFilterLink.m in Sources */ = {isa = PBXBuildFile; fileRef = A27B288D19F70C65007080FB /* GTLAnalyticsProfileFilterLink.m */; };
+		A27B28DC19F70C66007080FB /* GTLAnalyticsProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = A27B288F19F70C65007080FB /* GTLAnalyticsProfile.m */; };
+		A27B28DD19F70C66007080FB /* GTLAnalyticsMcfData.m in Sources */ = {isa = PBXBuildFile; fileRef = A27B289119F70C65007080FB /* GTLAnalyticsMcfData.m */; };
+		A27B28DE19F70C66007080FB /* GTLAnalyticsGoals.m in Sources */ = {isa = PBXBuildFile; fileRef = A27B289319F70C65007080FB /* GTLAnalyticsGoals.m */; };
+		A27B28DF19F70C66007080FB /* GTLAnalyticsGoal.m in Sources */ = {isa = PBXBuildFile; fileRef = A27B289519F70C65007080FB /* GTLAnalyticsGoal.m */; };
+		A27B28E019F70C66007080FB /* GTLAnalyticsGaData.m in Sources */ = {isa = PBXBuildFile; fileRef = A27B289719F70C65007080FB /* GTLAnalyticsGaData.m */; };
+		A27B28E119F70C66007080FB /* GTLAnalyticsFilters.m in Sources */ = {isa = PBXBuildFile; fileRef = A27B289919F70C65007080FB /* GTLAnalyticsFilters.m */; };
+		A27B28E219F70C66007080FB /* GTLAnalyticsFilterRef.m in Sources */ = {isa = PBXBuildFile; fileRef = A27B289B19F70C66007080FB /* GTLAnalyticsFilterRef.m */; };
+		A27B28E319F70C66007080FB /* GTLAnalyticsFilterExpression.m in Sources */ = {isa = PBXBuildFile; fileRef = A27B289D19F70C66007080FB /* GTLAnalyticsFilterExpression.m */; };
+		A27B28E419F70C66007080FB /* GTLAnalyticsFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = A27B289F19F70C66007080FB /* GTLAnalyticsFilter.m */; };
+		A27B28E519F70C66007080FB /* GTLAnalyticsExperiments.m in Sources */ = {isa = PBXBuildFile; fileRef = A27B28A119F70C66007080FB /* GTLAnalyticsExperiments.m */; };
+		A27B28E619F70C66007080FB /* GTLAnalyticsExperiment.m in Sources */ = {isa = PBXBuildFile; fileRef = A27B28A319F70C66007080FB /* GTLAnalyticsExperiment.m */; };
+		A27B28E719F70C66007080FB /* GTLAnalyticsEntityUserLinks.m in Sources */ = {isa = PBXBuildFile; fileRef = A27B28A519F70C66007080FB /* GTLAnalyticsEntityUserLinks.m */; };
+		A27B28E819F70C66007080FB /* GTLAnalyticsEntityUserLink.m in Sources */ = {isa = PBXBuildFile; fileRef = A27B28A719F70C66007080FB /* GTLAnalyticsEntityUserLink.m */; };
+		A27B28E919F70C66007080FB /* GTLAnalyticsEntityAdWordsLinks.m in Sources */ = {isa = PBXBuildFile; fileRef = A27B28A919F70C66007080FB /* GTLAnalyticsEntityAdWordsLinks.m */; };
+		A27B28EA19F70C66007080FB /* GTLAnalyticsEntityAdWordsLink.m in Sources */ = {isa = PBXBuildFile; fileRef = A27B28AB19F70C66007080FB /* GTLAnalyticsEntityAdWordsLink.m */; };
+		A27B28EB19F70C66007080FB /* GTLAnalyticsDailyUploads.m in Sources */ = {isa = PBXBuildFile; fileRef = A27B28AD19F70C66007080FB /* GTLAnalyticsDailyUploads.m */; };
+		A27B28EC19F70C66007080FB /* GTLAnalyticsDailyUploadAppend.m in Sources */ = {isa = PBXBuildFile; fileRef = A27B28AF19F70C66007080FB /* GTLAnalyticsDailyUploadAppend.m */; };
+		A27B28ED19F70C66007080FB /* GTLAnalyticsDailyUpload.m in Sources */ = {isa = PBXBuildFile; fileRef = A27B28B119F70C66007080FB /* GTLAnalyticsDailyUpload.m */; };
+		A27B28EE19F70C66007080FB /* GTLAnalyticsCustomDataSources.m in Sources */ = {isa = PBXBuildFile; fileRef = A27B28B319F70C66007080FB /* GTLAnalyticsCustomDataSources.m */; };
+		A27B28EF19F70C66007080FB /* GTLAnalyticsCustomDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = A27B28B519F70C66007080FB /* GTLAnalyticsCustomDataSource.m */; };
+		A27B28F019F70C66007080FB /* GTLAnalyticsConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = A27B28B719F70C66007080FB /* GTLAnalyticsConstants.m */; };
+		A27B28F119F70C66007080FB /* GTLAnalyticsColumns.m in Sources */ = {isa = PBXBuildFile; fileRef = A27B28B919F70C66007080FB /* GTLAnalyticsColumns.m */; };
+		A27B28F219F70C66007080FB /* GTLAnalyticsColumn.m in Sources */ = {isa = PBXBuildFile; fileRef = A27B28BB19F70C66007080FB /* GTLAnalyticsColumn.m */; };
+		A27B28F319F70C66007080FB /* GTLAnalyticsAdWordsAccount.m in Sources */ = {isa = PBXBuildFile; fileRef = A27B28BD19F70C66007080FB /* GTLAnalyticsAdWordsAccount.m */; };
+		A27B28F419F70C66007080FB /* GTLAnalyticsAccountTicket.m in Sources */ = {isa = PBXBuildFile; fileRef = A27B28BF19F70C66007080FB /* GTLAnalyticsAccountTicket.m */; };
+		A27B28F519F70C66007080FB /* GTLAnalyticsAccountSummary.m in Sources */ = {isa = PBXBuildFile; fileRef = A27B28C119F70C66007080FB /* GTLAnalyticsAccountSummary.m */; };
+		A27B28F619F70C66007080FB /* GTLAnalyticsAccountSummaries.m in Sources */ = {isa = PBXBuildFile; fileRef = A27B28C319F70C66007080FB /* GTLAnalyticsAccountSummaries.m */; };
+		A27B28F719F70C66007080FB /* GTLAnalyticsAccounts.m in Sources */ = {isa = PBXBuildFile; fileRef = A27B28C519F70C66007080FB /* GTLAnalyticsAccounts.m */; };
+		A27B28F819F70C66007080FB /* GTLAnalyticsAccountRef.m in Sources */ = {isa = PBXBuildFile; fileRef = A27B28C719F70C66007080FB /* GTLAnalyticsAccountRef.m */; };
+		A27B28F919F70C66007080FB /* GTLAnalyticsAccount.m in Sources */ = {isa = PBXBuildFile; fileRef = A27B28C919F70C66007080FB /* GTLAnalyticsAccount.m */; };
+		A27B28FC19F70C89007080FB /* GTLServiceAnalytics.m in Sources */ = {isa = PBXBuildFile; fileRef = A27B28FA19F70C89007080FB /* GTLServiceAnalytics.m */; };
 		A28FCA0F19D3353000F9FB01 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A28FCA0E19D3353000F9FB01 /* ViewController.m */; };
 		C37F67A219EDFEF300A47B4F /* LaunchPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C37F67A119EDFEF300A47B4F /* LaunchPageViewController.m */; };
 /* End PBXBuildFile section */
@@ -130,110 +179,6 @@
 		8767794E19F03B780031D63A /* SettingsControllerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsControllerViewController.m; sourceTree = "<group>"; };
 		A24595F819F6B081009C94FA /* libGoogleAnalyticsServices.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGoogleAnalyticsServices.a; sourceTree = "<group>"; };
 		A24595F919F6B081009C94FA /* libAdIdAccess.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libAdIdAccess.a; sourceTree = "<group>"; };
-		A245979119F6B75E009C94FA /* GTLQueryAnalytics.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = GTLQueryAnalytics.h; path = Generated/GTLQueryAnalytics.h; sourceTree = "<group>"; };
-		A245979219F6B75E009C94FA /* GTLQueryAnalytics.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = GTLQueryAnalytics.m; path = Generated/GTLQueryAnalytics.m; sourceTree = "<group>"; };
-		A245979519F6B78E009C94FA /* GTLQueryAnalytics.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = GTLQueryAnalytics.h; path = Generated/GTLQueryAnalytics.h; sourceTree = "<group>"; };
-		A245979619F6B78E009C94FA /* GTLQueryAnalytics.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = GTLQueryAnalytics.m; path = Generated/GTLQueryAnalytics.m; sourceTree = "<group>"; };
-		A245979919F6C569009C94FA /* GTLQueryAnalytics.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = GTLQueryAnalytics.h; path = Generated/GTLQueryAnalytics.h; sourceTree = "<group>"; };
-		A245979A19F6C569009C94FA /* GTLQueryAnalytics.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = GTLQueryAnalytics.m; path = Generated/GTLQueryAnalytics.m; sourceTree = "<group>"; };
-		A245979B19F6C569009C94FA /* GTLAnalyticsExperiment.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = GTLAnalyticsExperiment.h; path = Generated/GTLAnalyticsExperiment.h; sourceTree = "<group>"; };
-		A245979C19F6C569009C94FA /* GTLAnalyticsGaData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = GTLAnalyticsGaData.h; path = Generated/GTLAnalyticsGaData.h; sourceTree = "<group>"; };
-		A245979D19F6C569009C94FA /* GTLAnalyticsMcfData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = GTLAnalyticsMcfData.h; path = Generated/GTLAnalyticsMcfData.h; sourceTree = "<group>"; };
-		A245979E19F6C569009C94FA /* GTLAnalyticsGoal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = GTLAnalyticsGoal.h; path = Generated/GTLAnalyticsGoal.h; sourceTree = "<group>"; };
-		A245979F19F6C569009C94FA /* GTLAnalyticsFilter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = GTLAnalyticsFilter.h; path = Generated/GTLAnalyticsFilter.h; sourceTree = "<group>"; };
-		A24597A019F6C569009C94FA /* GTLAnalyticsRealtimeData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = GTLAnalyticsRealtimeData.h; path = Generated/GTLAnalyticsRealtimeData.h; sourceTree = "<group>"; };
-		A24597A119F6C569009C94FA /* GTLAnalyticsProfile.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = GTLAnalyticsProfile.h; path = Generated/GTLAnalyticsProfile.h; sourceTree = "<group>"; };
-		A24597A219F6C569009C94FA /* GTLAnalyticsGaData.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = GTLAnalyticsGaData.m; path = Generated/GTLAnalyticsGaData.m; sourceTree = "<group>"; };
-		A24597A319F6C569009C94FA /* GTLAnalyticsMcfData.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = GTLAnalyticsMcfData.m; path = Generated/GTLAnalyticsMcfData.m; sourceTree = "<group>"; };
-		A24597A419F6C569009C94FA /* GTLAnalyticsWebproperty.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = GTLAnalyticsWebproperty.h; path = Generated/GTLAnalyticsWebproperty.h; sourceTree = "<group>"; };
-		A24597A519F6C569009C94FA /* GTLServiceAnalytics.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = GTLServiceAnalytics.m; path = Generated/GTLServiceAnalytics.m; sourceTree = "<group>"; };
-		A24597A619F6C569009C94FA /* GTLAnalyticsGoal.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = GTLAnalyticsGoal.m; path = Generated/GTLAnalyticsGoal.m; sourceTree = "<group>"; };
-		A24597A719F6C569009C94FA /* GTLAnalyticsUnsampledReport.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = GTLAnalyticsUnsampledReport.h; path = Generated/GTLAnalyticsUnsampledReport.h; sourceTree = "<group>"; };
-		A24597A819F6C569009C94FA /* GTLAnalyticsFilterExpression.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = GTLAnalyticsFilterExpression.h; path = Generated/GTLAnalyticsFilterExpression.h; sourceTree = "<group>"; };
-		A24597A919F6C569009C94FA /* GTLAnalyticsCustomDataSource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = GTLAnalyticsCustomDataSource.h; path = Generated/GTLAnalyticsCustomDataSource.h; sourceTree = "<group>"; };
-		A24597AA19F6C569009C94FA /* GTLAnalyticsRealtimeData.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = GTLAnalyticsRealtimeData.m; path = Generated/GTLAnalyticsRealtimeData.m; sourceTree = "<group>"; };
-		A24597AB19F6C569009C94FA /* GTLAnalyticsEntityUserLink.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = GTLAnalyticsEntityUserLink.h; path = Generated/GTLAnalyticsEntityUserLink.h; sourceTree = "<group>"; };
-		A24597AC19F6C569009C94FA /* GTLAnalyticsDailyUpload.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = GTLAnalyticsDailyUpload.h; path = Generated/GTLAnalyticsDailyUpload.h; sourceTree = "<group>"; };
-		A24597AD19F6C569009C94FA /* GTLAnalyticsFilter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = GTLAnalyticsFilter.m; path = Generated/GTLAnalyticsFilter.m; sourceTree = "<group>"; };
-		A24597AE19F6C569009C94FA /* GTLAnalyticsAccount.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = GTLAnalyticsAccount.h; path = Generated/GTLAnalyticsAccount.h; sourceTree = "<group>"; };
-		A24597AF19F6C569009C94FA /* GTLAnalyticsProfile.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = GTLAnalyticsProfile.m; path = Generated/GTLAnalyticsProfile.m; sourceTree = "<group>"; };
-		A24597B019F6C569009C94FA /* GTLAnalyticsUnsampledReports.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = GTLAnalyticsUnsampledReports.h; path = Generated/GTLAnalyticsUnsampledReports.h; sourceTree = "<group>"; };
-		A24597B119F6C569009C94FA /* GTLAnalyticsExperiment.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = GTLAnalyticsExperiment.m; path = Generated/GTLAnalyticsExperiment.m; sourceTree = "<group>"; };
-		A24597B219F6C569009C94FA /* GTLAnalytics_Sources.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = GTLAnalytics_Sources.m; path = Generated/GTLAnalytics_Sources.m; sourceTree = "<group>"; };
-		A24597B319F6C569009C94FA /* GTLAnalyticsAccountSummaries.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = GTLAnalyticsAccountSummaries.h; path = Generated/GTLAnalyticsAccountSummaries.h; sourceTree = "<group>"; };
-		A24597B419F6C569009C94FA /* GTLAnalyticsProfileFilterLinks.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = GTLAnalyticsProfileFilterLinks.h; path = Generated/GTLAnalyticsProfileFilterLinks.h; sourceTree = "<group>"; };
-		A24597B519F6C569009C94FA /* GTLAnalyticsExperiments.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = GTLAnalyticsExperiments.h; path = Generated/GTLAnalyticsExperiments.h; sourceTree = "<group>"; };
-		A24597B619F6C569009C94FA /* GTLAnalyticsWebproperty.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = GTLAnalyticsWebproperty.m; path = Generated/GTLAnalyticsWebproperty.m; sourceTree = "<group>"; };
-		A24597B719F6C569009C94FA /* GTLAnalyticsDailyUploads.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = GTLAnalyticsDailyUploads.h; path = Generated/GTLAnalyticsDailyUploads.h; sourceTree = "<group>"; };
-		A24597B819F6C569009C94FA /* GTLAnalyticsCustomDataSources.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = GTLAnalyticsCustomDataSources.h; path = Generated/GTLAnalyticsCustomDataSources.h; sourceTree = "<group>"; };
-		A24597B919F6C569009C94FA /* GTLAnalyticsAccounts.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = GTLAnalyticsAccounts.h; path = Generated/GTLAnalyticsAccounts.h; sourceTree = "<group>"; };
-		A24597BA19F6C569009C94FA /* GTLAnalyticsWebproperties.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = GTLAnalyticsWebproperties.h; path = Generated/GTLAnalyticsWebproperties.h; sourceTree = "<group>"; };
-		A24597BB19F6C569009C94FA /* GTLAnalyticsProfiles.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = GTLAnalyticsProfiles.h; path = Generated/GTLAnalyticsProfiles.h; sourceTree = "<group>"; };
-		A24597BC19F6C569009C94FA /* GTLAnalyticsProfileFilterLink.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = GTLAnalyticsProfileFilterLink.h; path = Generated/GTLAnalyticsProfileFilterLink.h; sourceTree = "<group>"; };
-		A24597BD19F6C569009C94FA /* GTLAnalytics.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = GTLAnalytics.h; path = Generated/GTLAnalytics.h; sourceTree = "<group>"; };
-		A24597BE19F6C569009C94FA /* GTLAnalyticsEntityAdWordsLink.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = GTLAnalyticsEntityAdWordsLink.h; path = Generated/GTLAnalyticsEntityAdWordsLink.h; sourceTree = "<group>"; };
-		A24597BF19F6C569009C94FA /* GTLAnalyticsGoals.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = GTLAnalyticsGoals.h; path = Generated/GTLAnalyticsGoals.h; sourceTree = "<group>"; };
-		A24597C019F6C569009C94FA /* GTLAnalyticsSegments.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = GTLAnalyticsSegments.h; path = Generated/GTLAnalyticsSegments.h; sourceTree = "<group>"; };
-		A24597C119F6C569009C94FA /* GTLAnalyticsUploads.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = GTLAnalyticsUploads.h; path = Generated/GTLAnalyticsUploads.h; sourceTree = "<group>"; };
-		A24597C219F6C569009C94FA /* GTLAnalyticsFilters.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = GTLAnalyticsFilters.h; path = Generated/GTLAnalyticsFilters.h; sourceTree = "<group>"; };
-		A24597C319F6C569009C94FA /* GTLAnalyticsEntityAdWordsLinks.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = GTLAnalyticsEntityAdWordsLinks.h; path = Generated/GTLAnalyticsEntityAdWordsLinks.h; sourceTree = "<group>"; };
-		A24597C419F6C569009C94FA /* GTLAnalyticsEntityUserLinks.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = GTLAnalyticsEntityUserLinks.h; path = Generated/GTLAnalyticsEntityUserLinks.h; sourceTree = "<group>"; };
-		A24597C519F6C569009C94FA /* GTLAnalyticsCustomDataSource.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = GTLAnalyticsCustomDataSource.m; path = Generated/GTLAnalyticsCustomDataSource.m; sourceTree = "<group>"; };
-		A24597C619F6C569009C94FA /* GTLAnalyticsEntityUserLink.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = GTLAnalyticsEntityUserLink.m; path = Generated/GTLAnalyticsEntityUserLink.m; sourceTree = "<group>"; };
-		A24597C719F6C569009C94FA /* GTLAnalyticsUnsampledReport.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = GTLAnalyticsUnsampledReport.m; path = Generated/GTLAnalyticsUnsampledReport.m; sourceTree = "<group>"; };
-		A24597C819F6C569009C94FA /* GTLAnalyticsConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = GTLAnalyticsConstants.h; path = Generated/GTLAnalyticsConstants.h; sourceTree = "<group>"; };
-		A24597C919F6C569009C94FA /* GTLAnalyticsAccount.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = GTLAnalyticsAccount.m; path = Generated/GTLAnalyticsAccount.m; sourceTree = "<group>"; };
-		A24597CA19F6C569009C94FA /* GTLAnalyticsDailyUpload.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = GTLAnalyticsDailyUpload.m; path = Generated/GTLAnalyticsDailyUpload.m; sourceTree = "<group>"; };
-		A24597CB19F6C569009C94FA /* GTLAnalyticsAccountTicket.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = GTLAnalyticsAccountTicket.h; path = Generated/GTLAnalyticsAccountTicket.h; sourceTree = "<group>"; };
-		A24597CC19F6C569009C94FA /* GTLAnalyticsEntityAdWordsLink.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = GTLAnalyticsEntityAdWordsLink.m; path = Generated/GTLAnalyticsEntityAdWordsLink.m; sourceTree = "<group>"; };
-		A24597CD19F6C569009C94FA /* GTLAnalyticsWebPropertySummary.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = GTLAnalyticsWebPropertySummary.h; path = Generated/GTLAnalyticsWebPropertySummary.h; sourceTree = "<group>"; };
-		A24597CE19F6C569009C94FA /* GTLAnalyticsColumn.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = GTLAnalyticsColumn.h; path = Generated/GTLAnalyticsColumn.h; sourceTree = "<group>"; };
-		A24597CF19F6C569009C94FA /* GTLServiceAnalytics.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = GTLServiceAnalytics.h; path = Generated/GTLServiceAnalytics.h; sourceTree = "<group>"; };
-		A24597D019F6C569009C94FA /* GTLAnalyticsSegment.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = GTLAnalyticsSegment.h; path = Generated/GTLAnalyticsSegment.h; sourceTree = "<group>"; };
-		A24597D119F6C569009C94FA /* GTLAnalyticsColumns.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = GTLAnalyticsColumns.h; path = Generated/GTLAnalyticsColumns.h; sourceTree = "<group>"; };
-		A24597D219F6C569009C94FA /* GTLAnalyticsConstants.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = GTLAnalyticsConstants.m; path = Generated/GTLAnalyticsConstants.m; sourceTree = "<group>"; };
-		A24597D319F6C569009C94FA /* GTLAnalyticsProfileRef.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = GTLAnalyticsProfileRef.h; path = Generated/GTLAnalyticsProfileRef.h; sourceTree = "<group>"; };
-		A24597D419F6C569009C94FA /* GTLAnalyticsDailyUploadAppend.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = GTLAnalyticsDailyUploadAppend.h; path = Generated/GTLAnalyticsDailyUploadAppend.h; sourceTree = "<group>"; };
-		A24597D519F6C569009C94FA /* GTLAnalyticsUpload.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = GTLAnalyticsUpload.h; path = Generated/GTLAnalyticsUpload.h; sourceTree = "<group>"; };
-		A24597D619F6C569009C94FA /* GTLAnalyticsWebPropertyRef.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = GTLAnalyticsWebPropertyRef.h; path = Generated/GTLAnalyticsWebPropertyRef.h; sourceTree = "<group>"; };
-		A24597D719F6C569009C94FA /* GTLAnalyticsWebPropertySummary.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = GTLAnalyticsWebPropertySummary.m; path = Generated/GTLAnalyticsWebPropertySummary.m; sourceTree = "<group>"; };
-		A24597D819F6C569009C94FA /* GTLAnalyticsAccountSummary.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = GTLAnalyticsAccountSummary.h; path = Generated/GTLAnalyticsAccountSummary.h; sourceTree = "<group>"; };
-		A24597D919F6C569009C94FA /* GTLAnalyticsColumn.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = GTLAnalyticsColumn.m; path = Generated/GTLAnalyticsColumn.m; sourceTree = "<group>"; };
-		A24597DA19F6C569009C94FA /* GTLAnalyticsAccountSummary.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = GTLAnalyticsAccountSummary.m; path = Generated/GTLAnalyticsAccountSummary.m; sourceTree = "<group>"; };
-		A24597DB19F6C569009C94FA /* GTLAnalyticsProfileSummary.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = GTLAnalyticsProfileSummary.h; path = Generated/GTLAnalyticsProfileSummary.h; sourceTree = "<group>"; };
-		A24597DC19F6C569009C94FA /* GTLAnalyticsColumns.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = GTLAnalyticsColumns.m; path = Generated/GTLAnalyticsColumns.m; sourceTree = "<group>"; };
-		A24597DD19F6C569009C94FA /* GTLAnalyticsFilterRef.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = GTLAnalyticsFilterRef.h; path = Generated/GTLAnalyticsFilterRef.h; sourceTree = "<group>"; };
-		A24597DE19F6C569009C94FA /* GTLAnalyticsUpload.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = GTLAnalyticsUpload.m; path = Generated/GTLAnalyticsUpload.m; sourceTree = "<group>"; };
-		A24597DF19F6C569009C94FA /* GTLAnalyticsProfileFilterLinks.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = GTLAnalyticsProfileFilterLinks.m; path = Generated/GTLAnalyticsProfileFilterLinks.m; sourceTree = "<group>"; };
-		A24597E019F6C569009C94FA /* GTLAnalyticsCustomDataSources.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = GTLAnalyticsCustomDataSources.m; path = Generated/GTLAnalyticsCustomDataSources.m; sourceTree = "<group>"; };
-		A24597E119F6C569009C94FA /* GTLAnalyticsEntityAdWordsLinks.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = GTLAnalyticsEntityAdWordsLinks.m; path = Generated/GTLAnalyticsEntityAdWordsLinks.m; sourceTree = "<group>"; };
-		A24597E219F6C569009C94FA /* GTLAnalyticsUnsampledReports.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = GTLAnalyticsUnsampledReports.m; path = Generated/GTLAnalyticsUnsampledReports.m; sourceTree = "<group>"; };
-		A24597E319F6C569009C94FA /* GTLAnalyticsAdWordsAccount.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = GTLAnalyticsAdWordsAccount.h; path = Generated/GTLAnalyticsAdWordsAccount.h; sourceTree = "<group>"; };
-		A24597E419F6C569009C94FA /* GTLAnalyticsAccountSummaries.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = GTLAnalyticsAccountSummaries.m; path = Generated/GTLAnalyticsAccountSummaries.m; sourceTree = "<group>"; };
-		A24597E519F6C569009C94FA /* GTLAnalyticsEntityUserLinks.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = GTLAnalyticsEntityUserLinks.m; path = Generated/GTLAnalyticsEntityUserLinks.m; sourceTree = "<group>"; };
-		A24597E619F6C569009C94FA /* GTLAnalyticsAccountTicket.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = GTLAnalyticsAccountTicket.m; path = Generated/GTLAnalyticsAccountTicket.m; sourceTree = "<group>"; };
-		A24597E719F6C569009C94FA /* GTLAnalyticsWebproperties.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = GTLAnalyticsWebproperties.m; path = Generated/GTLAnalyticsWebproperties.m; sourceTree = "<group>"; };
-		A24597E819F6C569009C94FA /* GTLAnalyticsDailyUploads.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = GTLAnalyticsDailyUploads.m; path = Generated/GTLAnalyticsDailyUploads.m; sourceTree = "<group>"; };
-		A24597E919F6C569009C94FA /* GTLAnalyticsProfileFilterLink.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = GTLAnalyticsProfileFilterLink.m; path = Generated/GTLAnalyticsProfileFilterLink.m; sourceTree = "<group>"; };
-		A24597EA19F6C569009C94FA /* GTLAnalyticsExperiments.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = GTLAnalyticsExperiments.m; path = Generated/GTLAnalyticsExperiments.m; sourceTree = "<group>"; };
-		A24597EB19F6C569009C94FA /* GTLAnalyticsAccountRef.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = GTLAnalyticsAccountRef.h; path = Generated/GTLAnalyticsAccountRef.h; sourceTree = "<group>"; };
-		A24597EC19F6C569009C94FA /* GTLAnalyticsAccounts.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = GTLAnalyticsAccounts.m; path = Generated/GTLAnalyticsAccounts.m; sourceTree = "<group>"; };
-		A24597ED19F6C569009C94FA /* GTLAnalyticsProfiles.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = GTLAnalyticsProfiles.m; path = Generated/GTLAnalyticsProfiles.m; sourceTree = "<group>"; };
-		A24597EE19F6C569009C94FA /* GTLAnalyticsSegments.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = GTLAnalyticsSegments.m; path = Generated/GTLAnalyticsSegments.m; sourceTree = "<group>"; };
-		A24597EF19F6C569009C94FA /* GTLAnalyticsFilters.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = GTLAnalyticsFilters.m; path = Generated/GTLAnalyticsFilters.m; sourceTree = "<group>"; };
-		A24597F019F6C569009C94FA /* GTLAnalyticsUploads.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = GTLAnalyticsUploads.m; path = Generated/GTLAnalyticsUploads.m; sourceTree = "<group>"; };
-		A24597F119F6C569009C94FA /* GTLAnalyticsGoals.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = GTLAnalyticsGoals.m; path = Generated/GTLAnalyticsGoals.m; sourceTree = "<group>"; };
-		A24597F219F6C569009C94FA /* GTLAnalyticsProfileRef.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = GTLAnalyticsProfileRef.m; path = Generated/GTLAnalyticsProfileRef.m; sourceTree = "<group>"; };
-		A24597F319F6C569009C94FA /* GTLAnalyticsWebPropertyRef.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = GTLAnalyticsWebPropertyRef.m; path = Generated/GTLAnalyticsWebPropertyRef.m; sourceTree = "<group>"; };
-		A24597F419F6C569009C94FA /* GTLAnalyticsSegment.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = GTLAnalyticsSegment.m; path = Generated/GTLAnalyticsSegment.m; sourceTree = "<group>"; };
-		A24597F519F6C569009C94FA /* GTLAnalyticsProfileSummary.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = GTLAnalyticsProfileSummary.m; path = Generated/GTLAnalyticsProfileSummary.m; sourceTree = "<group>"; };
-		A24597F619F6C569009C94FA /* GTLAnalyticsUserRef.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = GTLAnalyticsUserRef.h; path = Generated/GTLAnalyticsUserRef.h; sourceTree = "<group>"; };
-		A24597F719F6C569009C94FA /* GTLAnalyticsFilterRef.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = GTLAnalyticsFilterRef.m; path = Generated/GTLAnalyticsFilterRef.m; sourceTree = "<group>"; };
-		A24597F819F6C569009C94FA /* GTLAnalyticsAccountRef.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = GTLAnalyticsAccountRef.m; path = Generated/GTLAnalyticsAccountRef.m; sourceTree = "<group>"; };
-		A24597F919F6C569009C94FA /* GTLAnalyticsUserRef.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = GTLAnalyticsUserRef.m; path = Generated/GTLAnalyticsUserRef.m; sourceTree = "<group>"; };
-		A24597FA19F6C569009C94FA /* GTLAnalyticsDailyUploadAppend.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = GTLAnalyticsDailyUploadAppend.m; path = Generated/GTLAnalyticsDailyUploadAppend.m; sourceTree = "<group>"; };
-		A24597FB19F6C569009C94FA /* GTLAnalyticsFilterExpression.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = GTLAnalyticsFilterExpression.m; path = Generated/GTLAnalyticsFilterExpression.m; sourceTree = "<group>"; };
-		A24597FC19F6C569009C94FA /* GTLAnalyticsAdWordsAccount.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = GTLAnalyticsAdWordsAccount.m; path = Generated/GTLAnalyticsAdWordsAccount.m; sourceTree = "<group>"; };
 		A25016EB19F5CA5600C31AA8 /* GTLDefines.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GTLDefines.h; sourceTree = "<group>"; };
 		A25016ED19F5CA5C00C31AA8 /* GTLUtilities.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GTLUtilities.m; sourceTree = "<group>"; };
 		A25016EE19F5CA5C00C31AA8 /* GTLJSONParser.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GTLJSONParser.m; sourceTree = "<group>"; };
@@ -326,6 +271,106 @@
 		A276FB5619D3344D00276AE9 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		A276FB5819D3345100276AE9 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		A276FB5A19D3345600276AE9 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		A27B286819F70C10007080FB /* GTLQueryAnalytics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTLQueryAnalytics.h; sourceTree = "<group>"; };
+		A27B286919F70C23007080FB /* GTLAnalytics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTLAnalytics.h; sourceTree = "<group>"; };
+		A27B286A19F70C51007080FB /* GTLQueryAnalytics.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTLQueryAnalytics.m; sourceTree = "<group>"; };
+		A27B286B19F70C51007080FB /* GTLQueryAnalytics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTLQueryAnalytics.h; sourceTree = "<group>"; };
+		A27B286D19F70C65007080FB /* GTLAnalyticsWebPropertySummary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTLAnalyticsWebPropertySummary.m; sourceTree = "<group>"; };
+		A27B286E19F70C65007080FB /* GTLAnalyticsWebPropertySummary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTLAnalyticsWebPropertySummary.h; sourceTree = "<group>"; };
+		A27B286F19F70C65007080FB /* GTLAnalyticsWebPropertyRef.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTLAnalyticsWebPropertyRef.m; sourceTree = "<group>"; };
+		A27B287019F70C65007080FB /* GTLAnalyticsWebPropertyRef.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTLAnalyticsWebPropertyRef.h; sourceTree = "<group>"; };
+		A27B287119F70C65007080FB /* GTLAnalyticsWebproperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTLAnalyticsWebproperty.m; sourceTree = "<group>"; };
+		A27B287219F70C65007080FB /* GTLAnalyticsWebproperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTLAnalyticsWebproperty.h; sourceTree = "<group>"; };
+		A27B287319F70C65007080FB /* GTLAnalyticsWebproperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTLAnalyticsWebproperties.m; sourceTree = "<group>"; };
+		A27B287419F70C65007080FB /* GTLAnalyticsWebproperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTLAnalyticsWebproperties.h; sourceTree = "<group>"; };
+		A27B287519F70C65007080FB /* GTLAnalyticsUserRef.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTLAnalyticsUserRef.m; sourceTree = "<group>"; };
+		A27B287619F70C65007080FB /* GTLAnalyticsUserRef.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTLAnalyticsUserRef.h; sourceTree = "<group>"; };
+		A27B287719F70C65007080FB /* GTLAnalyticsUploads.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTLAnalyticsUploads.m; sourceTree = "<group>"; };
+		A27B287819F70C65007080FB /* GTLAnalyticsUploads.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTLAnalyticsUploads.h; sourceTree = "<group>"; };
+		A27B287919F70C65007080FB /* GTLAnalyticsUpload.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTLAnalyticsUpload.m; sourceTree = "<group>"; };
+		A27B287A19F70C65007080FB /* GTLAnalyticsUpload.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTLAnalyticsUpload.h; sourceTree = "<group>"; };
+		A27B287B19F70C65007080FB /* GTLAnalyticsUnsampledReports.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTLAnalyticsUnsampledReports.m; sourceTree = "<group>"; };
+		A27B287C19F70C65007080FB /* GTLAnalyticsUnsampledReports.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTLAnalyticsUnsampledReports.h; sourceTree = "<group>"; };
+		A27B287D19F70C65007080FB /* GTLAnalyticsUnsampledReport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTLAnalyticsUnsampledReport.m; sourceTree = "<group>"; };
+		A27B287E19F70C65007080FB /* GTLAnalyticsUnsampledReport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTLAnalyticsUnsampledReport.h; sourceTree = "<group>"; };
+		A27B287F19F70C65007080FB /* GTLAnalyticsSegments.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTLAnalyticsSegments.m; sourceTree = "<group>"; };
+		A27B288019F70C65007080FB /* GTLAnalyticsSegments.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTLAnalyticsSegments.h; sourceTree = "<group>"; };
+		A27B288119F70C65007080FB /* GTLAnalyticsSegment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTLAnalyticsSegment.m; sourceTree = "<group>"; };
+		A27B288219F70C65007080FB /* GTLAnalyticsSegment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTLAnalyticsSegment.h; sourceTree = "<group>"; };
+		A27B288319F70C65007080FB /* GTLAnalyticsRealtimeData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTLAnalyticsRealtimeData.m; sourceTree = "<group>"; };
+		A27B288419F70C65007080FB /* GTLAnalyticsRealtimeData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTLAnalyticsRealtimeData.h; sourceTree = "<group>"; };
+		A27B288519F70C65007080FB /* GTLAnalyticsProfileSummary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTLAnalyticsProfileSummary.m; sourceTree = "<group>"; };
+		A27B288619F70C65007080FB /* GTLAnalyticsProfileSummary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTLAnalyticsProfileSummary.h; sourceTree = "<group>"; };
+		A27B288719F70C65007080FB /* GTLAnalyticsProfiles.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTLAnalyticsProfiles.m; sourceTree = "<group>"; };
+		A27B288819F70C65007080FB /* GTLAnalyticsProfiles.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTLAnalyticsProfiles.h; sourceTree = "<group>"; };
+		A27B288919F70C65007080FB /* GTLAnalyticsProfileRef.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTLAnalyticsProfileRef.m; sourceTree = "<group>"; };
+		A27B288A19F70C65007080FB /* GTLAnalyticsProfileRef.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTLAnalyticsProfileRef.h; sourceTree = "<group>"; };
+		A27B288B19F70C65007080FB /* GTLAnalyticsProfileFilterLinks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTLAnalyticsProfileFilterLinks.m; sourceTree = "<group>"; };
+		A27B288C19F70C65007080FB /* GTLAnalyticsProfileFilterLinks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTLAnalyticsProfileFilterLinks.h; sourceTree = "<group>"; };
+		A27B288D19F70C65007080FB /* GTLAnalyticsProfileFilterLink.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTLAnalyticsProfileFilterLink.m; sourceTree = "<group>"; };
+		A27B288E19F70C65007080FB /* GTLAnalyticsProfileFilterLink.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTLAnalyticsProfileFilterLink.h; sourceTree = "<group>"; };
+		A27B288F19F70C65007080FB /* GTLAnalyticsProfile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTLAnalyticsProfile.m; sourceTree = "<group>"; };
+		A27B289019F70C65007080FB /* GTLAnalyticsProfile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTLAnalyticsProfile.h; sourceTree = "<group>"; };
+		A27B289119F70C65007080FB /* GTLAnalyticsMcfData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTLAnalyticsMcfData.m; sourceTree = "<group>"; };
+		A27B289219F70C65007080FB /* GTLAnalyticsMcfData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTLAnalyticsMcfData.h; sourceTree = "<group>"; };
+		A27B289319F70C65007080FB /* GTLAnalyticsGoals.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTLAnalyticsGoals.m; sourceTree = "<group>"; };
+		A27B289419F70C65007080FB /* GTLAnalyticsGoals.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTLAnalyticsGoals.h; sourceTree = "<group>"; };
+		A27B289519F70C65007080FB /* GTLAnalyticsGoal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTLAnalyticsGoal.m; sourceTree = "<group>"; };
+		A27B289619F70C65007080FB /* GTLAnalyticsGoal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTLAnalyticsGoal.h; sourceTree = "<group>"; };
+		A27B289719F70C65007080FB /* GTLAnalyticsGaData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTLAnalyticsGaData.m; sourceTree = "<group>"; };
+		A27B289819F70C65007080FB /* GTLAnalyticsGaData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTLAnalyticsGaData.h; sourceTree = "<group>"; };
+		A27B289919F70C65007080FB /* GTLAnalyticsFilters.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTLAnalyticsFilters.m; sourceTree = "<group>"; };
+		A27B289A19F70C65007080FB /* GTLAnalyticsFilters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTLAnalyticsFilters.h; sourceTree = "<group>"; };
+		A27B289B19F70C66007080FB /* GTLAnalyticsFilterRef.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTLAnalyticsFilterRef.m; sourceTree = "<group>"; };
+		A27B289C19F70C66007080FB /* GTLAnalyticsFilterRef.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTLAnalyticsFilterRef.h; sourceTree = "<group>"; };
+		A27B289D19F70C66007080FB /* GTLAnalyticsFilterExpression.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTLAnalyticsFilterExpression.m; sourceTree = "<group>"; };
+		A27B289E19F70C66007080FB /* GTLAnalyticsFilterExpression.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTLAnalyticsFilterExpression.h; sourceTree = "<group>"; };
+		A27B289F19F70C66007080FB /* GTLAnalyticsFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTLAnalyticsFilter.m; sourceTree = "<group>"; };
+		A27B28A019F70C66007080FB /* GTLAnalyticsFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTLAnalyticsFilter.h; sourceTree = "<group>"; };
+		A27B28A119F70C66007080FB /* GTLAnalyticsExperiments.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTLAnalyticsExperiments.m; sourceTree = "<group>"; };
+		A27B28A219F70C66007080FB /* GTLAnalyticsExperiments.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTLAnalyticsExperiments.h; sourceTree = "<group>"; };
+		A27B28A319F70C66007080FB /* GTLAnalyticsExperiment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTLAnalyticsExperiment.m; sourceTree = "<group>"; };
+		A27B28A419F70C66007080FB /* GTLAnalyticsExperiment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTLAnalyticsExperiment.h; sourceTree = "<group>"; };
+		A27B28A519F70C66007080FB /* GTLAnalyticsEntityUserLinks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTLAnalyticsEntityUserLinks.m; sourceTree = "<group>"; };
+		A27B28A619F70C66007080FB /* GTLAnalyticsEntityUserLinks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTLAnalyticsEntityUserLinks.h; sourceTree = "<group>"; };
+		A27B28A719F70C66007080FB /* GTLAnalyticsEntityUserLink.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTLAnalyticsEntityUserLink.m; sourceTree = "<group>"; };
+		A27B28A819F70C66007080FB /* GTLAnalyticsEntityUserLink.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTLAnalyticsEntityUserLink.h; sourceTree = "<group>"; };
+		A27B28A919F70C66007080FB /* GTLAnalyticsEntityAdWordsLinks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTLAnalyticsEntityAdWordsLinks.m; sourceTree = "<group>"; };
+		A27B28AA19F70C66007080FB /* GTLAnalyticsEntityAdWordsLinks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTLAnalyticsEntityAdWordsLinks.h; sourceTree = "<group>"; };
+		A27B28AB19F70C66007080FB /* GTLAnalyticsEntityAdWordsLink.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTLAnalyticsEntityAdWordsLink.m; sourceTree = "<group>"; };
+		A27B28AC19F70C66007080FB /* GTLAnalyticsEntityAdWordsLink.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTLAnalyticsEntityAdWordsLink.h; sourceTree = "<group>"; };
+		A27B28AD19F70C66007080FB /* GTLAnalyticsDailyUploads.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTLAnalyticsDailyUploads.m; sourceTree = "<group>"; };
+		A27B28AE19F70C66007080FB /* GTLAnalyticsDailyUploads.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTLAnalyticsDailyUploads.h; sourceTree = "<group>"; };
+		A27B28AF19F70C66007080FB /* GTLAnalyticsDailyUploadAppend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTLAnalyticsDailyUploadAppend.m; sourceTree = "<group>"; };
+		A27B28B019F70C66007080FB /* GTLAnalyticsDailyUploadAppend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTLAnalyticsDailyUploadAppend.h; sourceTree = "<group>"; };
+		A27B28B119F70C66007080FB /* GTLAnalyticsDailyUpload.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTLAnalyticsDailyUpload.m; sourceTree = "<group>"; };
+		A27B28B219F70C66007080FB /* GTLAnalyticsDailyUpload.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTLAnalyticsDailyUpload.h; sourceTree = "<group>"; };
+		A27B28B319F70C66007080FB /* GTLAnalyticsCustomDataSources.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTLAnalyticsCustomDataSources.m; sourceTree = "<group>"; };
+		A27B28B419F70C66007080FB /* GTLAnalyticsCustomDataSources.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTLAnalyticsCustomDataSources.h; sourceTree = "<group>"; };
+		A27B28B519F70C66007080FB /* GTLAnalyticsCustomDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTLAnalyticsCustomDataSource.m; sourceTree = "<group>"; };
+		A27B28B619F70C66007080FB /* GTLAnalyticsCustomDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTLAnalyticsCustomDataSource.h; sourceTree = "<group>"; };
+		A27B28B719F70C66007080FB /* GTLAnalyticsConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTLAnalyticsConstants.m; sourceTree = "<group>"; };
+		A27B28B819F70C66007080FB /* GTLAnalyticsConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTLAnalyticsConstants.h; sourceTree = "<group>"; };
+		A27B28B919F70C66007080FB /* GTLAnalyticsColumns.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTLAnalyticsColumns.m; sourceTree = "<group>"; };
+		A27B28BA19F70C66007080FB /* GTLAnalyticsColumns.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTLAnalyticsColumns.h; sourceTree = "<group>"; };
+		A27B28BB19F70C66007080FB /* GTLAnalyticsColumn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTLAnalyticsColumn.m; sourceTree = "<group>"; };
+		A27B28BC19F70C66007080FB /* GTLAnalyticsColumn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTLAnalyticsColumn.h; sourceTree = "<group>"; };
+		A27B28BD19F70C66007080FB /* GTLAnalyticsAdWordsAccount.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTLAnalyticsAdWordsAccount.m; sourceTree = "<group>"; };
+		A27B28BE19F70C66007080FB /* GTLAnalyticsAdWordsAccount.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTLAnalyticsAdWordsAccount.h; sourceTree = "<group>"; };
+		A27B28BF19F70C66007080FB /* GTLAnalyticsAccountTicket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTLAnalyticsAccountTicket.m; sourceTree = "<group>"; };
+		A27B28C019F70C66007080FB /* GTLAnalyticsAccountTicket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTLAnalyticsAccountTicket.h; sourceTree = "<group>"; };
+		A27B28C119F70C66007080FB /* GTLAnalyticsAccountSummary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTLAnalyticsAccountSummary.m; sourceTree = "<group>"; };
+		A27B28C219F70C66007080FB /* GTLAnalyticsAccountSummary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTLAnalyticsAccountSummary.h; sourceTree = "<group>"; };
+		A27B28C319F70C66007080FB /* GTLAnalyticsAccountSummaries.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTLAnalyticsAccountSummaries.m; sourceTree = "<group>"; };
+		A27B28C419F70C66007080FB /* GTLAnalyticsAccountSummaries.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTLAnalyticsAccountSummaries.h; sourceTree = "<group>"; };
+		A27B28C519F70C66007080FB /* GTLAnalyticsAccounts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTLAnalyticsAccounts.m; sourceTree = "<group>"; };
+		A27B28C619F70C66007080FB /* GTLAnalyticsAccounts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTLAnalyticsAccounts.h; sourceTree = "<group>"; };
+		A27B28C719F70C66007080FB /* GTLAnalyticsAccountRef.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTLAnalyticsAccountRef.m; sourceTree = "<group>"; };
+		A27B28C819F70C66007080FB /* GTLAnalyticsAccountRef.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTLAnalyticsAccountRef.h; sourceTree = "<group>"; };
+		A27B28C919F70C66007080FB /* GTLAnalyticsAccount.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTLAnalyticsAccount.m; sourceTree = "<group>"; };
+		A27B28CA19F70C66007080FB /* GTLAnalyticsAccount.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTLAnalyticsAccount.h; sourceTree = "<group>"; };
+		A27B28FA19F70C89007080FB /* GTLServiceAnalytics.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTLServiceAnalytics.m; sourceTree = "<group>"; };
+		A27B28FB19F70C89007080FB /* GTLServiceAnalytics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTLServiceAnalytics.h; sourceTree = "<group>"; };
 		A28FCA0D19D3353000F9FB01 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		A28FCA0E19D3353000F9FB01 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		A29B3D0F19F6AD910015818F /* libAdIdAccess.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libAdIdAccess.a; path = ../../../../Downloads/GoogleAnalyticsServicesiOS_3.09/libAdIdAccess.a; sourceTree = "<group>"; };
@@ -378,117 +423,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		A245985F19F6C5E1009C94FA /* GoogleAnalytics */ = {
-			isa = PBXGroup;
-			children = (
-				A245979919F6C569009C94FA /* GTLQueryAnalytics.h */,
-				A245979A19F6C569009C94FA /* GTLQueryAnalytics.m */,
-				A245979B19F6C569009C94FA /* GTLAnalyticsExperiment.h */,
-				A245979C19F6C569009C94FA /* GTLAnalyticsGaData.h */,
-				A245979D19F6C569009C94FA /* GTLAnalyticsMcfData.h */,
-				A245979E19F6C569009C94FA /* GTLAnalyticsGoal.h */,
-				A245979F19F6C569009C94FA /* GTLAnalyticsFilter.h */,
-				A24597A019F6C569009C94FA /* GTLAnalyticsRealtimeData.h */,
-				A24597A119F6C569009C94FA /* GTLAnalyticsProfile.h */,
-				A24597A219F6C569009C94FA /* GTLAnalyticsGaData.m */,
-				A24597A319F6C569009C94FA /* GTLAnalyticsMcfData.m */,
-				A24597A419F6C569009C94FA /* GTLAnalyticsWebproperty.h */,
-				A24597A519F6C569009C94FA /* GTLServiceAnalytics.m */,
-				A24597A619F6C569009C94FA /* GTLAnalyticsGoal.m */,
-				A24597A719F6C569009C94FA /* GTLAnalyticsUnsampledReport.h */,
-				A24597A819F6C569009C94FA /* GTLAnalyticsFilterExpression.h */,
-				A24597A919F6C569009C94FA /* GTLAnalyticsCustomDataSource.h */,
-				A24597AA19F6C569009C94FA /* GTLAnalyticsRealtimeData.m */,
-				A24597AB19F6C569009C94FA /* GTLAnalyticsEntityUserLink.h */,
-				A24597AC19F6C569009C94FA /* GTLAnalyticsDailyUpload.h */,
-				A24597AD19F6C569009C94FA /* GTLAnalyticsFilter.m */,
-				A24597AE19F6C569009C94FA /* GTLAnalyticsAccount.h */,
-				A24597AF19F6C569009C94FA /* GTLAnalyticsProfile.m */,
-				A24597B019F6C569009C94FA /* GTLAnalyticsUnsampledReports.h */,
-				A24597B119F6C569009C94FA /* GTLAnalyticsExperiment.m */,
-				A24597B219F6C569009C94FA /* GTLAnalytics_Sources.m */,
-				A24597B319F6C569009C94FA /* GTLAnalyticsAccountSummaries.h */,
-				A24597B419F6C569009C94FA /* GTLAnalyticsProfileFilterLinks.h */,
-				A24597B519F6C569009C94FA /* GTLAnalyticsExperiments.h */,
-				A24597B619F6C569009C94FA /* GTLAnalyticsWebproperty.m */,
-				A24597B719F6C569009C94FA /* GTLAnalyticsDailyUploads.h */,
-				A24597B819F6C569009C94FA /* GTLAnalyticsCustomDataSources.h */,
-				A24597B919F6C569009C94FA /* GTLAnalyticsAccounts.h */,
-				A24597BA19F6C569009C94FA /* GTLAnalyticsWebproperties.h */,
-				A24597BB19F6C569009C94FA /* GTLAnalyticsProfiles.h */,
-				A24597BC19F6C569009C94FA /* GTLAnalyticsProfileFilterLink.h */,
-				A24597BD19F6C569009C94FA /* GTLAnalytics.h */,
-				A24597BE19F6C569009C94FA /* GTLAnalyticsEntityAdWordsLink.h */,
-				A24597BF19F6C569009C94FA /* GTLAnalyticsGoals.h */,
-				A24597C019F6C569009C94FA /* GTLAnalyticsSegments.h */,
-				A24597C119F6C569009C94FA /* GTLAnalyticsUploads.h */,
-				A24597C219F6C569009C94FA /* GTLAnalyticsFilters.h */,
-				A24597C319F6C569009C94FA /* GTLAnalyticsEntityAdWordsLinks.h */,
-				A24597C419F6C569009C94FA /* GTLAnalyticsEntityUserLinks.h */,
-				A24597C519F6C569009C94FA /* GTLAnalyticsCustomDataSource.m */,
-				A24597C619F6C569009C94FA /* GTLAnalyticsEntityUserLink.m */,
-				A24597C719F6C569009C94FA /* GTLAnalyticsUnsampledReport.m */,
-				A24597C819F6C569009C94FA /* GTLAnalyticsConstants.h */,
-				A24597C919F6C569009C94FA /* GTLAnalyticsAccount.m */,
-				A24597CA19F6C569009C94FA /* GTLAnalyticsDailyUpload.m */,
-				A24597CB19F6C569009C94FA /* GTLAnalyticsAccountTicket.h */,
-				A24597CC19F6C569009C94FA /* GTLAnalyticsEntityAdWordsLink.m */,
-				A24597CD19F6C569009C94FA /* GTLAnalyticsWebPropertySummary.h */,
-				A24597CE19F6C569009C94FA /* GTLAnalyticsColumn.h */,
-				A24597CF19F6C569009C94FA /* GTLServiceAnalytics.h */,
-				A24597D019F6C569009C94FA /* GTLAnalyticsSegment.h */,
-				A24597D119F6C569009C94FA /* GTLAnalyticsColumns.h */,
-				A24597D219F6C569009C94FA /* GTLAnalyticsConstants.m */,
-				A24597D319F6C569009C94FA /* GTLAnalyticsProfileRef.h */,
-				A24597D419F6C569009C94FA /* GTLAnalyticsDailyUploadAppend.h */,
-				A24597D519F6C569009C94FA /* GTLAnalyticsUpload.h */,
-				A24597D619F6C569009C94FA /* GTLAnalyticsWebPropertyRef.h */,
-				A24597D719F6C569009C94FA /* GTLAnalyticsWebPropertySummary.m */,
-				A24597D819F6C569009C94FA /* GTLAnalyticsAccountSummary.h */,
-				A24597D919F6C569009C94FA /* GTLAnalyticsColumn.m */,
-				A24597DA19F6C569009C94FA /* GTLAnalyticsAccountSummary.m */,
-				A24597DB19F6C569009C94FA /* GTLAnalyticsProfileSummary.h */,
-				A24597DC19F6C569009C94FA /* GTLAnalyticsColumns.m */,
-				A24597DD19F6C569009C94FA /* GTLAnalyticsFilterRef.h */,
-				A24597DE19F6C569009C94FA /* GTLAnalyticsUpload.m */,
-				A24597DF19F6C569009C94FA /* GTLAnalyticsProfileFilterLinks.m */,
-				A24597E019F6C569009C94FA /* GTLAnalyticsCustomDataSources.m */,
-				A24597E119F6C569009C94FA /* GTLAnalyticsEntityAdWordsLinks.m */,
-				A24597E219F6C569009C94FA /* GTLAnalyticsUnsampledReports.m */,
-				A24597E319F6C569009C94FA /* GTLAnalyticsAdWordsAccount.h */,
-				A24597E419F6C569009C94FA /* GTLAnalyticsAccountSummaries.m */,
-				A24597E519F6C569009C94FA /* GTLAnalyticsEntityUserLinks.m */,
-				A24597E619F6C569009C94FA /* GTLAnalyticsAccountTicket.m */,
-				A24597E719F6C569009C94FA /* GTLAnalyticsWebproperties.m */,
-				A24597E819F6C569009C94FA /* GTLAnalyticsDailyUploads.m */,
-				A24597E919F6C569009C94FA /* GTLAnalyticsProfileFilterLink.m */,
-				A24597EA19F6C569009C94FA /* GTLAnalyticsExperiments.m */,
-				A24597EB19F6C569009C94FA /* GTLAnalyticsAccountRef.h */,
-				A24597EC19F6C569009C94FA /* GTLAnalyticsAccounts.m */,
-				A24597ED19F6C569009C94FA /* GTLAnalyticsProfiles.m */,
-				A24597EE19F6C569009C94FA /* GTLAnalyticsSegments.m */,
-				A24597EF19F6C569009C94FA /* GTLAnalyticsFilters.m */,
-				A24597F019F6C569009C94FA /* GTLAnalyticsUploads.m */,
-				A24597F119F6C569009C94FA /* GTLAnalyticsGoals.m */,
-				A24597F219F6C569009C94FA /* GTLAnalyticsProfileRef.m */,
-				A24597F319F6C569009C94FA /* GTLAnalyticsWebPropertyRef.m */,
-				A24597F419F6C569009C94FA /* GTLAnalyticsSegment.m */,
-				A24597F519F6C569009C94FA /* GTLAnalyticsProfileSummary.m */,
-				A24597F619F6C569009C94FA /* GTLAnalyticsUserRef.h */,
-				A24597F719F6C569009C94FA /* GTLAnalyticsFilterRef.m */,
-				A24597F819F6C569009C94FA /* GTLAnalyticsAccountRef.m */,
-				A24597F919F6C569009C94FA /* GTLAnalyticsUserRef.m */,
-				A24597FA19F6C569009C94FA /* GTLAnalyticsDailyUploadAppend.m */,
-				A24597FB19F6C569009C94FA /* GTLAnalyticsFilterExpression.m */,
-				A24597FC19F6C569009C94FA /* GTLAnalyticsAdWordsAccount.m */,
-				A245979519F6B78E009C94FA /* GTLQueryAnalytics.h */,
-				A245979619F6B78E009C94FA /* GTLQueryAnalytics.m */,
-				A245979119F6B75E009C94FA /* GTLQueryAnalytics.h */,
-				A245979219F6B75E009C94FA /* GTLQueryAnalytics.m */,
-			);
-			name = GoogleAnalytics;
-			sourceTree = "<group>";
-		};
 		A250176D19F5CAE600C31AA8 /* GoogleFramework */ = {
 			isa = PBXGroup;
 			children = (
@@ -566,7 +500,7 @@
 		A251691619D32DF00041C7B9 = {
 			isa = PBXGroup;
 			children = (
-				A245985F19F6C5E1009C94FA /* GoogleAnalytics */,
+				A27B267219F70910007080FB /* GoogleAnalytics */,
 				A29B3D2119F6AE160015818F /* GoogleAnalytics-CoreGather */,
 				A250176D19F5CAE600C31AA8 /* GoogleFramework */,
 				A276FB3F19D333A700276AE9 /* Frameworks */,
@@ -655,6 +589,113 @@
 				A276FB4119D333A700276AE9 /* Parse.framework */,
 			);
 			path = Frameworks;
+			sourceTree = "<group>";
+		};
+		A27B267219F70910007080FB /* GoogleAnalytics */ = {
+			isa = PBXGroup;
+			children = (
+				A27B286D19F70C65007080FB /* GTLAnalyticsWebPropertySummary.m */,
+				A27B286E19F70C65007080FB /* GTLAnalyticsWebPropertySummary.h */,
+				A27B286F19F70C65007080FB /* GTLAnalyticsWebPropertyRef.m */,
+				A27B287019F70C65007080FB /* GTLAnalyticsWebPropertyRef.h */,
+				A27B287119F70C65007080FB /* GTLAnalyticsWebproperty.m */,
+				A27B287219F70C65007080FB /* GTLAnalyticsWebproperty.h */,
+				A27B287319F70C65007080FB /* GTLAnalyticsWebproperties.m */,
+				A27B287419F70C65007080FB /* GTLAnalyticsWebproperties.h */,
+				A27B287519F70C65007080FB /* GTLAnalyticsUserRef.m */,
+				A27B287619F70C65007080FB /* GTLAnalyticsUserRef.h */,
+				A27B287719F70C65007080FB /* GTLAnalyticsUploads.m */,
+				A27B287819F70C65007080FB /* GTLAnalyticsUploads.h */,
+				A27B287919F70C65007080FB /* GTLAnalyticsUpload.m */,
+				A27B287A19F70C65007080FB /* GTLAnalyticsUpload.h */,
+				A27B287B19F70C65007080FB /* GTLAnalyticsUnsampledReports.m */,
+				A27B287C19F70C65007080FB /* GTLAnalyticsUnsampledReports.h */,
+				A27B287D19F70C65007080FB /* GTLAnalyticsUnsampledReport.m */,
+				A27B287E19F70C65007080FB /* GTLAnalyticsUnsampledReport.h */,
+				A27B287F19F70C65007080FB /* GTLAnalyticsSegments.m */,
+				A27B288019F70C65007080FB /* GTLAnalyticsSegments.h */,
+				A27B288119F70C65007080FB /* GTLAnalyticsSegment.m */,
+				A27B288219F70C65007080FB /* GTLAnalyticsSegment.h */,
+				A27B288319F70C65007080FB /* GTLAnalyticsRealtimeData.m */,
+				A27B288419F70C65007080FB /* GTLAnalyticsRealtimeData.h */,
+				A27B288519F70C65007080FB /* GTLAnalyticsProfileSummary.m */,
+				A27B288619F70C65007080FB /* GTLAnalyticsProfileSummary.h */,
+				A27B288719F70C65007080FB /* GTLAnalyticsProfiles.m */,
+				A27B288819F70C65007080FB /* GTLAnalyticsProfiles.h */,
+				A27B288919F70C65007080FB /* GTLAnalyticsProfileRef.m */,
+				A27B288A19F70C65007080FB /* GTLAnalyticsProfileRef.h */,
+				A27B288B19F70C65007080FB /* GTLAnalyticsProfileFilterLinks.m */,
+				A27B288C19F70C65007080FB /* GTLAnalyticsProfileFilterLinks.h */,
+				A27B288D19F70C65007080FB /* GTLAnalyticsProfileFilterLink.m */,
+				A27B288E19F70C65007080FB /* GTLAnalyticsProfileFilterLink.h */,
+				A27B288F19F70C65007080FB /* GTLAnalyticsProfile.m */,
+				A27B289019F70C65007080FB /* GTLAnalyticsProfile.h */,
+				A27B289119F70C65007080FB /* GTLAnalyticsMcfData.m */,
+				A27B289219F70C65007080FB /* GTLAnalyticsMcfData.h */,
+				A27B289319F70C65007080FB /* GTLAnalyticsGoals.m */,
+				A27B289419F70C65007080FB /* GTLAnalyticsGoals.h */,
+				A27B289519F70C65007080FB /* GTLAnalyticsGoal.m */,
+				A27B289619F70C65007080FB /* GTLAnalyticsGoal.h */,
+				A27B289719F70C65007080FB /* GTLAnalyticsGaData.m */,
+				A27B289819F70C65007080FB /* GTLAnalyticsGaData.h */,
+				A27B289919F70C65007080FB /* GTLAnalyticsFilters.m */,
+				A27B289A19F70C65007080FB /* GTLAnalyticsFilters.h */,
+				A27B289B19F70C66007080FB /* GTLAnalyticsFilterRef.m */,
+				A27B289C19F70C66007080FB /* GTLAnalyticsFilterRef.h */,
+				A27B289D19F70C66007080FB /* GTLAnalyticsFilterExpression.m */,
+				A27B289E19F70C66007080FB /* GTLAnalyticsFilterExpression.h */,
+				A27B289F19F70C66007080FB /* GTLAnalyticsFilter.m */,
+				A27B28A019F70C66007080FB /* GTLAnalyticsFilter.h */,
+				A27B28A119F70C66007080FB /* GTLAnalyticsExperiments.m */,
+				A27B28A219F70C66007080FB /* GTLAnalyticsExperiments.h */,
+				A27B28A319F70C66007080FB /* GTLAnalyticsExperiment.m */,
+				A27B28A419F70C66007080FB /* GTLAnalyticsExperiment.h */,
+				A27B28A519F70C66007080FB /* GTLAnalyticsEntityUserLinks.m */,
+				A27B28A619F70C66007080FB /* GTLAnalyticsEntityUserLinks.h */,
+				A27B28A719F70C66007080FB /* GTLAnalyticsEntityUserLink.m */,
+				A27B28A819F70C66007080FB /* GTLAnalyticsEntityUserLink.h */,
+				A27B28A919F70C66007080FB /* GTLAnalyticsEntityAdWordsLinks.m */,
+				A27B28AA19F70C66007080FB /* GTLAnalyticsEntityAdWordsLinks.h */,
+				A27B28AB19F70C66007080FB /* GTLAnalyticsEntityAdWordsLink.m */,
+				A27B28AC19F70C66007080FB /* GTLAnalyticsEntityAdWordsLink.h */,
+				A27B28AD19F70C66007080FB /* GTLAnalyticsDailyUploads.m */,
+				A27B28AE19F70C66007080FB /* GTLAnalyticsDailyUploads.h */,
+				A27B28AF19F70C66007080FB /* GTLAnalyticsDailyUploadAppend.m */,
+				A27B28B019F70C66007080FB /* GTLAnalyticsDailyUploadAppend.h */,
+				A27B28B119F70C66007080FB /* GTLAnalyticsDailyUpload.m */,
+				A27B28B219F70C66007080FB /* GTLAnalyticsDailyUpload.h */,
+				A27B28B319F70C66007080FB /* GTLAnalyticsCustomDataSources.m */,
+				A27B28B419F70C66007080FB /* GTLAnalyticsCustomDataSources.h */,
+				A27B28B519F70C66007080FB /* GTLAnalyticsCustomDataSource.m */,
+				A27B28B619F70C66007080FB /* GTLAnalyticsCustomDataSource.h */,
+				A27B28B719F70C66007080FB /* GTLAnalyticsConstants.m */,
+				A27B28B819F70C66007080FB /* GTLAnalyticsConstants.h */,
+				A27B28B919F70C66007080FB /* GTLAnalyticsColumns.m */,
+				A27B28BA19F70C66007080FB /* GTLAnalyticsColumns.h */,
+				A27B28BB19F70C66007080FB /* GTLAnalyticsColumn.m */,
+				A27B28BC19F70C66007080FB /* GTLAnalyticsColumn.h */,
+				A27B28BD19F70C66007080FB /* GTLAnalyticsAdWordsAccount.m */,
+				A27B28FA19F70C89007080FB /* GTLServiceAnalytics.m */,
+				A27B28FB19F70C89007080FB /* GTLServiceAnalytics.h */,
+				A27B28BE19F70C66007080FB /* GTLAnalyticsAdWordsAccount.h */,
+				A27B28BF19F70C66007080FB /* GTLAnalyticsAccountTicket.m */,
+				A27B28C019F70C66007080FB /* GTLAnalyticsAccountTicket.h */,
+				A27B28C119F70C66007080FB /* GTLAnalyticsAccountSummary.m */,
+				A27B28C219F70C66007080FB /* GTLAnalyticsAccountSummary.h */,
+				A27B28C319F70C66007080FB /* GTLAnalyticsAccountSummaries.m */,
+				A27B28C419F70C66007080FB /* GTLAnalyticsAccountSummaries.h */,
+				A27B28C519F70C66007080FB /* GTLAnalyticsAccounts.m */,
+				A27B28C619F70C66007080FB /* GTLAnalyticsAccounts.h */,
+				A27B28C719F70C66007080FB /* GTLAnalyticsAccountRef.m */,
+				A27B28C819F70C66007080FB /* GTLAnalyticsAccountRef.h */,
+				A27B28C919F70C66007080FB /* GTLAnalyticsAccount.m */,
+				A27B28CA19F70C66007080FB /* GTLAnalyticsAccount.h */,
+				A27B286A19F70C51007080FB /* GTLQueryAnalytics.m */,
+				A27B286B19F70C51007080FB /* GTLQueryAnalytics.h */,
+				A27B286919F70C23007080FB /* GTLAnalytics.h */,
+				A27B286819F70C10007080FB /* GTLQueryAnalytics.h */,
+			);
+			name = GoogleAnalytics;
 			sourceTree = "<group>";
 		};
 		A29B3D2119F6AE160015818F /* GoogleAnalytics-CoreGather */ = {
@@ -780,11 +821,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				A25016F619F5CA5C00C31AA8 /* GTLUtilities.m in Sources */,
+				A27B28EC19F70C66007080FB /* GTLAnalyticsDailyUploadAppend.m in Sources */,
 				A25016F719F5CA5C00C31AA8 /* GTLJSONParser.m in Sources */,
+				A27B28F619F70C66007080FB /* GTLAnalyticsAccountSummaries.m in Sources */,
 				A25016F819F5CA5C00C31AA8 /* GTLBase64.m in Sources */,
+				A27B28F119F70C66007080FB /* GTLAnalyticsColumns.m in Sources */,
+				A27B28E619F70C66007080FB /* GTLAnalyticsExperiment.m in Sources */,
 				A25016F919F5CA5C00C31AA8 /* GTLUtilities.h in Sources */,
+				A27B28DA19F70C66007080FB /* GTLAnalyticsProfileFilterLinks.m in Sources */,
 				A250174219F5CAA100C31AA8 /* SBJsonParser.m in Sources */,
+				A27B28D319F70C66007080FB /* GTLAnalyticsUnsampledReport.m in Sources */,
 				A250174319F5CAA100C31AA8 /* SBJsonWriter.m in Sources */,
+				A27B28DF19F70C66007080FB /* GTLAnalyticsGoal.m in Sources */,
 				A250174419F5CAA100C31AA8 /* SBJsonWriter.h in Sources */,
 				A250174519F5CAA100C31AA8 /* SBJsonParser.h in Sources */,
 				A250174619F5CAA100C31AA8 /* SBJsonBase.h in Sources */,
@@ -792,36 +840,57 @@
 				A250174819F5CAA100C31AA8 /* SBJsonBase.m in Sources */,
 				A250175D19F5CAAB00C31AA8 /* GTMHTTPFetcher.m in Sources */,
 				A250175E19F5CAAB00C31AA8 /* GTMHTTPFetcherLogging.m in Sources */,
+				A27B28DE19F70C66007080FB /* GTLAnalyticsGoals.m in Sources */,
+				A27B28D019F70C66007080FB /* GTLAnalyticsUploads.m in Sources */,
 				A250175F19F5CAAB00C31AA8 /* GTMHTTPUploadFetcher.m in Sources */,
 				A250176019F5CAAB00C31AA8 /* GTMHTTPFetcher.h in Sources */,
+				A27B28F019F70C66007080FB /* GTLAnalyticsConstants.m in Sources */,
 				A250176119F5CAAB00C31AA8 /* GTMHTTPFetchHistory.m in Sources */,
+				A27B28E919F70C66007080FB /* GTLAnalyticsEntityAdWordsLinks.m in Sources */,
 				A250176219F5CAAB00C31AA8 /* GTMHTTPFetcherService.m in Sources */,
 				A250176319F5CAAB00C31AA8 /* GTMMIMEDocument.m in Sources */,
 				A250176419F5CAAB00C31AA8 /* GTMHTTPFetchHistory.h in Sources */,
 				A250176519F5CAAB00C31AA8 /* GTMReadMonitorInputStream.m in Sources */,
+				A27B28CC19F70C66007080FB /* GTLAnalyticsWebPropertyRef.m in Sources */,
 				A250176619F5CAAB00C31AA8 /* GTMGatherInputStream.m in Sources */,
+				A27B28E819F70C66007080FB /* GTLAnalyticsEntityUserLink.m in Sources */,
 				A250176719F5CAAB00C31AA8 /* GTMHTTPUploadFetcher.h in Sources */,
+				A27B28D619F70C66007080FB /* GTLAnalyticsRealtimeData.m in Sources */,
+				A27B28F719F70C66007080FB /* GTLAnalyticsAccounts.m in Sources */,
 				A250176819F5CAAB00C31AA8 /* GTMHTTPFetcherService.h in Sources */,
+				A27B28E719F70C66007080FB /* GTLAnalyticsEntityUserLinks.m in Sources */,
 				A250176919F5CAAB00C31AA8 /* GTMHTTPFetcherLogging.h in Sources */,
+				A27B28ED19F70C66007080FB /* GTLAnalyticsDailyUpload.m in Sources */,
 				A250176A19F5CAAB00C31AA8 /* GTMGatherInputStream.h in Sources */,
 				A250176B19F5CAAB00C31AA8 /* GTMReadMonitorInputStream.h in Sources */,
 				A250176C19F5CAAB00C31AA8 /* GTMMIMEDocument.h in Sources */,
 				A250174919F5CAA100C31AA8 /* NSObject+SBJSON.h in Sources */,
+				A27B28EB19F70C66007080FB /* GTLAnalyticsDailyUploads.m in Sources */,
 				A250174A19F5CAA100C31AA8 /* NSString+SBJSON.h in Sources */,
 				A250174B19F5CAA100C31AA8 /* NSObject+SBJSON.m in Sources */,
 				A250174C19F5CAA100C31AA8 /* NSString+SBJSON.m in Sources */,
+				A27B28E019F70C66007080FB /* GTLAnalyticsGaData.m in Sources */,
 				A25016FA19F5CA5C00C31AA8 /* GTLTargetNamespace.h in Sources */,
+				A27B28D519F70C66007080FB /* GTLAnalyticsSegment.m in Sources */,
 				A25016FB19F5CA5C00C31AA8 /* GTLFramework.m in Sources */,
+				A27B28EF19F70C66007080FB /* GTLAnalyticsCustomDataSource.m in Sources */,
 				A25016FC19F5CA5C00C31AA8 /* GTLJSONParser.h in Sources */,
 				A250173519F5CA9B00C31AA8 /* GTLClientLoginAuthentication.m in Sources */,
+				A27B28CD19F70C66007080FB /* GTLAnalyticsWebproperty.m in Sources */,
 				A250173619F5CA9B00C31AA8 /* GTLClientLoginAuthentication.h in Sources */,
 				A25016FD19F5CA5C00C31AA8 /* GTLFramework.h in Sources */,
 				A25016FE19F5CA5C00C31AA8 /* GTLBase64.h in Sources */,
 				A250172D19F5CA8800C31AA8 /* GTMOAuth2WindowController.m in Sources */,
 				A250172E19F5CA8800C31AA8 /* GTMOAuth2WindowController.h in Sources */,
+				A27B28E419F70C66007080FB /* GTLAnalyticsFilter.m in Sources */,
 				A250173119F5CA8F00C31AA8 /* GTMOAuth2ViewControllerTouch.m in Sources */,
 				A250173219F5CA8F00C31AA8 /* GTMOAuth2ViewControllerTouch.h in Sources */,
+				A27B28CF19F70C66007080FB /* GTLAnalyticsUserRef.m in Sources */,
+				A27B28DC19F70C66007080FB /* GTLAnalyticsProfile.m in Sources */,
 				A250172719F5CA8100C31AA8 /* GTMOAuth2Authentication.m in Sources */,
+				A27B28F519F70C66007080FB /* GTLAnalyticsAccountSummary.m in Sources */,
+				A27B28CB19F70C66007080FB /* GTLAnalyticsWebPropertySummary.m in Sources */,
+				A27B28D219F70C66007080FB /* GTLAnalyticsUnsampledReports.m in Sources */,
 				A250172819F5CA8100C31AA8 /* GTMOAuth2SignIn.m in Sources */,
 				A250172919F5CA8100C31AA8 /* GTMOAuth2Authentication.h in Sources */,
 				A250172A19F5CA8100C31AA8 /* GTMOAuth2SignIn.h in Sources */,
@@ -829,27 +898,48 @@
 				A250171219F5CA7900C31AA8 /* GTLRuntimeCommon.m in Sources */,
 				A250171319F5CA7900C31AA8 /* GTLService.h in Sources */,
 				A250171419F5CA7900C31AA8 /* GTLObject.m in Sources */,
+				A27B28DD19F70C66007080FB /* GTLAnalyticsMcfData.m in Sources */,
 				A250171519F5CA7900C31AA8 /* GTLDateTime.m in Sources */,
+				A27B28FC19F70C89007080FB /* GTLServiceAnalytics.m in Sources */,
+				A27B28DB19F70C66007080FB /* GTLAnalyticsProfileFilterLink.m in Sources */,
 				A250171619F5CA7900C31AA8 /* GTLQuery.m in Sources */,
+				A27B28E219F70C66007080FB /* GTLAnalyticsFilterRef.m in Sources */,
 				A250171719F5CA7900C31AA8 /* GTLObject.h in Sources */,
+				A27B28F819F70C66007080FB /* GTLAnalyticsAccountRef.m in Sources */,
 				A250171819F5CA7900C31AA8 /* GTLQuery.h in Sources */,
 				A250171919F5CA7900C31AA8 /* GTLBatchQuery.m in Sources */,
+				A27B28D419F70C66007080FB /* GTLAnalyticsSegments.m in Sources */,
+				A27B28D919F70C66007080FB /* GTLAnalyticsProfileRef.m in Sources */,
 				A250171A19F5CA7900C31AA8 /* GTLUploadParameters.m in Sources */,
+				A27B28EA19F70C66007080FB /* GTLAnalyticsEntityAdWordsLink.m in Sources */,
 				A250171B19F5CA7900C31AA8 /* GTLBatchResult.m in Sources */,
+				A27B28D119F70C66007080FB /* GTLAnalyticsUpload.m in Sources */,
 				A250171C19F5CA7900C31AA8 /* GTLErrorObject.m in Sources */,
 				A250171D19F5CA7900C31AA8 /* GTLDateTime.h in Sources */,
+				A27B28D719F70C66007080FB /* GTLAnalyticsProfileSummary.m in Sources */,
+				A27B286C19F70C51007080FB /* GTLQueryAnalytics.m in Sources */,
 				A250171E19F5CA7900C31AA8 /* GTLUploadParameters.h in Sources */,
 				A250171F19F5CA7900C31AA8 /* GTLBatchResult.h in Sources */,
 				A250172019F5CA7900C31AA8 /* GTLRuntimeCommon.h in Sources */,
 				A250172119F5CA7900C31AA8 /* GTLBatchQuery.h in Sources */,
+				A27B28E519F70C66007080FB /* GTLAnalyticsExperiments.m in Sources */,
 				A250172219F5CA7900C31AA8 /* GTLErrorObject.h in Sources */,
+				A27B28CE19F70C66007080FB /* GTLAnalyticsWebproperties.m in Sources */,
+				A27B28F419F70C66007080FB /* GTLAnalyticsAccountTicket.m in Sources */,
 				8767794C19F0347C0031D63A /* addPropertyController.m in Sources */,
+				A27B28EE19F70C66007080FB /* GTLAnalyticsCustomDataSources.m in Sources */,
 				A251692819D32DF00041C7B9 /* AppDelegate.m in Sources */,
 				8767794F19F03B780031D63A /* SettingsControllerViewController.m in Sources */,
 				A251692B19D32DF00041C7B9 /* App.xcdatamodeld in Sources */,
 				A28FCA0F19D3353000F9FB01 /* ViewController.m in Sources */,
 				A251692519D32DF00041C7B9 /* main.m in Sources */,
+				A27B28E319F70C66007080FB /* GTLAnalyticsFilterExpression.m in Sources */,
+				A27B28F219F70C66007080FB /* GTLAnalyticsColumn.m in Sources */,
+				A27B28F919F70C66007080FB /* GTLAnalyticsAccount.m in Sources */,
+				A27B28D819F70C66007080FB /* GTLAnalyticsProfiles.m in Sources */,
+				A27B28F319F70C66007080FB /* GTLAnalyticsAdWordsAccount.m in Sources */,
 				C37F67A219EDFEF300A47B4F /* LaunchPageViewController.m in Sources */,
+				A27B28E119F70C66007080FB /* GTLAnalyticsFilters.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -972,8 +1062,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					/Users/marekbejda/Downloads/GoogleAnalyticsServicesiOS_3.09,
-					/Users/marekbejda/Desktop/Cupcake,
+					"$(PROJECT_DIR)/Generated",
 					"$(PROJECT_DIR)",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -994,8 +1083,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					/Users/marekbejda/Downloads/GoogleAnalyticsServicesiOS_3.09,
-					/Users/marekbejda/Desktop/Cupcake,
+					"$(PROJECT_DIR)/Generated",
 					"$(PROJECT_DIR)",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";

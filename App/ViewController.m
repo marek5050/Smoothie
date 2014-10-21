@@ -52,11 +52,33 @@ NSString * const kGTLAuthScopeDriveFile = @"https://www.googleapis.com/auth/anal
 }
 
 - (void)isAuthorizedWithAuthentication:(GTMOAuth2Authentication *)auth {
-    //    [[self driveService] setAuthorizer:auth];
-    //    self.authButton.titleLabel.text = @"Sign Out";
-    //    self.authButton setitle = @"Sign out";
-    [self performSegueWithIdentifier:@"LoggedIn" sender:self];
+    NSLog(@"User Logged In %@", auth);
     self.isAuthorized = YES;
+    [self performSegueWithIdentifier:@"LoggedIn" sender:self];
+    GTLQueryAnalytics *query = [GTLQueryAnalytics queryForManagementAccountSummariesList];
+    GTLServiceAnalytics *service = [[GTLServiceAnalytics alloc] init];
+    //GTLServiceTicket *ticket = [[GTLServiceTicket alloc] init];
+    
+    [service executeQuery:query completionHandler:^(GTLServiceTicket *ticket,
+                                                              GTLServiceTicket *files,
+                                                              NSError *error) {
+      // [alert dismissWithClickedButtonIndex:0 animated:YES];
+       if (error == nil) {
+            NSLog(@"files: %@",files);
+    //        [self.driveFiles removeAllObjects];
+    //        [self.driveFiles addObjectsFromArray:files.items];
+    //        [self.tableView reloadData];
+        } else {
+            NSLog(@"An error occurred: %@", error);
+        }
+    }];
+    
+//    GTLQueryAnalytics *analytics = [[GTLQueryAnalytics alloc] init];
+    //GTLQuery *query =
+    
+//    analytics.queryForManagementAccountSummariesList()
+//    analytics.queryForManagementAccountSummariesList
+    // [];
     //   [self toggleActionButtons:YES];
     // [self loadDriveFiles];
 }

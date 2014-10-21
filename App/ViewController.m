@@ -9,12 +9,14 @@
 #import "ViewController.h"
 #import <Parse/Parse.h>
 #import "GTMOAuth2ViewControllerTouch.h"
+#import "GAI.h"
+#import "GAIDictionaryBuilder.h"
 
 
 static NSString *const kKeychainItemName = @"iOSDriveSample: Google Drive";
 static NSString *const kClientId = @"705427936283-36skae8h1kjraf3ih0us1o6150h44mln.apps.googleusercontent.com";
 static NSString *const kClientSecret = @"dHkGVAcXBmG3qIIjJaaTNW-Y";
-NSString * const kGTLAuthScopeDriveFile = @"https://www.googleapis.com/auth/drive.file";
+NSString * const kGTLAuthScopeDriveFile = @"https://www.googleapis.com/auth/analytics https://www.googleapis.com/auth/analytics.provision https://www.googleapis.com/auth/analytics.manage.users";
 
 
 @interface ViewController ()

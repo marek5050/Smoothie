@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		8767794C19F0347C0031D63A /* addPropertyController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8767794B19F0347C0031D63A /* addPropertyController.m */; };
 		8767794F19F03B780031D63A /* SettingsControllerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8767794E19F03B780031D63A /* SettingsControllerViewController.m */; };
-		A24595FA19F6B081009C94FA /* libGoogleAnalyticsServices.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A24595F819F6B081009C94FA /* libGoogleAnalyticsServices.a */; };
-		A24595FB19F6B081009C94FA /* libAdIdAccess.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A24595F919F6B081009C94FA /* libAdIdAccess.a */; };
 		A25016F619F5CA5C00C31AA8 /* GTLUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = A25016ED19F5CA5C00C31AA8 /* GTLUtilities.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		A25016F719F5CA5C00C31AA8 /* GTLJSONParser.m in Sources */ = {isa = PBXBuildFile; fileRef = A25016EE19F5CA5C00C31AA8 /* GTLJSONParser.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		A25016F819F5CA5C00C31AA8 /* GTLBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = A25016EF19F5CA5C00C31AA8 /* GTLBase64.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -98,7 +96,6 @@
 		A276FB5919D3345100276AE9 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A276FB5819D3345100276AE9 /* StoreKit.framework */; };
 		A276FB5B19D3345600276AE9 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A276FB5A19D3345600276AE9 /* SystemConfiguration.framework */; };
 		A28FCA0F19D3353000F9FB01 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A28FCA0E19D3353000F9FB01 /* ViewController.m */; };
-		A29B3D1619F6ADDA0015818F /* libAdIdAccess.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A29B3D1419F6ADDA0015818F /* libAdIdAccess.a */; };
 		C37F67A219EDFEF300A47B4F /* LaunchPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C37F67A119EDFEF300A47B4F /* LaunchPageViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -354,7 +351,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A29B3D1619F6ADDA0015818F /* libAdIdAccess.a in Frameworks */,
 				A276FB5B19D3345600276AE9 /* SystemConfiguration.framework in Frameworks */,
 				A276FB5919D3345100276AE9 /* StoreKit.framework in Frameworks */,
 				A276FB5719D3344D00276AE9 /* Social.framework in Frameworks */,
@@ -366,9 +362,7 @@
 				A276FB4B19D3341100276AE9 /* CoreGraphics.framework in Frameworks */,
 				A276FB4919D3340B00276AE9 /* CFNetwork.framework in Frameworks */,
 				A276FB4719D3340200276AE9 /* AudioToolbox.framework in Frameworks */,
-				A24595FB19F6B081009C94FA /* libAdIdAccess.a in Frameworks */,
 				A276FB4519D333F800276AE9 /* Accounts.framework in Frameworks */,
-				A24595FA19F6B081009C94FA /* libGoogleAnalyticsServices.a in Frameworks */,
 				A276FB4319D333A700276AE9 /* Parse.framework in Frameworks */,
 				A276FB4219D333A700276AE9 /* Bolts.framework in Frameworks */,
 			);

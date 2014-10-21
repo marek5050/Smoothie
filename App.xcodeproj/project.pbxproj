@@ -98,7 +98,6 @@
 		A276FB5919D3345100276AE9 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A276FB5819D3345100276AE9 /* StoreKit.framework */; };
 		A276FB5B19D3345600276AE9 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A276FB5A19D3345600276AE9 /* SystemConfiguration.framework */; };
 		A28FCA0F19D3353000F9FB01 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A28FCA0E19D3353000F9FB01 /* ViewController.m */; };
-		A29B3D1519F6ADDA0015818F /* libGoogleAnalyticsServices.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A29B3D1319F6ADDA0015818F /* libGoogleAnalyticsServices.a */; };
 		A29B3D1619F6ADDA0015818F /* libAdIdAccess.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A29B3D1419F6ADDA0015818F /* libAdIdAccess.a */; };
 		C37F67A219EDFEF300A47B4F /* LaunchPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C37F67A119EDFEF300A47B4F /* LaunchPageViewController.m */; };
 /* End PBXBuildFile section */
@@ -355,7 +354,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A29B3D1519F6ADDA0015818F /* libGoogleAnalyticsServices.a in Frameworks */,
 				A29B3D1619F6ADDA0015818F /* libAdIdAccess.a in Frameworks */,
 				A276FB5B19D3345600276AE9 /* SystemConfiguration.framework in Frameworks */,
 				A276FB5919D3345100276AE9 /* StoreKit.framework in Frameworks */,
@@ -575,7 +573,7 @@
 			isa = PBXGroup;
 			children = (
 				A245985F19F6C5E1009C94FA /* GoogleAnalytics */,
-				A29B3D2119F6AE160015818F /* GoogleAnalytics */,
+				A29B3D2119F6AE160015818F /* GoogleAnalytics-CoreGather */,
 				A250176D19F5CAE600C31AA8 /* GoogleFramework */,
 				A276FB3F19D333A700276AE9 /* Frameworks */,
 				A251692119D32DF00041C7B9 /* App */,
@@ -665,7 +663,7 @@
 			path = Frameworks;
 			sourceTree = "<group>";
 		};
-		A29B3D2119F6AE160015818F /* GoogleAnalytics */ = {
+		A29B3D2119F6AE160015818F /* GoogleAnalytics-CoreGather */ = {
 			isa = PBXGroup;
 			children = (
 				A29B3D1719F6AE0E0015818F /* GAI.h */,
@@ -681,7 +679,7 @@
 				A29B3D1F19F6AE0E0015818F /* GAITrackedViewController.h */,
 				A29B3D2019F6AE0E0015818F /* GAITracker.h */,
 			);
-			name = GoogleAnalytics;
+			name = "GoogleAnalytics-CoreGather";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

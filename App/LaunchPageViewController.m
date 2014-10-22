@@ -6,6 +6,8 @@
 //  Copyright (c) 2014 Smoothie. All rights reserved.
 //
 
+#define APP ((AppDelegate *)[[UIApplication sharedApplication] delegate])
+
 #import "LaunchPageViewController.h"
 
 
@@ -30,11 +32,9 @@
     
    // need to call some method to populate the propertyList based on some database/backend
 }
+
 -(void)loadData{
     GTLQueryAnalytics *query = [GTLQueryAnalytics queryForManagementAccountSummariesList];
-    
-    //service setAPIKey:@"AIzaSyB4bLjYuOISLLjSv_pVTD0sEYXuq3hq7AA"];
-    //GTLServiceTicket *ticket = [[GTLServiceTicket alloc] init];
     
     [self.service executeQuery:query completionHandler:^(GTLServiceTicket *ticket,                                                        GTLAnalyticsAccountSummaries *files,
         NSError *error) {
@@ -49,7 +49,7 @@
             [self.propertyList addObjectsFromArray:files.items];
             
             [self.tableView reloadData];
-            [self addProperty];
+          //  [self helpEmail];
             
         } else {
             NSLog(@"An error occurred: %@", error);
@@ -57,37 +57,40 @@
     }];
 }
 
--(void)addProperty{
-    GTLAnalyticsWebproperty *web = [[GTLAnalyticsWebproperty alloc] init];
-    [web setName:@"WhateverWeb"];
-    [web setWebsiteUrl:@"http://whatever.com"];
-    NSMutableString *webTracking;
-    
-    GTLQueryAnalytics *query = [GTLQueryAnalytics queryForManagementWebpropertiesInsertWithObject:web accountId:@"46044590"];
-    
-    [self.service executeQuery:query completionHandler:^(GTLServiceTicket *ticket,                                                        GTLAnalyticsWebproperty *property,
-        NSError *error) {
-        if (error == nil) {
-            
-            NSLog(@"files: %@",property);
+//- (void) mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error
+//{
+//    switch (result)
+//    {
+//        case MFMailComposeResultCancelled:
+//            NSLog(@"Mail cancelled");
+//            break;
+//        case MFMailComposeResultSaved:
+//            NSLog(@"Mail saved");
+//            break;
+//        case MFMailComposeResultSent:
+//            NSLog(@"Mail sent");
+//            break;
+//        case MFMailComposeResultFailed:
+//            NSLog(@"Mail sent failure: %@", [error localizedDescription]);
+//            break;
+//        default:
+//            break;
+//    }
+//    
+//    // Close the Mail Interface
+//    [self dismissViewControllerAnimated:YES completion:NULL];
+//}
 
-            [webTracking appendString:@"<script>\
-            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){\
-            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),\
-            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)\
-            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');\
-                           ga('create', '"];
-            [webTracking appendString:[property identifier]];
-            [webTracking appendString:@"','auto'); ga('send', 'pageview'); </script>"];
-            
-        } else {
-            
-            NSLog(@"files: %@",error);
 
-        
-        }
-    }];
-}
+// The mail compose view controller delegate method
+//- (void)mailComposeController:(MFMailComposeViewController *)controller
+//          didFinishWithResult:(MFMailComposeResult)result
+//                        error:(NSError *)error
+//{
+//    [self dismissModalViewControllerAnimated:YES];
+//}
+
+
 
 //these methods are required for the tableview protocol stuff
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView

@@ -7,10 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "GTLAnalytics.h"
+#import <MessageUI/MessageUI.h>
 
-@interface addPropertyController : UIViewController <UITextFieldDelegate>
+@interface addPropertyController : UIViewController <UITextFieldDelegate,MFMailComposeViewControllerDelegate>
 @property (strong, nonatomic) IBOutlet UITextField *name;
 @property (strong, nonatomic) IBOutlet UITextField *url;
+@property (nonatomic, strong) MFMailComposeViewController *picker;
+@property GTLServiceAnalytics *service;
+
+-(void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error;
+
 
 - (IBAction)createButtonPressed;
 - (BOOL) createProperty: (NSString*) name url: (NSString*) url;

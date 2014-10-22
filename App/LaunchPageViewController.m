@@ -24,7 +24,6 @@
     
     [super viewDidLoad];
     
-    [self.tableView registerClass: [UITableViewCell class] forCellReuseIdentifier:@"cellid"];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     // Do any additional setup after loading the view, typically from a nib.
@@ -79,8 +78,9 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-//    NSLog(@"cellForRowAtIndexPath");
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cellid" forIndexPath:indexPath];
+    NSLog(@"cellForRowAtIndexPath");
+    static NSString *CellIdentifier = @"cellid";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
     // Configure the cell... will need to be replaced with the appropriate information to display
     
@@ -90,6 +90,8 @@
     
 //    if([self.propertyList objectAtIndex:indexPath.row]){
     cell.detailTextLabel.text=@"Hello World";
+    NSLog(@"AFTER SETTING THE DETAILTEXTLABEL");
+    NSLog(cell.detailTextLabel.text);
 
 //        cell.detailTextLabel.text= [NSString stringWithFormat:@"%@",[[self.propertyList objectAtIndex:indexPath.row] name]];
   //  }

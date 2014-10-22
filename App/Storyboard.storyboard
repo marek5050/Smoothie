@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="14A329f" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="wCl-s6-8x6">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="wCl-s6-8x6">
     <dependencies>
-        <deployment defaultVersion="1808" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+        <deployment defaultVersion="1792" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -45,7 +45,7 @@
             </objects>
             <point key="canvasLocation" x="455" y="376"/>
         </scene>
-        <!--Account-->
+        <!--Launch Page View Controller - Account-->
         <scene sceneID="aua-x3-9gR">
             <objects>
                 <viewController id="l5G-xc-UdQ" customClass="LaunchPageViewController" sceneMemberID="viewController">
@@ -61,7 +61,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" restorationIdentifier="cellid" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="cellid" textLabel="f2D-ed-9lc" detailTextLabel="JWt-1h-Dxf" style="IBUITableViewCellStyleValue1" id="KaB-fd-0Ba">
+                                    <tableViewCell contentMode="scaleToFill" restorationIdentifier="cellid" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="cellid" textLabel="f2D-ed-9lc" detailTextLabel="JWt-1h-Dxf" style="IBUITableViewCellStyleSubtitle" id="KaB-fd-0Ba">
                                         <rect key="frame" x="0.0" y="86" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KaB-fd-0Ba" id="wtc-kl-blj">
@@ -69,24 +69,26 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="f2D-ed-9lc">
+                                                    <rect key="frame" x="15" y="3" width="34" height="22"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="JWt-1h-Dxf">
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="JWt-1h-Dxf">
+                                                    <rect key="frame" x="15" y="25" width="32" height="15"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <accessibility key="accessibilityConfiguration">
                                                         <accessibilityTraits key="traits" none="YES"/>
                                                     </accessibility>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <color key="textColor" red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="M50-9t-mkr" kind="push" id="f4a-Xe-mHQ"/>
+                                            <segue destination="M50-9t-mkr" kind="push" id="LNw-3j-nQa"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -114,7 +116,7 @@
             </objects>
             <point key="canvasLocation" x="1010" y="356"/>
         </scene>
-        <!--<Property Name>-->
+        <!--View Controller - <Property Name>-->
         <scene sceneID="C25-O7-ySO">
             <objects>
                 <viewController id="M50-9t-mkr" sceneMemberID="viewController">
@@ -127,7 +129,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="&lt;Property Name&gt;" id="87i-RH-qZU">
+                    <navigationItem key="navigationItem" title="&lt;Property Name>" id="87i-RH-qZU">
                         <barButtonItem key="rightBarButtonItem" title="More" id="mqN-sk-ckc"/>
                     </navigationItem>
                 </viewController>
@@ -135,7 +137,7 @@
             </objects>
             <point key="canvasLocation" x="1621" y="-346"/>
         </scene>
-        <!--Settings-->
+        <!--Settings Controller View Controller - Settings-->
         <scene sceneID="h4J-v0-dc5">
             <objects>
                 <viewController id="1BH-7U-7J9" customClass="SettingsControllerViewController" sceneMemberID="viewController">
@@ -209,7 +211,7 @@
             </objects>
             <point key="canvasLocation" x="1346" y="1357"/>
         </scene>
-        <!--Color Scheme-->
+        <!--View Controller - Color Scheme-->
         <scene sceneID="Lld-2B-qP7">
             <objects>
                 <viewController id="f3g-F0-29M" sceneMemberID="viewController">
@@ -244,7 +246,7 @@
             </objects>
             <point key="canvasLocation" x="1880" y="1064"/>
         </scene>
-        <!--Help-->
+        <!--View Controller - Help-->
         <scene sceneID="lSe-g2-P02">
             <objects>
                 <viewController id="v9b-jE-R7Q" sceneMemberID="viewController">
@@ -279,7 +281,7 @@
             </objects>
             <point key="canvasLocation" x="1880" y="1801"/>
         </scene>
-        <!--Add Property-->
+        <!--Add Property Controller - Add Property-->
         <scene sceneID="ZXV-td-YhL">
             <objects>
                 <viewController id="3qr-Bb-vR4" customClass="addPropertyController" sceneMemberID="viewController">

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8700487D19F73DF300D76A2C /* PropertyDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8700487C19F73DF300D76A2C /* PropertyDetailViewController.m */; };
 		8767794C19F0347C0031D63A /* addPropertyController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8767794B19F0347C0031D63A /* addPropertyController.m */; };
 		8767794F19F03B780031D63A /* SettingsControllerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8767794E19F03B780031D63A /* SettingsControllerViewController.m */; };
 		A25016F619F5CA5C00C31AA8 /* GTLUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = A25016ED19F5CA5C00C31AA8 /* GTLUtilities.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -174,6 +175,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8700487B19F73DF300D76A2C /* PropertyDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PropertyDetailViewController.h; sourceTree = "<group>"; };
+		8700487C19F73DF300D76A2C /* PropertyDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PropertyDetailViewController.m; sourceTree = "<group>"; };
 		8767794A19F0347C0031D63A /* addPropertyController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = addPropertyController.h; sourceTree = "<group>"; };
 		8767794B19F0347C0031D63A /* addPropertyController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = addPropertyController.m; sourceTree = "<group>"; };
 		8767794D19F03B780031D63A /* SettingsControllerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsControllerViewController.h; sourceTree = "<group>"; };
@@ -539,6 +542,8 @@
 				8767794B19F0347C0031D63A /* addPropertyController.m */,
 				8767794D19F03B780031D63A /* SettingsControllerViewController.h */,
 				8767794E19F03B780031D63A /* SettingsControllerViewController.m */,
+				8700487B19F73DF300D76A2C /* PropertyDetailViewController.h */,
+				8700487C19F73DF300D76A2C /* PropertyDetailViewController.m */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -903,6 +908,7 @@
 				A250171319F5CA7900C31AA8 /* GTLService.h in Sources */,
 				A250171419F5CA7900C31AA8 /* GTLObject.m in Sources */,
 				A27B28DD19F70C66007080FB /* GTLAnalyticsMcfData.m in Sources */,
+				8700487D19F73DF300D76A2C /* PropertyDetailViewController.m in Sources */,
 				A250171519F5CA7900C31AA8 /* GTLDateTime.m in Sources */,
 				A27B28FC19F70C89007080FB /* GTLServiceAnalytics.m in Sources */,
 				A27B28DB19F70C66007080FB /* GTLAnalyticsProfileFilterLink.m in Sources */,

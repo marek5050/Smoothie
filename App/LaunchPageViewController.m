@@ -50,8 +50,42 @@
             [self.propertyList addObjectsFromArray:files.items];
             
             [self.tableView reloadData];
+            [self addProperty];
+            
         } else {
             NSLog(@"An error occurred: %@", error);
+        }
+    }];
+}
+
+-(void)addProperty{
+    GTLAnalyticsWebproperty *web = [[GTLAnalyticsWebproperty alloc] init];
+    [web setName:@"WhateverWeb"];
+    [web setWebsiteUrl:@"http://whatever.com"];
+    NSMutableString *webTracking;
+    
+    GTLQueryAnalytics *query = [GTLQueryAnalytics queryForManagementWebpropertiesInsertWithObject:web accountId:@"46044590"];
+    
+    [self.service executeQuery:query completionHandler:^(GTLServiceTicket *ticket,                                                        GTLAnalyticsWebproperty *property,
+        NSError *error) {
+        if (error == nil) {
+            
+            NSLog(@"files: %@",property);
+
+            [webTracking appendString:@"<script>\
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){\
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),\
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)\
+            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');\
+                           ga('create', '"];
+            [webTracking appendString:[property identifier]];
+            [webTracking appendString:@"','auto'); ga('send', 'pageview'); </script>"];
+            
+        } else {
+            
+            NSLog(@"files: %@",error);
+
+        
         }
     }];
 }

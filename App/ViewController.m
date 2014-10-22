@@ -93,7 +93,6 @@ GTMOAuth2Authentication *ga_auth;
     LaunchPageViewController *remote = [segue destinationViewController];
     NSString *segueIdentifier= segue.identifier;
     [remote setService:self.service];
-    [remote loadData];
 }
 
 - (void)viewDidLoad {

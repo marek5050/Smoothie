@@ -10,6 +10,7 @@
 
 #import "LaunchPageViewController.h"
 #import "PropertyDetailViewController.h"
+#import "addPropertyController.h"
 
 @interface LaunchPageViewController ()
 
@@ -28,6 +29,8 @@
     
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
+    [self loadData];
+    
     // Do any additional setup after loading the view, typically from a nib.
     
    // need to call some method to populate the propertyList based on some database/backend
@@ -45,6 +48,9 @@
             if(self.propertyList == nil){
                 self.propertyList = [[NSMutableArray alloc] init];
             }
+            if(self.accountList == nil)
+            {            self.accountList = [[NSMutableArray alloc] init];
+            }
             
             GTLAnalyticsAccountSummary *accountSummary = [[GTLAnalyticsAccountSummary alloc] init];
             accountSummary = [files.items objectAtIndex:0];
@@ -60,6 +66,7 @@
             NSLog(@"An error occurred: %@", error);
         }
     }];
+    [self.tableView reloadData];
 }
 
 //- (void) mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error
@@ -127,6 +134,17 @@
             NSLog(@"AFTER SETTING THE PROPERTY SUMMARY");
         }
         
+    }
+    
+    if([segue.identifier isEqualToString:@"addPropertySegue"]){
+        addPropertyController *remote = segue.destinationViewController;
+        NSLog(@"Property Id: %@", [[self.accountList objectAtIndex:0] identifier]);
+        remote.summary = [self.accountList objectAtIndex:0];
+       // remote.propertyID= [[self.accountList objectAtIndex:0] identifier];
+        
+      //  remote.propertyid1.text = [[self.accountList objectAtIndex:0] identifier];
+        
+        [remote setService:self.service];
     }
 }
 

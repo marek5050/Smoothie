@@ -12,14 +12,19 @@
 #import "GAI.h"
 #import "GAIDictionaryBuilder.h"
 #import "GTLAnalytics.h"
-
+#import "LaunchPageViewController.h"
 
 static NSString *const kKeychainItemName = @"iOSDriveSample: Google Drive";
-static NSString *const kClientId = @"705427936283-36skae8h1kjraf3ih0us1o6150h44mln.apps.googleusercontent.com";
-static NSString *const kClientSecret = @"dHkGVAcXBmG3qIIjJaaTNW-Y";
-NSString * const kGTLAuthScopeDriveFile = @"https://www.googleapis.com/auth/analytics https://www.googleapis.com/auth/analytics.provision https://www.googleapis.com/auth/analytics.manage.users";
+static NSString *const kClientId = @"705427936283-bc824tm4bc5b95m25tgmpl77srot6kds.apps.googleusercontent.com";
+static NSString *const kClientSecret = @"GAcGqkopAvDDT4wvtr_a_MQ2";
+NSString *kGTLAuthScopeAnalyticsEdit1 = @"https://www.googleapis.com/auth/analytics https://www.googleapis.com/auth/analytics.edit";
+
+static NSString *const APIKEY = @"AIzaSyB4bLjYuOISLLjSv_pVTD0sEYXuq3hq7AA";
+GTMOAuth2Authentication *ga_auth;
 
 @interface ViewController ()
+@property (retain) NSMutableArray *userProperties;
+@property (nonatomic) GTLServiceAnalytics *service;
 
 @property BOOL isAuthorized;
 
@@ -46,6 +51,8 @@ NSString * const kGTLAuthScopeDriveFile = @"https://www.googleapis.com/auth/anal
     if (error == nil) {
         NSLog(@"NO ERROR: %@",error);
         [self isAuthorizedWithAuthentication:auth];
+        ga_auth = auth;
+        
     }else{
         NSLog(@"Authenticated with no Error %@ \n", error);
     }
@@ -54,25 +61,11 @@ NSString * const kGTLAuthScopeDriveFile = @"https://www.googleapis.com/auth/anal
 - (void)isAuthorizedWithAuthentication:(GTMOAuth2Authentication *)auth {
     NSLog(@"User Logged In %@", auth);
     self.isAuthorized = YES;
+    self.service = [[GTLServiceAnalytics alloc] init];
+    [self.service setAuthorizer:auth];
+    
     [self performSegueWithIdentifier:@"LoggedIn" sender:self];
-    GTLQueryAnalytics *query = [GTLQueryAnalytics queryForManagementAccountSummariesList];
-    GTLServiceAnalytics *service = [[GTLServiceAnalytics alloc] init];
-    //GTLServiceTicket *ticket = [[GTLServiceTicket alloc] init];
-    
-    [service executeQuery:query completionHandler:^(GTLServiceTicket *ticket,
-                                                              GTLServiceTicket *files,
-                                                              NSError *error) {
-      // [alert dismissWithClickedButtonIndex:0 animated:YES];
-       if (error == nil) {
-            NSLog(@"files: %@",files);
-    //        [self.driveFiles removeAllObjects];
-    //        [self.driveFiles addObjectsFromArray:files.items];
-    //        [self.tableView reloadData];
-        } else {
-            NSLog(@"An error occurred: %@", error);
-        }
-    }];
-    
+
 //    GTLQueryAnalytics *analytics = [[GTLQueryAnalytics alloc] init];
     //GTLQuery *query =
     
@@ -82,7 +75,26 @@ NSString * const kGTLAuthScopeDriveFile = @"https://www.googleapis.com/auth/anal
     //   [self toggleActionButtons:YES];
     // [self loadDriveFiles];
 }
-
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+//    DrEditFileEditViewController *viewController = [segue destinationViewController];
+//    NSString *segueIdentifier = segue.identifier;
+//    viewController.driveService = [self driveService];
+//    viewController.delegate = self;
+//    
+//    if ([segueIdentifier isEqualToString:@"editFile"]) {
+//        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+//        GTLDriveFile *file = [self.driveFiles objectAtIndex:indexPath.row];
+//        viewController.driveFile = file;
+//        viewController.fileIndex = indexPath.row;
+//    } else if ([segueIdentifier isEqualToString:@"addFile"]) {
+//        viewController.driveFile = [GTLDriveFile object];
+//        viewController.fileIndex = -1;
+//    }
+    LaunchPageViewController *remote = [segue destinationViewController];
+    NSString *segueIdentifier= segue.identifier;
+    [remote setService:self.service];
+    [remote loadData];
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -90,13 +102,12 @@ NSString * const kGTLAuthScopeDriveFile = @"https://www.googleapis.com/auth/anal
     
     NSLog(@"----------------------We are here");
     
-    GTMOAuth2Authentication *auth =
-    [GTMOAuth2ViewControllerTouch authForGoogleFromKeychainForName:kKeychainItemName
+    ga_auth = [GTMOAuth2ViewControllerTouch authForGoogleFromKeychainForName:kKeychainItemName
                                                           clientID:kClientId
                                                       clientSecret:kClientSecret];
     
-    if ([auth canAuthorize]) {
-        [self isAuthorizedWithAuthentication:auth];
+    if ([ga_auth canAuthorize]) {
+        [self isAuthorizedWithAuthentication:ga_auth];
     }
     
     
@@ -129,7 +140,7 @@ NSString * const kGTLAuthScopeDriveFile = @"https://www.googleapis.com/auth/anal
         // Sign in.
         SEL finishedSelector = @selector(viewController:finishedWithAuth:error:);
         GTMOAuth2ViewControllerTouch *authViewController =
-        [[GTMOAuth2ViewControllerTouch alloc] initWithScope:kGTLAuthScopeDriveFile
+        [[GTMOAuth2ViewControllerTouch alloc] initWithScope:kGTLAuthScopeAnalyticsEdit1
                                                    clientID:kClientId
                                                clientSecret:kClientSecret
                                            keychainItemName:kKeychainItemName

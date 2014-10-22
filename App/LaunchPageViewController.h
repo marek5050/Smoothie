@@ -7,7 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "GTLAnalytics.h"
 
 @interface LaunchPageViewController : UIViewController <UITableViewDataSource, UITableViewDelegate> 
+//@property NSMutableArray *UserProperties;
+@property GTLServiceAnalytics *service;
+@property (strong, nonatomic) IBOutlet UITableView *tableView;
+@property (nonatomic, strong) NSMutableArray *propertyList;
 
+-(void)loadData;
 @end

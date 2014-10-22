@@ -7,7 +7,7 @@
 //
 
 #import "LaunchPageViewController.h"
-
+#import "PropertyDetailViewController.h"
 
 @interface LaunchPageViewController ()
 
@@ -46,7 +46,12 @@
                 self.propertyList = [[NSMutableArray alloc] init];
             }
             
-            [self.propertyList addObjectsFromArray:files.items];
+            GTLAnalyticsAccountSummary *accountSummary = [[GTLAnalyticsAccountSummary alloc] init];
+            accountSummary = [files.items objectAtIndex:0];
+            [self.propertyList addObjectsFromArray:accountSummary.webProperties];
+            
+            [self.accountList addObjectsFromArray: files.items];
+            self.accountName.title = accountSummary.name;
             
             [self.tableView reloadData];
         } else {
@@ -71,9 +76,21 @@
     return self.propertyList.count;
 }
 
--(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender\
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    NSLog(@"ABOUT TO SEGUE");
+ //   NSLog(@"ABOUT TO SEGUE");
+    if([sender isKindOfClass:[UITableViewCell class]])
+    {
+        UITableViewCell *cell = sender;
+        NSIndexPath* pathOfTheCell = [self.tableView indexPathForCell:cell];
+        if([segue.identifier isEqualToString:@"propertyDetails"]){
+            NSLog(@"IS DOING THE SEGUE TO THE PROPERTY DETAILS");
+            PropertyDetailViewController *pdvc = segue.destinationViewController;
+            pdvc.propertySummary = self.propertyList[pathOfTheCell.row];
+            NSLog(@"AFTER SETTING THE PROPERTY SUMMARY");
+        }
+        
+    }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -89,9 +106,8 @@
    cell.textLabel.text=[[self.propertyList objectAtIndex:indexPath.row] name];
     
 //    if([self.propertyList objectAtIndex:indexPath.row]){
-    cell.detailTextLabel.text=@"Hello World";
-    NSLog(@"AFTER SETTING THE DETAILTEXTLABEL");
-    NSLog(cell.detailTextLabel.text);
+   cell.detailTextLabel.text=[[self.propertyList objectAtIndex:indexPath.row] websiteUrl];
+
 
 //        cell.detailTextLabel.text= [NSString stringWithFormat:@"%@",[[self.propertyList objectAtIndex:indexPath.row] name]];
   //  }

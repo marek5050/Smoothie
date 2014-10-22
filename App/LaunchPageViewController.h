@@ -12,8 +12,10 @@
 @interface LaunchPageViewController : UIViewController <UITableViewDataSource, UITableViewDelegate> 
 //@property NSMutableArray *UserProperties;
 @property GTLServiceAnalytics *service;
+@property (strong, nonatomic) IBOutlet UINavigationItem *accountName;
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) NSMutableArray *propertyList;
+@property (nonatomic, strong) NSMutableArray *accountList;
 
 -(void)loadData;
 @end

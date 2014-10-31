@@ -9,8 +9,6 @@
 #import "ViewController.h"
 #import <Parse/Parse.h>
 #import "GTMOAuth2ViewControllerTouch.h"
-#import "GAI.h"
-#import "GAIDictionaryBuilder.h"
 #import "GTLAnalytics.h"
 #import "LaunchPageViewController.h"
 

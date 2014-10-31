@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A206E7E11A042EE8003DE3D0 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = A206E7E01A042EE8003DE3D0 /* README.md */; };
 		A23629EF1A03ECBA00659A3F /* GTMOAuth2Window.xib in Resources */ = {isa = PBXBuildFile; fileRef = A23629651A03ECBA00659A3F /* GTMOAuth2Window.xib */; };
 		A23629F31A03ECBA00659A3F /* GTMOAuth2ViewTouch.xib in Resources */ = {isa = PBXBuildFile; fileRef = A236296C1A03ECBA00659A3F /* GTMOAuth2ViewTouch.xib */; };
 		A2362A111A03ECFC00659A3F /* GTLDefines.h in Sources */ = {isa = PBXBuildFile; fileRef = A23628BF1A03ECBA00659A3F /* GTLDefines.h */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -78,6 +79,7 @@
 		8767794B19F0347C0031D63A /* addPropertyController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = addPropertyController.m; sourceTree = "<group>"; };
 		8767794D19F03B780031D63A /* SettingsControllerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsControllerViewController.h; sourceTree = "<group>"; };
 		8767794E19F03B780031D63A /* SettingsControllerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsControllerViewController.m; sourceTree = "<group>"; };
+		A206E7E01A042EE8003DE3D0 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		A23628BF1A03ECBA00659A3F /* GTLDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTLDefines.h; sourceTree = "<group>"; };
 		A23628C01A03ECBA00659A3F /* GTLNetworking_Sources.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTLNetworking_Sources.m; sourceTree = "<group>"; };
 		A23628C11A03ECBA00659A3F /* GTLCommon_Sources.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTLCommon_Sources.m; sourceTree = "<group>"; };
@@ -625,6 +627,7 @@
 		A251691619D32DF00041C7B9 = {
 			isa = PBXGroup;
 			children = (
+				A206E7E01A042EE8003DE3D0 /* README.md */,
 				A2362A0F1A03ECCB00659A3F /* Google */,
 				A2362A101A03ECD500659A3F /* Analytics */,
 				A251692119D32DF00041C7B9 /* App */,
@@ -833,6 +836,7 @@
 				A2362A131A03ECFC00659A3F /* GTLCommon_Sources.m in Sources */,
 				A2362A141A03ED0400659A3F /* GTLAnalytics.h in Sources */,
 				A2362A151A03ED0400659A3F /* GTLAnalytics_Sources.m in Sources */,
+				A206E7E11A042EE8003DE3D0 /* README.md in Sources */,
 				A2362A161A03ED1300659A3F /* ViewController.h in Sources */,
 				A2362A171A03ED1300659A3F /* ViewController.m in Sources */,
 				A2362A181A03ED1300659A3F /* AppDelegate.h in Sources */,

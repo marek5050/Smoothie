@@ -7,6 +7,7 @@
 //
 
 #include <Foundation/Foundation.h>
+#include <UIKit/UIKit.h> 
 
 @interface ColorScheme : NSObject
 

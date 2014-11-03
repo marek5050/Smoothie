@@ -21,8 +21,6 @@
 - (void)viewDidLoad
 {
     NSLog(@"LaunchPageViewController:viewDidLoad");
-
-//    [self.view setDelegate:self];
     
     [super viewDidLoad];
     [self.tableView setDelegate:self];
@@ -30,11 +28,20 @@
     
     [self.user setDelegate:self];
     [self.user loadUserSummary];
+    [_user addObserver:self forKeyPath:@"active" options:NSKeyValueObservingOptionOld|NSKeyValueObservingOptionNew context:nil];
+    
 
     
     // Do any additional setup after loading the view, typically from a nib.
     // need to call some method to populate the propertyList based on some database/backend
 }
+
+-(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
+    if([keyPath isEqualToString:@"active"]){
+        [_tableView reloadData];
+    }
+};
+
 
 -(void)interfaceUpdate{
     NSLog(@"LaunchPageViewController:interfaceUpdate:");
@@ -44,7 +51,7 @@
 //these methods are required for the tableview protocol stuff
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    NSLog(@"LaunchPageViewController:numberOfSectionsInTableView:Sections: %d",[self.user.active.properties count]);
+   // NSLog(@"LaunchPageViewController:numberOfSectionsInTableView:Sections: %d",[self.user.active.properties count]);
     // Return the number of sections.
     
     return [self.user.active.properties count];
@@ -52,7 +59,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    NSLog(@"LaunchPageViewController:numberOfRowsInSection:Rows: %d",[[[self.user.active.properties objectAtIndex:section] profiles] count]);
+   // NSLog(@"LaunchPageViewController:numberOfRowsInSection:Rows: %d",[[[self.user.active.properties objectAtIndex:section] profiles] count]);
     // Return the number of rows in the section.
     // NSLog(@"Rendering with: %@",self.propertyList.count);
     
@@ -89,11 +96,16 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSLog(@"cellForRowAtIndexPath");
+    NSLog(@"cellForRowAtIndexPath:Section: %d Row: %d",indexPath.section,indexPath.row );
     static NSString *CellIdentifier = @"cellid";
     InfoTableViewCell *cell = (InfoTableViewCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
-
+  
+    NSLog(@"Count %d ",[self.user.active.properties count]);
+    
     GoogleProperty *p = [self.user.active.properties objectAtIndex:indexPath.section];
+
+    NSLog(@"ProfileCount %d ",[p.profiles count]);
+    
     GoogleProfile  *prof = [p.profiles objectAtIndex:indexPath.row];
     cell.activeUsers.text = @"5";
     cell.url.text = [p websiteUrl];
@@ -105,9 +117,10 @@
 
     return cell;
 }
+
 - (IBAction)NextAccount:(UIButton *)sender{
     
-    [self.user setActive:];
+    _user.active = [_user.accounts objectAtIndex:1];
     
 }
 

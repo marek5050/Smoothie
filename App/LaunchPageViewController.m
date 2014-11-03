@@ -6,15 +6,13 @@
 //  Copyright (c) 2014 Smoothie. All rights reserved.
 //
 
-#define APP ((AppDelegate *)[[UIApplication sharedApplication] delegate])
-
 #import "LaunchPageViewController.h"
 #import "PropertyDetailViewController.h"
 #import "addPropertyController.h"
+#import "InfoTableViewCell.h"
+#import "GoogleAccount.h"
 
 @interface LaunchPageViewController ()
-
-
 
 @end
 
@@ -22,102 +20,43 @@
 
 - (void)viewDidLoad
 {
-    NSLog(@"viewDidLoad");
-    self.propertyList = [[NSMutableArray alloc] init];
+    NSLog(@"LaunchPageViewController:viewDidLoad");
+
+//    [self.view setDelegate:self];
     
     [super viewDidLoad];
+    [self.tableView setDelegate:self];
+    _tableView.dataSource = self;
     
-    self.tableView.delegate = self;
-    self.tableView.dataSource = self;
-    [self loadData];
+    [self.user setDelegate:self];
+    [self.user loadUserSummary];
+
     
     // Do any additional setup after loading the view, typically from a nib.
-    
-   // need to call some method to populate the propertyList based on some database/backend
+    // need to call some method to populate the propertyList based on some database/backend
 }
 
--(void)loadData{
-    GTLQueryAnalytics *query = [GTLQueryAnalytics queryForManagementAccountSummariesList];
-    
-    [self.service executeQuery:query completionHandler:^(GTLServiceTicket *ticket,                                                        GTLAnalyticsAccountSummaries *files,
-        NSError *error) {
-        // [alert dismissWithClickedButtonIndex:0 animated:YES];
-        if (error == nil) {
-            NSLog(@"files: %@",files);
-            [self.propertyList removeAllObjects];
-            if(self.propertyList == nil){
-                self.propertyList = [[NSMutableArray alloc] init];
-            }
-            if(self.accountList == nil)
-            {            self.accountList = [[NSMutableArray alloc] init];
-            }
-            
-            GTLAnalyticsAccountSummary *accountSummary = [[GTLAnalyticsAccountSummary alloc] init];
-            accountSummary = [files.items objectAtIndex:0];
-            [self.propertyList addObjectsFromArray:accountSummary.webProperties];
-            
-            [self.accountList addObjectsFromArray: files.items];
-            self.accountName.title = accountSummary.name;
-            
-            [self.tableView reloadData];
-          //  [self helpEmail];
-            
-        } else {
-            NSLog(@"An error occurred: %@", error);
-        }
-    }];
-    [self.tableView reloadData];
+-(void)interfaceUpdate{
+    NSLog(@"LaunchPageViewController:interfaceUpdate:");
+   [_tableView reloadData];
 }
-
-//- (void) mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error
-//{
-//    switch (result)
-//    {
-//        case MFMailComposeResultCancelled:
-//            NSLog(@"Mail cancelled");
-//            break;
-//        case MFMailComposeResultSaved:
-//            NSLog(@"Mail saved");
-//            break;
-//        case MFMailComposeResultSent:
-//            NSLog(@"Mail sent");
-//            break;
-//        case MFMailComposeResultFailed:
-//            NSLog(@"Mail sent failure: %@", [error localizedDescription]);
-//            break;
-//        default:
-//            break;
-//    }
-//    
-//    // Close the Mail Interface
-//    [self dismissViewControllerAnimated:YES completion:NULL];
-//}
-
-
-// The mail compose view controller delegate method
-//- (void)mailComposeController:(MFMailComposeViewController *)controller
-//          didFinishWithResult:(MFMailComposeResult)result
-//                        error:(NSError *)error
-//{
-//    [self dismissModalViewControllerAnimated:YES];
-//}
-
-
 
 //these methods are required for the tableview protocol stuff
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    NSLog(@"numberOfSectionsInTableView");
+    NSLog(@"LaunchPageViewController:numberOfSectionsInTableView:Sections: %d",[self.user.active.properties count]);
     // Return the number of sections.
-    return 1;
+    
+    return [self.user.active.properties count];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    NSLog(@"numberOfRowsInSection");
+    NSLog(@"LaunchPageViewController:numberOfRowsInSection:Rows: %d",[[[self.user.active.properties objectAtIndex:section] profiles] count]);
     // Return the number of rows in the section.
-//    NSLog(@"Rendering with: %@",self.propertyList.count);
-    return self.propertyList.count;
+    // NSLog(@"Rendering with: %@",self.propertyList.count);
+    
+    return [[[self.user.active.properties objectAtIndex:section] profiles] count];
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
@@ -129,22 +68,22 @@
         NSIndexPath* pathOfTheCell = [self.tableView indexPathForCell:cell];
         if([segue.identifier isEqualToString:@"propertyDetails"]){
             NSLog(@"IS DOING THE SEGUE TO THE PROPERTY DETAILS");
-            PropertyDetailViewController *pdvc = segue.destinationViewController;
-            pdvc.propertySummary = self.propertyList[pathOfTheCell.row];
+           // PropertyDetailViewController *pdvc = segue.destinationViewController;
+            //pdvc.propertySummary = self.propertyList[pathOfTheCell.row];
             NSLog(@"AFTER SETTING THE PROPERTY SUMMARY");
         }
         
     }
     
     if([segue.identifier isEqualToString:@"addPropertySegue"]){
-        addPropertyController *remote = segue.destinationViewController;
-        NSLog(@"Property Id: %@", [[self.accountList objectAtIndex:0] identifier]);
-        remote.summary = [self.accountList objectAtIndex:0];
+       addPropertyController *remote = segue.destinationViewController;
+       //NSLog(@"Property Id: %@", [[self.accountList objectAtIndex:0] identifier]);
+       //remote.summary = [self.accountList objectAtIndex:0];
        // remote.propertyID= [[self.accountList objectAtIndex:0] identifier];
         
       //  remote.propertyid1.text = [[self.accountList objectAtIndex:0] identifier];
         
-        [remote setService:self.service];
+        [remote setUser:self.user];
     }
 }
 
@@ -152,21 +91,24 @@
 {
     NSLog(@"cellForRowAtIndexPath");
     static NSString *CellIdentifier = @"cellid";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
-    
-    // Configure the cell... will need to be replaced with the appropriate information to display
-    
-   // cell.textLabel.text = @"Testing Title";
-    //cell.detailTextLabel.text = @"Testing Label";
-   cell.textLabel.text=[[self.propertyList objectAtIndex:indexPath.row] name];
-    
-//    if([self.propertyList objectAtIndex:indexPath.row]){
-   cell.detailTextLabel.text=[[self.propertyList objectAtIndex:indexPath.row] websiteUrl];
+    InfoTableViewCell *cell = (InfoTableViewCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
 
+    GoogleProperty *p = [self.user.active.properties objectAtIndex:indexPath.section];
+    GoogleProfile  *prof = [p.profiles objectAtIndex:indexPath.row];
+    cell.activeUsers.text = @"5";
+    cell.url.text = [p websiteUrl];
+    cell.name.text = [prof name];
+    cell.property.text = [prof identifier];
+  //  cell.detailTextLabel.text = @"123";
+  //  cell.textLabel.text=@"#@1";
+  //  NSLog(@"LaunchPageViewController:cellForRowAtIndexPath: %d %d", indexPath.row, indexPath.section);
 
-//        cell.detailTextLabel.text= [NSString stringWithFormat:@"%@",[[self.propertyList objectAtIndex:indexPath.row] name]];
-  //  }
     return cell;
+}
+- (IBAction)NextAccount:(UIButton *)sender{
+    
+    [self.user setActive:];
+    
 }
 
 @end

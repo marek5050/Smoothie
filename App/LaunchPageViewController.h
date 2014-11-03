@@ -8,14 +8,18 @@
 
 #import <UIKit/UIKit.h>
 #import "GTLAnalytics.h"
+#import "User.h"
 
+@interface LaunchPageViewController : UIViewController <UITableViewDataSource, UITableViewDelegate,GoogleUserDelegate>
 
-@interface LaunchPageViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
-@property GTLServiceAnalytics *service;
 @property (strong, nonatomic) IBOutlet UINavigationItem *accountName;
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
-@property (nonatomic, strong) NSMutableArray *propertyList;
-@property (nonatomic, strong) NSMutableArray *accountList;
 
--(void)loadData;
+@property (nonatomic, strong) User *user;
+
+- (IBAction)NextAccount:(UIButton *)sender;
+
+/* Required for GoogleUserDelegate */
+-(void) interfaceUpdate;
+
 @end

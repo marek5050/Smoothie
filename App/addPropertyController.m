@@ -52,7 +52,7 @@
     NSLog(@"Name: %@  Url: %@ PropertyID: %@",name, url, _propertyID);
     
     GTLQueryAnalytics *query = [GTLQueryAnalytics queryForManagementWebpropertiesInsertWithObject:web accountId:[self propertyID]];
-    [self.service executeQuery:query completionHandler:^(GTLServiceTicket *ticket,                                                        GTLAnalyticsWebproperty *property,
+    [self.user.service executeQuery:query completionHandler:^(GTLServiceTicket *ticket,                                                        GTLAnalyticsWebproperty *property,
         NSError *error) {
         if (error == nil) {
             

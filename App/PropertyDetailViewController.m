@@ -19,13 +19,13 @@
     [super viewDidLoad];
     NSLog(@"viewDidLoad for PropertyDetailVeiwController");
     
-    self.propertyName.title = self.propertySummary.name;
+ /*   self.propertyName.title = self.propertySummary.name;
     self.name.text = self.propertySummary.name;
     self.websiteURL.text = self.propertySummary.websiteUrl;
     self.identifier.text = self.propertySummary.identifier;
     self.internalWebPropertyId.text = self.propertySummary.internalWebPropertyId;
     self.level.text = self.propertySummary.level;
-    self.kind.text = self.propertySummary.kind;
+    self.kind.text = self.propertySummary.kind;*/
     // Do any additional setup after loading the view.
 }
 

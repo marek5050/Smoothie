@@ -33,6 +33,7 @@
 		A251692D19D32DF00041C7B9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A251692C19D32DF00041C7B9 /* Images.xcassets */; };
 		A251693919D32DF10041C7B9 /* AppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A251693819D32DF10041C7B9 /* AppTests.m */; };
 		A251694319D32EC20041C7B9 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A251694219D32EC20041C7B9 /* Storyboard.storyboard */; };
+		A2704BB01A080DD9005450A8 /* ColorScheme.m in Sources */ = {isa = PBXBuildFile; fileRef = A2704BAF1A080DD9005450A8 /* ColorScheme.m */; };
 		A276FB4219D333A700276AE9 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A276FB4019D333A700276AE9 /* Bolts.framework */; };
 		A276FB4319D333A700276AE9 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A276FB4119D333A700276AE9 /* Parse.framework */; };
 		A276FB4519D333F800276AE9 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A276FB4419D333F800276AE9 /* Accounts.framework */; };
@@ -83,7 +84,6 @@
 		08AD3F5F1A06D81300D50F07 /* ColorSchemeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorSchemeViewController.m; sourceTree = "<group>"; };
 		08AD3F611A06D82200D50F07 /* ColorSchemeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ColorSchemeViewController.h; sourceTree = "<group>"; };
 		08AD3F621A06DABE00D50F07 /* ColorScheme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorScheme.m; sourceTree = "<group>"; };
-		08AD3F641A06DACD00D50F07 /* ColorScheme.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ColorScheme.h; sourceTree = "<group>"; };
 		8700487B19F73DF300D76A2C /* PropertyDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PropertyDetailViewController.h; sourceTree = "<group>"; };
 		8700487C19F73DF300D76A2C /* PropertyDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PropertyDetailViewController.m; sourceTree = "<group>"; };
 		8767794A19F0347C0031D63A /* addPropertyController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = addPropertyController.h; sourceTree = "<group>"; };
@@ -275,6 +275,8 @@
 		A251693719D32DF10041C7B9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A251693819D32DF10041C7B9 /* AppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppTests.m; sourceTree = "<group>"; };
 		A251694219D32EC20041C7B9 /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
+		A2704BAE1A080DD9005450A8 /* ColorScheme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorScheme.h; sourceTree = SOURCE_ROOT; };
+		A2704BAF1A080DD9005450A8 /* ColorScheme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorScheme.m; sourceTree = SOURCE_ROOT; };
 		A276FB4019D333A700276AE9 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		A276FB4119D333A700276AE9 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		A276FB4419D333F800276AE9 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
@@ -623,6 +625,8 @@
 		A251692119D32DF00041C7B9 /* App */ = {
 			isa = PBXGroup;
 			children = (
+				A2704BAE1A080DD9005450A8 /* ColorScheme.h */,
+				A2704BAF1A080DD9005450A8 /* ColorScheme.m */,
 				08AD3F611A06D82200D50F07 /* ColorSchemeViewController.h */,
 				08AD3F5F1A06D81300D50F07 /* ColorSchemeViewController.m */,
 				A28FCA0D19D3353000F9FB01 /* ViewController.h */,
@@ -831,6 +835,7 @@
 				E79A3EF6F2CFE583AD5DF1F1 /* GoogleAccount.m in Sources */,
 				E79A392B6B68E64A5A493FB4 /* GoogleProperty.m in Sources */,
 				E79A3FEA8090851FE750CCDF /* GoogleProfile.m in Sources */,
+				A2704BB01A080DD9005450A8 /* ColorScheme.m in Sources */,
 				E79A3261B7FD84E404D74FDF /* User.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

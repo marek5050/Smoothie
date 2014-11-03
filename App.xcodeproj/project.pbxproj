@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		08AD3F601A06D81300D50F07 /* ColorSchemeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 08AD3F5F1A06D81300D50F07 /* ColorSchemeViewController.m */; };
+		08AD3F631A06DABE00D50F07 /* ColorScheme.m in Sources */ = {isa = PBXBuildFile; fileRef = 08AD3F621A06DABE00D50F07 /* ColorScheme.m */; };
 		A206E7E11A042EE8003DE3D0 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = A206E7E01A042EE8003DE3D0 /* README.md */; };
 		A23629EF1A03ECBA00659A3F /* GTMOAuth2Window.xib in Resources */ = {isa = PBXBuildFile; fileRef = A23629651A03ECBA00659A3F /* GTMOAuth2Window.xib */; };
 		A23629F31A03ECBA00659A3F /* GTMOAuth2ViewTouch.xib in Resources */ = {isa = PBXBuildFile; fileRef = A236296C1A03ECBA00659A3F /* GTMOAuth2ViewTouch.xib */; };
@@ -78,6 +80,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		08AD3F5F1A06D81300D50F07 /* ColorSchemeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorSchemeViewController.m; sourceTree = "<group>"; };
+		08AD3F611A06D82200D50F07 /* ColorSchemeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ColorSchemeViewController.h; sourceTree = "<group>"; };
+		08AD3F621A06DABE00D50F07 /* ColorScheme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorScheme.m; sourceTree = "<group>"; };
+		08AD3F641A06DACD00D50F07 /* ColorScheme.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ColorScheme.h; sourceTree = "<group>"; };
 		8700487B19F73DF300D76A2C /* PropertyDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PropertyDetailViewController.h; sourceTree = "<group>"; };
 		8700487C19F73DF300D76A2C /* PropertyDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PropertyDetailViewController.m; sourceTree = "<group>"; };
 		8767794A19F0347C0031D63A /* addPropertyController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = addPropertyController.h; sourceTree = "<group>"; };
@@ -617,6 +623,8 @@
 		A251692119D32DF00041C7B9 /* App */ = {
 			isa = PBXGroup;
 			children = (
+				08AD3F611A06D82200D50F07 /* ColorSchemeViewController.h */,
+				08AD3F5F1A06D81300D50F07 /* ColorSchemeViewController.m */,
 				A28FCA0D19D3353000F9FB01 /* ViewController.h */,
 				A28FCA0E19D3353000F9FB01 /* ViewController.m */,
 				A251692619D32DF00041C7B9 /* AppDelegate.h */,
@@ -805,6 +813,7 @@
 				A2362A1E1A03ED1E00659A3F /* SettingsControllerViewController.h in Sources */,
 				A2362A1F1A03ED1E00659A3F /* SettingsControllerViewController.m in Sources */,
 				A2362A201A03ED1E00659A3F /* PropertyDetailViewController.h in Sources */,
+				08AD3F631A06DABE00D50F07 /* ColorScheme.m in Sources */,
 				A2362A211A03ED1E00659A3F /* PropertyDetailViewController.m in Sources */,
 				A2362A111A03ECFC00659A3F /* GTLDefines.h in Sources */,
 				A283ABF61A04577C007E997E /* InfoTableViewCell.m in Sources */,
@@ -816,6 +825,7 @@
 				A2362A161A03ED1300659A3F /* ViewController.h in Sources */,
 				A2362A171A03ED1300659A3F /* ViewController.m in Sources */,
 				A2362A181A03ED1300659A3F /* AppDelegate.h in Sources */,
+				08AD3F601A06D81300D50F07 /* ColorSchemeViewController.m in Sources */,
 				A2362A191A03ED1300659A3F /* AppDelegate.m in Sources */,
 				A2362A221A03ED2300659A3F /* main.m in Sources */,
 				E79A3EF6F2CFE583AD5DF1F1 /* GoogleAccount.m in Sources */,

@@ -139,7 +139,7 @@
         <!--<Property Name>-->
         <scene sceneID="C25-O7-ySO">
             <objects>
-                <viewController id="M50-9t-mkr" customClass="PropertyDetailViewController" sceneMemberID="viewController">
+                <viewController id="M50-9t-mkr" customClass="ColorSchemeViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="29P-fd-ref"/>
                         <viewControllerLayoutGuide type="bottom" id="a9j-hv-d0f"/>
@@ -309,7 +309,7 @@
         <!--Color Scheme-->
         <scene sceneID="Lld-2B-qP7">
             <objects>
-                <viewController id="f3g-F0-29M" sceneMemberID="viewController">
+                <viewController id="f3g-F0-29M" customClass="ColorSchemeViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="hcO-uh-gSb"/>
                         <viewControllerLayoutGuide type="bottom" id="1ui-uV-mU6"/>
@@ -322,7 +322,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="yZS-V6-Dx8">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellid" id="yZS-V6-Dx8">
                                         <rect key="frame" x="0.0" y="86" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="yZS-V6-Dx8" id="Phw-mn-KBn">
@@ -336,6 +336,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Color Scheme" id="fV6-H8-tel"/>
+                    <connections>
+                        <outlet property="tableView" destination="73S-z7-bzc" id="ekG-vr-t5u"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UWN-ky-0hM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -139,7 +139,7 @@
         <!--<Property Name>-->
         <scene sceneID="C25-O7-ySO">
             <objects>
-                <viewController id="M50-9t-mkr" customClass="ColorSchemeViewController" sceneMemberID="viewController">
+                <viewController id="M50-9t-mkr" customClass="PropertyDetailViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="29P-fd-ref"/>
                         <viewControllerLayoutGuide type="bottom" id="a9j-hv-d0f"/>

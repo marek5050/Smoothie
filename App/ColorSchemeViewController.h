@@ -9,9 +9,12 @@
 #import <UIKit/UIKit.h>
 #import "ColorScheme.h"
 
+#define changeScheme @"changeScheme"
+
 @interface ColorSchemeViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) NSMutableArray *schemes;
 @property (nonatomic, strong) ColorScheme *scheme;
+@property (nonatomic, strong) NSMutableDictionary *selectedScheme;
 
 @end

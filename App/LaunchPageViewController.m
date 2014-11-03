@@ -11,6 +11,8 @@
 #import "addPropertyController.h"
 #import "InfoTableViewCell.h"
 #import "GoogleAccount.h"
+#import "ColorSchemeViewController.h"
+
 
 @interface LaunchPageViewController ()
 

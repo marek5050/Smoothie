@@ -25,14 +25,16 @@
 }
 
 -(void) setForest {
-    
+    [self.forest setObject:[UIColor greenColor]  forKey:@"backgroundColor"];
 }
 
 -(void) setSunrise {
+    [self.sunrise setObject:[UIColor orangeColor]  forKey:@"backgroundColor"];
     
 }
 
 -(void) setMidnight {
+    [self.midnight setObject:[UIColor blackColor]  forKey:@"backgroundColor"];
     
 }
 

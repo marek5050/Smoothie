@@ -7,6 +7,8 @@
 //
 
 #import "PropertyDetailViewController.h"
+#import "ColorSchemeViewController.h"
+
 
 @interface PropertyDetailViewController ()
 

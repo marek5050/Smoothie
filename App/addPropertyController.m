@@ -7,6 +7,8 @@
 //
 
 #import "addPropertyController.h"
+#import "ColorSchemeViewController.h"
+
 
 @implementation addPropertyController
 

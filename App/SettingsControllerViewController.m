@@ -7,6 +7,8 @@
 //
 
 #import "SettingsControllerViewController.h"
+#import "ColorSchemeViewController.h"
+
 
 @interface SettingsControllerViewController ()
 

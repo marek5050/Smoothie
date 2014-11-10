@@ -36,7 +36,7 @@
 
         for(int i=0; i < summary.profiles.count;i++){
             prof = [summary.profiles objectAtIndex:i];
-            profile=[[GoogleProfile alloc] initWithSummary:prof];
+                    profile=[[GoogleProfile alloc] initWithSummary:prof];
 
             [self.profiles addObject:profile];
         }

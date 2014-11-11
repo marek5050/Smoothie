@@ -12,6 +12,7 @@
 #import "InfoTableViewCell.h"
 #import "GoogleAccount.h"
 #import "ColorSchemeViewController.h"
+#import "PNChart.h"
 
 
 @interface LaunchPageViewController ()

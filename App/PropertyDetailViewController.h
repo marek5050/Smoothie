@@ -9,13 +9,11 @@
 #import <UIKit/UIKit.h>
 #import "GTLAnalytics.h"
 #import "User.h"
+#import "PNChart.h"
 
-@interface PropertyDetailViewController : UIViewController
+@interface PropertyDetailViewController : UIViewController <PNChartDelegate, UIScrollViewDelegate>
+@property (weak, nonatomic) IBOutlet UIScrollView *sv;
 @property (strong, nonatomic) IBOutlet UINavigationItem *profileName;
-@property (weak, nonatomic) IBOutlet UILabel *propertyName;
-@property (weak, nonatomic) IBOutlet UILabel *url;
-@property (weak, nonatomic) IBOutlet UILabel *ID;
 @property (strong, nonatomic) GoogleProperty *property;
 @property (strong, nonatomic) GoogleProfile *profile;
-- (IBAction)emailJS:(id)sender;
 @end

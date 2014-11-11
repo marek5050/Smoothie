@@ -61,7 +61,7 @@
             }
         }
     }
-   //[_delegate interfaceUpdate];
+   [_delegate interfaceUpdate];
 }
 
 - (void)setActive:(GoogleAccount *)act{

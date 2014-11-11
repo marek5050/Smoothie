@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>BBAAEBF5-1759-4609-A19F-146F2DA57F58</string>
+	<key>IDESourceControlProjectName</key>
+	<string>App</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>3966DA08-DBEE-4F10-8E1F-C4DDE4F63DA4</key>
+		<string>https://github.com/marek5050/Smoothie.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>App.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>3966DA08-DBEE-4F10-8E1F-C4DDE4F63DA4</key>
+		<string>..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/marek5050/Smoothie.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>3966DA08-DBEE-4F10-8E1F-C4DDE4F63DA4</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>3966DA08-DBEE-4F10-8E1F-C4DDE4F63DA4</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Smoothie</string>
+		</dict>
+	</array>
+</dict>
+</plist>

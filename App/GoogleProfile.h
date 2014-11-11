@@ -11,7 +11,7 @@
 @property (nonatomic,strong) NSString *identifier;
 @property (nonatomic,strong) NSString *name;
 @property (nonatomic,strong) NSString *type;
-@property (nonatomic,strong) NSString *activeVisitors;
+@property (nonatomic,strong) NSNumber *activeVisitors;
 @property bool update;
 
 

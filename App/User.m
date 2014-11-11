@@ -52,7 +52,10 @@
 
                     if (error == nil) {
 
+
                         [prof setActiveVisitors:[[data.rows objectAtIndex:0] objectAtIndex:0]];
+                        
+                        [_delegate interfaceUpdate];
 
                     } else {
                         NSLog(@"An error occurred: %@", error);
@@ -61,7 +64,6 @@
             }
         }
     }
-   [_delegate interfaceUpdate];
 }
 
 - (void)setActive:(GoogleAccount *)act{

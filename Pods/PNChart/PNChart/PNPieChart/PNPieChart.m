@@ -44,7 +44,8 @@
 	if(self){
 		_items = [NSArray arrayWithArray:items];
 		_outterCircleRadius = CGRectGetWidth(self.bounds)/2;
-		_innerCircleRadius  = CGRectGetWidth(self.bounds)/6;
+//		_innerCircleRadius  = CGRectGetWidth(self.bounds)/6;
+        _innerCircleRadius  = 0;
 		
 		_descriptionTextColor = [UIColor whiteColor];
 		_descriptionTextFont  = [UIFont fontWithName:@"Avenir-Medium" size:18.0];

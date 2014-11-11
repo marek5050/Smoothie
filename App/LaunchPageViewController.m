@@ -132,7 +132,6 @@
     int section_count = [[[self.user.active.properties objectAtIndex:indexPath.section] profiles] count];
     if(indexPath.row < section_count){
         GoogleProfile  *prof = [p.profiles objectAtIndex:indexPath.row];
-        NSLog(@"ACTIVEVISITORS: %@",[prof activeVisitors]);
         cell.activeUsers.text = [NSString stringWithFormat:@"Users: %@", [prof activeVisitors]];
         cell.url.text = [p websiteUrl];
         cell.name.text = [prof name];

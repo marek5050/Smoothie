@@ -52,9 +52,14 @@
 
                     if (error == nil) {
 
-
-                        [prof setActiveVisitors:[[data.rows objectAtIndex:0] objectAtIndex:0]];
+                        if([data.rows count]>0){
+                            [prof setActiveVisitors:[[data.rows objectAtIndex:0] objectAtIndex:0]];
+                        }else{
+                            [prof setActiveVisitors:@0];
+                        }
+                        NSNumber *n = @30;
                         
+                        [self loadDailyVisitorCount:n forProfile:prof];
                         [_delegate interfaceUpdate];
 
                     } else {
@@ -65,6 +70,41 @@
         }
     }
 }
+
+
+
+-(void) loadDailyVisitorCount:(NSNumber *)days forProfile:(GoogleProfile *)profile{
+    NSLog(@"User:loadDailyVisitorCount:PropertiesCount:%@",[profile identifier]);
+    
+    NSString *req;
+    GoogleProperty *prop;
+    GoogleProfile *prof;
+    
+    for(int j=0; j < [prop.profiles count]; j++){
+        prof = [[prop profiles] objectAtIndex:j];
+            if(prof.update){
+                
+                req = [[NSString alloc] initWithFormat:@"ga:%@",[prof identifier]];
+                
+                NSLog(@"User:loadUserRealTimeForActive:RequestId: %@", [prof identifier]);
+                NSString *end = [NSString stringWithFormat:@"%@daysAgo",days];
+                
+                GTLQueryAnalytics *query = [GTLQueryAnalytics queryForDataGaGetWithIds:@"ga:61501948" startDate:@"today" endDate:end metrics:@"ga:users"];
+                
+                [self.service executeQuery:query completionHandler:^(GTLServiceTicket *ticket, GTLAnalyticsRealtimeData *data, NSError *error){
+                    if (error == nil) {
+                        
+                        
+                        
+                    } else {
+                        NSLog(@"An error occurred: %@", error);
+                    }
+                }];
+            }
+    }
+}
+
+
 
 - (void)setActive:(GoogleAccount *)act{
     if(act == nil){

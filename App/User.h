@@ -31,5 +31,6 @@
     -(instancetype) init;
     -(void) loadUserSummary;
     -(void) loadUserRealTimeForActive;
+    -(void) loadDailyVisitorCount:(NSNumber *)days forProfile:(GoogleProfile *)profile;
 
 @end

@@ -8,13 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
-@protocol GoogleDataDelegate    <NSObject>
-@optional
--(void) interfaceUpdate;
-
-@end
 
 @interface GoogleDataArray : NSObject
+
     @property (atomic,strong) NSArray *dataValues;
     @property (atomic,strong) NSMutableArray *xValues;
     @property (atomic,strong) NSMutableArray *yValues;

@@ -10,10 +10,14 @@
 #import "GTLAnalytics.h"
 #import "User.h"
 #import "PNChart.h"
+#import "GoogleDataController.h"
 
-@interface PropertyDetailViewController : UIViewController <PNChartDelegate, UIScrollViewDelegate>
+@interface PropertyDetailViewController : UIViewController <PNChartDelegate, UIScrollViewDelegate, GoogleDataDelegate>
+
 @property (weak, nonatomic) IBOutlet UIScrollView *sv;
 @property (strong, nonatomic) IBOutlet UINavigationItem *profileName;
 @property (strong, nonatomic) GoogleProperty *property;
 @property (strong, nonatomic) GoogleProfile *profile;
+@property (strong,nonatomic)  GoogleDataController *dataController;
+
 @end

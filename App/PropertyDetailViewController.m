@@ -28,6 +28,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    _dataController = [[GoogleDataController alloc] init];
+    _dataController.delegate = self;
+    
+    
     NSLog(@"viewDidLoad for PropertyDetailVeiwController");
     int next_y = 90;
     int label_graph_margin = 20;

@@ -11,13 +11,11 @@
 @implementation GoogleDataArray
 
 
-//@property (atomic,strong) NSMutableArray *dataValues;
-//@property (atomic,strong) NSMutableArray *xValues;
-//@property (atomic,strong) NSMutableArray *yValues;
-
 -(instancetype) init{
     self = [super init];
    if(self){
+       
+       _status=@0;
        _dataValues = nil;
        _xValues = nil;
        _yValues = nil;

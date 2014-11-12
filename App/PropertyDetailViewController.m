@@ -19,6 +19,7 @@
 @property (strong, nonatomic) IBOutlet UILabel *propertyName;
 @property (strong, nonatomic) IBOutlet UILabel *url;
 @property (strong, nonatomic) IBOutlet UILabel *ID;
+@property (strong, nonatomic) IBOutlet UIButton *emailButton;
 
 @end
 
@@ -35,8 +36,6 @@
     self.sv.delegate = self;
     
     CGRect viewFrame = self.sv.frame;
-    viewFrame.size.height += 1000;  // 400 is arbitrary
-    self.sv.contentSize = viewFrame.size;
     
     self.profileName.title = self.profile.name;
     
@@ -201,8 +200,29 @@
 
     }
     
+    next_y += 50;
+    self.ID = [[UILabel alloc] initWithFrame:CGRectMake(50, next_y, SCREEN_WIDTH, label_size)];
+    self.ID.text = [NSString stringWithFormat: @"ID: %@", self.profile.identifier];
+    [self.sv addSubview:self.ID];
+
+    self.emailButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    self.emailButton.frame = CGRectMake(50, next_y, SCREEN_WIDTH, label_size);
+    [self.emailButton setTitle:@"Email JS" forState:UIControlStateNormal];
+    [self.emailButton addTarget:self
+               action:@selector(emailJS:)
+     forControlEvents:UIControlEventTouchUpInside];
+//    self.emailButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentRight;
+    [self.sv addSubview:self.emailButton];
+    next_y += label_size + 25;
     
-    //self.ID.text = self.profile.identifier;
+    viewFrame.size.height = next_y;  // 400 is arbitrary
+    self.sv.contentSize = viewFrame.size;
+
+    NSLog(@"Next_y: %d", next_y);
+}
+
+- (void) emailJS: (UIButton*)button{
+    NSLog(@"EMAILING JS");
 }
 
 - (void)didReceiveMemoryWarning

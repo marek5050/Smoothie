@@ -124,9 +124,12 @@
     
 	_currentTotal += currentDataItem.value;
 	
-    NSString *titleText = currentDataItem.description;
-    if(!titleText){
+    NSString *titleText;
+    if(!currentDataItem.description){
         titleText = [NSString stringWithFormat:@"%.0f%%",currentDataItem.value/ _total * 100];
+    }
+    else{
+        titleText = [NSString stringWithFormat:@"%@\n%.0f%%", currentDataItem.description, currentDataItem.value/ _total * 100];
     }
     
     CGPoint center = CGPointMake(_outterCircleRadius + distance * sin(rad),
@@ -137,6 +140,7 @@
     
     UILabel *descriptionLabel = [[UILabel alloc] initWithFrame:frame];
     [descriptionLabel setText:titleText];
+    descriptionLabel.numberOfLines = 2;
     [descriptionLabel setFont:_descriptionTextFont];
     [descriptionLabel setTextColor:_descriptionTextColor];
     [descriptionLabel setShadowColor:_descriptionTextShadowColor];

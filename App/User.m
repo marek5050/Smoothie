@@ -43,7 +43,7 @@
             if(prof.update){
 
                 req = [[NSString alloc] initWithFormat:@"ga:%@",[prof identifier]];
-                NSLog(@"User:loadUserRealTimeForActive:RequestId: %@", [prof identifier]);
+//                NSLog(@"User:loadUserRealTimeForActive:RequestId: %@", [prof identifier]);
 
                 GTLQueryAnalytics *query = [GTLQueryAnalytics queryForDataRealtimeGetWithIds:req metrics:@"rt:activeUsers"];
 
@@ -57,7 +57,7 @@
                         }else{
                             [prof setActiveVisitors:@0];
                         }
-                        NSNumber *n = @30;
+                        NSNumber *n = @90;
                         
                         [self loadDailyVisitorCount:n forProfile:prof];
                         [_delegate interfaceUpdate];
@@ -73,35 +73,32 @@
 
 
 
--(void) loadDailyVisitorCount:(NSNumber *)days forProfile:(GoogleProfile *)profile{
+-(GoogleDataArray *) loadDailyVisitorCount:(NSNumber *)days forProfile:(GoogleProfile *)profile{
     NSLog(@"User:loadDailyVisitorCount:PropertiesCount:%@",[profile identifier]);
+    GoogleDataArray *ret= [[GoogleDataArray alloc] init];
     
     NSString *req;
-    GoogleProperty *prop;
-    GoogleProfile *prof;
+    req = [[NSString alloc] initWithFormat:@"ga:%@",[profile identifier]];
+                
     
-    for(int j=0; j < [prop.profiles count]; j++){
-        prof = [[prop profiles] objectAtIndex:j];
-            if(prof.update){
+    NSString *start = [NSString stringWithFormat:@"%@daysAgo",days];
+    NSString *profid = [NSString stringWithFormat:@"ga:%@",[profile identifier]];
+    
+    GTLQueryAnalytics *query = [GTLQueryAnalytics queryForDataGaGetWithIds:profid startDate:start endDate:@"today" metrics:@"ga:users"];
+    [query setDimensions:@"ga:date"];
                 
-                req = [[NSString alloc] initWithFormat:@"ga:%@",[prof identifier]];
-                
-                NSLog(@"User:loadUserRealTimeForActive:RequestId: %@", [prof identifier]);
-                NSString *end = [NSString stringWithFormat:@"%@daysAgo",days];
-                
-                GTLQueryAnalytics *query = [GTLQueryAnalytics queryForDataGaGetWithIds:@"ga:61501948" startDate:@"today" endDate:end metrics:@"ga:users"];
-                
-                [self.service executeQuery:query completionHandler:^(GTLServiceTicket *ticket, GTLAnalyticsRealtimeData *data, NSError *error){
-                    if (error == nil) {
-                        
-                        
-                        
-                    } else {
-                        NSLog(@"An error occurred: %@", error);
-                    }
-                }];
-            }
-    }
+    [self.service executeQuery:query completionHandler:^(GTLServiceTicket *ticket, GTLAnalyticsGaData *data, NSError *error){
+        if (error == nil) {
+            
+            [ret setDataValues:data.rows];
+            
+       } else {
+           [ret setStatus:@0];
+           NSLog(@"An error occurred: %@", error);
+       }
+    }];
+
+  return ret;
 }
 
 

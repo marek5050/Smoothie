@@ -7,6 +7,7 @@
 #import <Foundation/Foundation.h>
 #import "GoogleAccount.h"
 #import "GTMOAuth2Authentication.h"
+#import "GoogleDataArray.h"
 
 @protocol GoogleUserDelegate    <NSObject>
 @required
@@ -31,6 +32,6 @@
     -(instancetype) init;
     -(void) loadUserSummary;
     -(void) loadUserRealTimeForActive;
-    -(void) loadDailyVisitorCount:(NSNumber *)days forProfile:(GoogleProfile *)profile;
+    -(GoogleDataArray *) loadDailyVisitorCount:(NSNumber *)days forProfile:(GoogleProfile *)profile;
 
 @end

@@ -12,6 +12,7 @@
 		2FC3FDCA1A12C2C000E330B3 /* libPods-App-PNChart.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FC3FDC91A12C2C000E330B3 /* libPods-App-PNChart.a */; };
 		2FC3FDCC1A12C2E300E330B3 /* libPods-App-UICountingLabel.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FC3FDCB1A12C2E300E330B3 /* libPods-App-UICountingLabel.a */; };
 		2FC3FDCE1A12C2ED00E330B3 /* libPods-App.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FC3FDCD1A12C2ED00E330B3 /* libPods-App.a */; };
+		2FE53A6B1A12F52D005A0F38 /* GoogleDataArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FE53A6A1A12F52D005A0F38 /* GoogleDataArray.m */; };
 		A206E7E11A042EE8003DE3D0 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = A206E7E01A042EE8003DE3D0 /* README.md */; };
 		A23629EF1A03ECBA00659A3F /* GTMOAuth2Window.xib in Resources */ = {isa = PBXBuildFile; fileRef = A23629651A03ECBA00659A3F /* GTMOAuth2Window.xib */; };
 		A23629F31A03ECBA00659A3F /* GTMOAuth2ViewTouch.xib in Resources */ = {isa = PBXBuildFile; fileRef = A236296C1A03ECBA00659A3F /* GTMOAuth2ViewTouch.xib */; };
@@ -112,6 +113,8 @@
 		2FC3FDC91A12C2C000E330B3 /* libPods-App-PNChart.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libPods-App-PNChart.a"; sourceTree = "<group>"; };
 		2FC3FDCB1A12C2E300E330B3 /* libPods-App-UICountingLabel.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libPods-App-UICountingLabel.a"; sourceTree = "<group>"; };
 		2FC3FDCD1A12C2ED00E330B3 /* libPods-App.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libPods-App.a"; sourceTree = "<group>"; };
+		2FE53A691A12F52D005A0F38 /* GoogleDataArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoogleDataArray.h; sourceTree = "<group>"; };
+		2FE53A6A1A12F52D005A0F38 /* GoogleDataArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoogleDataArray.m; sourceTree = "<group>"; };
 		8700487B19F73DF300D76A2C /* PropertyDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PropertyDetailViewController.h; sourceTree = "<group>"; };
 		8700487C19F73DF300D76A2C /* PropertyDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PropertyDetailViewController.m; sourceTree = "<group>"; };
 		8767794A19F0347C0031D63A /* addPropertyController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = addPropertyController.h; sourceTree = "<group>"; };
@@ -771,6 +774,8 @@
 				E79A3455288C9919DFFF8A55 /* GoogleProperty.h */,
 				E79A38F4F6846BD3D72B62A6 /* GoogleProfile.m */,
 				E79A3F16C3FFB14DB19BF9BF /* GoogleProfile.h */,
+				2FE53A691A12F52D005A0F38 /* GoogleDataArray.h */,
+				2FE53A6A1A12F52D005A0F38 /* GoogleDataArray.m */,
 				E79A3B289F981ECDC4B42138 /* User.m */,
 				E79A3FDCE0C0DC50695B37AC /* User.h */,
 			);
@@ -952,6 +957,7 @@
 				A2362A1B1A03ED1E00659A3F /* LaunchPageViewController.m in Sources */,
 				A2362A1C1A03ED1E00659A3F /* addPropertyController.h in Sources */,
 				A2362A1D1A03ED1E00659A3F /* addPropertyController.m in Sources */,
+				2FE53A6B1A12F52D005A0F38 /* GoogleDataArray.m in Sources */,
 				A2362A1E1A03ED1E00659A3F /* SettingsControllerViewController.h in Sources */,
 				A2362A1F1A03ED1E00659A3F /* SettingsControllerViewController.m in Sources */,
 				A2362A201A03ED1E00659A3F /* PropertyDetailViewController.h in Sources */,

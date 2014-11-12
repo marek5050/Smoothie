@@ -57,9 +57,7 @@
                         }else{
                             [prof setActiveVisitors:@0];
                         }
-                        NSNumber *n = @90;
                         
-                        [self loadDailyVisitorCount:n forProfile:prof];
                         [_delegate interfaceUpdate];
 
                     } else {
@@ -73,7 +71,7 @@
 
 
 
--(GoogleDataArray *) loadDailyVisitorCount:(NSNumber *)days forProfile:(GoogleProfile *)profile{
+-(GoogleDataArray *) loadDailyVisitorCount:(NSNumber *)days forProfile:(GoogleProfile *)profile callback:(SEL)selector{
     NSLog(@"User:loadDailyVisitorCount:PropertiesCount:%@",[profile identifier]);
     GoogleDataArray *ret= [[GoogleDataArray alloc] init];
     
@@ -91,6 +89,10 @@
         if (error == nil) {
             
             [ret setDataValues:data.rows];
+            GoogleDataArray *gArr = [[GoogleDataArray alloc] init];
+            [gArr setDataValues:data.rows];
+            
+            [_delegate performSelector: selector withObject:gArr];
             
        } else {
            [ret setStatus:@0];

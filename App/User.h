@@ -32,6 +32,5 @@
     -(instancetype) init;
     -(void) loadUserSummary;
     -(void) loadUserRealTimeForActive;
-    -(GoogleDataArray *) loadDailyVisitorCount:(NSNumber *)days forProfile:(GoogleProfile *)profile;
-
+    -(GoogleDataArray *) loadDailyVisitorCount:(NSNumber *)days forProfile:(GoogleProfile *)profile callback:(SEL)selector;
 @end

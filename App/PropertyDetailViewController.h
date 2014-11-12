@@ -18,6 +18,7 @@
 @property (strong, nonatomic) IBOutlet UINavigationItem *profileName;
 @property (strong, nonatomic) GoogleProperty *property;
 @property (strong, nonatomic) GoogleProfile *profile;
+@property (strong,nonatomic)  User *user;
 @property (strong,nonatomic)  GoogleDataController *dataController;
 
 @end

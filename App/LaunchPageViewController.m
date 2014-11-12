@@ -95,6 +95,7 @@
             
             pdvc.property = prop;
             pdvc.profile = prof;
+            pdvc.user = _user;
         
             NSLog(@"AFTER SETTING THE PROPERTY SUMMARY");
         }

@@ -29,9 +29,9 @@
     [super viewDidLoad];
     NSLog(@"viewDidLoad for PropertyDetailVeiwController");
     int next_y = 90;
-    int label_graph_margin = 25;
-    int label_size = 18;
-    int graph_graph_margin = 35;
+    int label_graph_margin = 20;
+    int label_size = 23;
+    int graph_graph_margin = 30;
     self.sv.delegate = self;
     
     CGRect viewFrame = self.sv.frame;
@@ -40,20 +40,28 @@
     
     self.profileName.title = self.profile.name;
     
+    /** 
+     Write Property Name at Top
+    **/
     self.propertyName = [[UILabel alloc] initWithFrame:CGRectMake(10, 10, SCREEN_WIDTH, 15)];
     self.propertyName.text = [NSString stringWithFormat:@"Property: %@", self.property.name];
     self.propertyName.font = [UIFont fontWithName:@"Helvetica" size:16];
     [self.sv addSubview:self.propertyName];
 
+    /**
+     Write Property URL
+     **/
     self.url = [[UILabel alloc] initWithFrame:CGRectMake(10, 40, SCREEN_WIDTH, 15)];
     self.url.text = [NSString stringWithFormat:@"URL: %@", self.property.websiteUrl];
     self.url.font = [UIFont fontWithName:@"Helvetica" size:16];
     [self.sv addSubview:self.url];
     
-    //users for last 90 days - line chart
+    /**
+     Write Users for last 90 days - line chart
+     **/
     UILabel * lineChartLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, next_y, SCREEN_WIDTH, label_size)];
     lineChartLabel.text = @"Users: Last 90 Days";
-    lineChartLabel.font = [UIFont fontWithName:@"Helvetica" size:label_size];
+    lineChartLabel.font = [UIFont fontWithName:@"Helvetica" size:18];
     next_y += label_size + label_graph_margin;
     
     int recentHeight = 200;
@@ -83,10 +91,12 @@
     [self.sv addSubview:lineChartLabel];
     [self.sv addSubview:recentUsersLineChart];
     
-    //user by county - pie chart
+    /**
+     Write User by Country pie chart
+     **/
     UILabel * countryPieChartLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, next_y, SCREEN_WIDTH, label_size)];
     countryPieChartLabel.text = @"Users: By Country";
-    countryPieChartLabel.font = [UIFont fontWithName:@"Helvetica" size:label_size];
+    countryPieChartLabel.font = [UIFont fontWithName:@"Helvetica" size:18];
     next_y += label_size + label_graph_margin;
     
     
@@ -109,10 +119,12 @@
     [self.sv addSubview:countryPieChartLabel];
     [self.sv addSubview:countryPieChart];
     
-    //users by OS - pie chart
+    /**
+     Write Users by OS - pie chart
+     **/
     UILabel * OSPieChartLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, next_y, SCREEN_WIDTH, label_size)];
     OSPieChartLabel.text = @"Users: By OS";
-    OSPieChartLabel.font = [UIFont fontWithName:@"Helvetica" size:label_size];
+    OSPieChartLabel.font = [UIFont fontWithName:@"Helvetica" size:18];
     next_y += label_size + label_graph_margin;
     
     //WILL BE REPLACED BY DATA FORM API
@@ -134,10 +146,12 @@
     [self.sv addSubview:OSPieChartLabel];
     [self.sv addSubview:OSPieChart];
     
-    //users - browser breakdown
+    /**
+     Write Users by browser - pie chart
+     **/
     UILabel * browserPieChartLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, next_y, SCREEN_WIDTH, label_size)];
     browserPieChartLabel.text = @"Users: By Browser";
-    browserPieChartLabel.font = [UIFont fontWithName:@"Helvetica" size:label_size];
+    browserPieChartLabel.font = [UIFont fontWithName:@"Helvetica" size:18];
     next_y += label_size + label_graph_margin;
     
     
@@ -148,18 +162,44 @@
                          ];
     
     
-    
-    PNPieChart *browserPieChart = [[PNPieChart alloc] initWithFrame:CGRectMake(40.0, next_y, 240.0, 240.0) items:itemsBrowser];
+    int browserHeight = 240;
+    PNPieChart *browserPieChart = [[PNPieChart alloc] initWithFrame:CGRectMake(40.0, next_y, 240.0, browserHeight) items:itemsBrowser];
     browserPieChart.descriptionTextColor = [UIColor whiteColor];
     browserPieChart.descriptionTextFont  = [UIFont fontWithName:@"Helvetica" size:14.0];
     browserPieChart.descriptionTextShadowColor = [UIColor clearColor];
     [browserPieChart strokeChart];
+    next_y += osHeight + graph_graph_margin;
     
     
     [self.sv addSubview:browserPieChartLabel];
     [self.sv addSubview:browserPieChart];
     
-    //common keywords - tableview
+    //common keywords - "tableview"
+    UILabel * commonKeywordsLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, next_y, SCREEN_WIDTH, label_size)];
+    commonKeywordsLabel.text = @"Search Keywords";
+    commonKeywordsLabel.font = [UIFont fontWithName:@"Helvetica" size:18];
+    next_y += label_size + label_graph_margin;
+    [self.sv addSubview:commonKeywordsLabel];
+    NSArray *keywords = @[@[@"Mercedes-Benz", @20], @[@"marek", @10], @[@"yash", @10], @[@"megan", @10]];
+    
+    // shitty table view
+    for (NSArray *obj in keywords) {
+        UILabel *left = [[UILabel alloc] initWithFrame:CGRectMake(10, next_y, SCREEN_WIDTH - 20, 18)];
+        left.text = obj[0];
+        left.font = [UIFont fontWithName:@"Helvetica" size:16];
+        UILabel *right = [[UILabel alloc] initWithFrame:CGRectMake(10, next_y, SCREEN_WIDTH - 20, 18)];
+        right.text = [obj[1] stringValue];
+        right.font = [UIFont fontWithName:@"Helvetica" size:16];
+        right.textAlignment = UITextAlignmentRight;
+        next_y += 22;
+        UILabel *separator = [[UILabel alloc] initWithFrame:CGRectMake(10, next_y, SCREEN_WIDTH - 20, 0.5)];
+        separator.backgroundColor = [UIColor blackColor];
+        next_y += 2;
+        [self.sv addSubview:left];
+        [self.sv addSubview:right];
+        [self.sv addSubview:separator];
+
+    }
     
     
     //self.ID.text = self.profile.identifier;

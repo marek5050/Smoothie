@@ -86,11 +86,20 @@
     NSString *labelText;
 
     if (_showLabel) {
+        
+        int actualCount = 0;
+        for(int index = 0; index < xLabels.count; ++index){
+            if(!([xLabels[index] isEqualToString:@""])){
+                actualCount++;
+            }
+        }
+        
         _xLabelWidth = _chartCavanWidth / [xLabels count];
+        int secondXLabelWidth = _chartCavanWidth / actualCount;
 
         for (int index = 0; index < xLabels.count; index++) {
             labelText = xLabels[index];
-            PNChartLabel *label = [[PNChartLabel alloc] initWithFrame:CGRectMake(2 * _chartMargin +  (index * _xLabelWidth) - (_xLabelWidth / 2), _chartMargin + _chartCavanHeight, _xLabelWidth, _chartMargin)];
+            PNChartLabel *label = [[PNChartLabel alloc] initWithFrame:CGRectMake(2 * _chartMargin +  (index * _xLabelWidth) - (secondXLabelWidth / 2), _chartMargin + _chartCavanHeight, secondXLabelWidth, _chartMargin)];
             [label setTextAlignment:NSTextAlignmentCenter];
             label.text = labelText;
             [self addSubview:label];

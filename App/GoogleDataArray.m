@@ -33,11 +33,11 @@
     _xValues = [[NSMutableArray alloc] initWithCapacity:dataValues.count];
     _yValues = [[NSMutableArray alloc] initWithCapacity:dataValues.count];
     for(int i=0;i < dataValues.count; i++){
-        if(i%20==0){
+       // if(i%20==0){
             [_xValues addObject: [[dataValues objectAtIndex:i] objectAtIndex:0]];
-        }else{
-            [_xValues addObject:@""];
-        }
+       // }else{
+        //    [_xValues addObject:@""];
+      //  }
         [_yValues addObject: [[dataValues objectAtIndex:i] objectAtIndex:1]];
     
     }

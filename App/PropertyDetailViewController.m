@@ -39,18 +39,17 @@ int height = 100;
 }
 
 -(void) create90DayChart:(GoogleDataArray *)dataset{
-    NSLog(@"create90DayChart: %@",dataset);
     /**
      Write Users for last 90 days - line chart
      **/
     int recentHeight = 120;
-    UILabel * lineChartLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, next_y, SCREEN_WIDTH-10, label_size)];
+    UILabel * lineChartLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 100, SCREEN_WIDTH-10, label_size)];
     lineChartLabel.text = @"Users: Last 90 Days";
     lineChartLabel.font = [UIFont fontWithName:@"Helvetica" size:18];
 //    next_y += label_size + label_graph_margin;
     next_y = [self getHeight: label_size + label_graph_margin];
 
-    PNLineChart * recentUsersLineChart = [[PNLineChart alloc] initWithFrame:CGRectMake(10, next_y, SCREEN_WIDTH-10, recentHeight)];
+    PNLineChart * recentUsersLineChart = [[PNLineChart alloc] initWithFrame:CGRectMake(0, 120, SCREEN_WIDTH-10, recentHeight)];
     recentUsersLineChart.backgroundColor = [UIColor clearColor];
   //  next_y += recentHeight + graph_graph_margin;
     next_y = [self getHeight: recentHeight + graph_graph_margin];
@@ -77,9 +76,9 @@ int height = 100;
     
     [self.sv addSubview:lineChartLabel];
     [self.sv addSubview:recentUsersLineChart];
-    [self.sv setContentSize:self.sv.frame.size];
-    CGSize size =  CGSizeMake(self.sv.frame.size.width,next_y+50);
-    self.sv.contentSize=size;
+   // [self.sv setContentSize:self.sv.frame.size];
+    //CGSize size =  CGSizeMake(self.sv.frame.size.width,next_y+50);
+   // self.sv.contentSize=size;
 }
 - (void)viewDidLoad
 {
@@ -117,23 +116,24 @@ int height = 100;
     /**
      Write User by Country pie chart
      **/
-    [self createUserByCountryChart:nil];
+    [_user loadUsersByCountry:@90 forProfile:_profile callback:@selector(createUserByCountryChart:)];
+    
     /**
      Write Users by OS - pie chart
      **/
-    [self createUsersByOSChart:nil];
+    [_user loadUsersByOS:@90 forProfile:_profile callback:@selector(createUsersByOSChart:)];
     
     /**
      Write Users by browser - pie chart
      **/
-    [self createUsersByBrowserChart:nil];
+    [_user loadUsersByBrowser:@90 forProfile:_profile callback:@selector(createUsersByBrowserChart:)];
     
     //common keywords - "tableview"
-    [self createCommonKeywordsChart:nil];
+    [_user loadUsersByKeyword:@90 forProfile:_profile callback:@selector(createCommonKeywordsChart:)];
 
     
-    next_y = [self getHeight:55];
-//    next_y += 50;
+    //next_y = [self getHeight:55];
+    next_y += 50;
     self.ID = [[UILabel alloc] initWithFrame:CGRectMake(50, next_y, SCREEN_WIDTH, label_size)];
     self.ID.text = [NSString stringWithFormat: @"ID: %@", self.profile.identifier];
     [self.sv addSubview:self.ID];
@@ -147,30 +147,35 @@ int height = 100;
 //    self.emailButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentRight;
     [self.sv addSubview:self.emailButton];
 //    next_y += label_size + 25;
-    next_y = [self getHeight:label_size + 25];
+    //next_y = [self getHeight:label_size + 25];
   
-    viewFrame.size.height = next_y;  // 400 is arbitrary
+    viewFrame.size.height = 5000;  // 400 is arbitrary
     self.sv.contentSize = viewFrame.size;
 
     NSLog(@"Next_y: %d", next_y);
 }
 
 -(void) createUserByCountryChart:(GoogleDataArray *)dataset{
-    UILabel * countryPieChartLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, next_y, SCREEN_WIDTH, label_size)];
+    UILabel * countryPieChartLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 260, SCREEN_WIDTH, label_size)];
     countryPieChartLabel.text = @"Users: By Country";
     countryPieChartLabel.font = [UIFont fontWithName:@"Helvetica" size:18];
     //    next_y += label_size + label_graph_margin;
     next_y = [self getHeight:label_size + label_graph_margin];
     
-    //WILL BE REPLACED BY DATA FORM API
-    NSArray *items = @[[PNPieChartDataItem dataItemWithValue:10 color:[UIColor greenColor]],
-                       [PNPieChartDataItem dataItemWithValue:20 color:[UIColor redColor] description:@"WWDC"],
-                       [PNPieChartDataItem dataItemWithValue:40 color:[UIColor blueColor] description:@"GOOL I/O"],
-                       ];
+    NSMutableArray *items = [[NSMutableArray alloc] init];
     
+    NSArray *colors = @[[UIColor orangeColor], [UIColor redColor], [UIColor blueColor], [UIColor darkGrayColor], [UIColor purpleColor]];
+    
+    int stop = MIN(5, [dataset.xValues count]);
+    for(int index = 0; index < stop; ++index){
+        NSString *xValue = dataset.xValues[index];
+        int yValue = [dataset.yValues[index] intValue];
+        
+        [items addObject:[PNPieChartDataItem dataItemWithValue:yValue color:colors[index] description:xValue]];
+    }
     
     int countryHeight = 240;
-    PNPieChart *countryPieChart = [[PNPieChart alloc] initWithFrame:CGRectMake(40.0, next_y, 240.0, countryHeight) items:items];
+    PNPieChart *countryPieChart = [[PNPieChart alloc] initWithFrame:CGRectMake(40.0, 300, 240.0, countryHeight) items:items];
     countryPieChart.descriptionTextColor = [UIColor whiteColor];
     countryPieChart.descriptionTextFont  = [UIFont fontWithName:@"Helvetica" size:14.0];
     countryPieChart.descriptionTextShadowColor = [UIColor clearColor];
@@ -184,21 +189,33 @@ int height = 100;
 }
 
 -(void) createUsersByOSChart:(GoogleDataArray *)dataset {
-    UILabel * OSPieChartLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, next_y, SCREEN_WIDTH, label_size)];
+    UILabel * OSPieChartLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 540, SCREEN_WIDTH, label_size)];
     OSPieChartLabel.text = @"Users: By OS";
     OSPieChartLabel.font = [UIFont fontWithName:@"Helvetica" size:18];
     //    next_y += label_size + label_graph_margin;
     next_y = [self getHeight:label_size + label_graph_margin];
     
     //WILL BE REPLACED BY DATA FORM API
-    NSArray *itemsOS = @[[PNPieChartDataItem dataItemWithValue:25 color:[UIColor greenColor]],
-                         [PNPieChartDataItem dataItemWithValue:50 color:[UIColor redColor] description:@"WWDC"],
-                         [PNPieChartDataItem dataItemWithValue:25 color:[UIColor blueColor] description:@"GOOL I/O"],
-                         ];
+//    NSArray *itemsOS = @[[PNPieChartDataItem dataItemWithValue:25 color:[UIColor greenColor]],
+//                         [PNPieChartDataItem dataItemWithValue:50 color:[UIColor redColor] description:@"WWDC"],
+//                         [PNPieChartDataItem dataItemWithValue:25 color:[UIColor blueColor] description:@"GOOL I/O"],
+//                         ];
+//
     
+    NSMutableArray *itemsOS = [[NSMutableArray alloc] init];
+    
+    NSArray *colors = @[[UIColor orangeColor], [UIColor redColor], [UIColor blueColor], [UIColor darkGrayColor], [UIColor purpleColor]];
+    
+    int stop = MIN(5, [dataset.xValues count]);
+    for(int index = 0; index < stop; ++index){
+        NSString *xValue = dataset.xValues[index];
+        int yValue = [dataset.yValues[index] intValue];
+        
+        [itemsOS addObject:[PNPieChartDataItem dataItemWithValue:yValue color:colors[index] description:xValue]];
+    }
     
     int osHeight = 240;
-    PNPieChart *OSPieChart = [[PNPieChart alloc] initWithFrame:CGRectMake(40.0, next_y, 240.0, osHeight) items:itemsOS];
+    PNPieChart *OSPieChart = [[PNPieChart alloc] initWithFrame:CGRectMake(40.0, 560, 240.0, osHeight) items:itemsOS];
     OSPieChart.descriptionTextColor = [UIColor whiteColor];
     OSPieChart.descriptionTextFont  = [UIFont fontWithName:@"Helvetica" size:14.0];
     OSPieChart.descriptionTextShadowColor = [UIColor clearColor];
@@ -211,22 +228,28 @@ int height = 100;
 }
 
 -(void) createUsersByBrowserChart:(GoogleDataArray *)dataset {
-    UILabel * browserPieChartLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, next_y, SCREEN_WIDTH, label_size)];
+    UILabel * browserPieChartLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 820, SCREEN_WIDTH, label_size)];
     browserPieChartLabel.text = @"Users: By Browser";
     browserPieChartLabel.font = [UIFont fontWithName:@"Helvetica" size:18];
     //next_y += label_size + label_graph_margin;
     next_y = [self getHeight:label_size + label_graph_margin];
     
     
-    //WILL BE REPLACED BY DATA FORM API
-    NSArray *itemsBrowser = @[[PNPieChartDataItem dataItemWithValue:10 color:[UIColor greenColor]],
-                              [PNPieChartDataItem dataItemWithValue:10 color:[UIColor redColor] description:@"WWDC"],
-                              [PNPieChartDataItem dataItemWithValue:10 color:[UIColor blueColor] description:@"GOOL I/O"],
-                              ];
+    NSMutableArray *itemsBrowser = [[NSMutableArray alloc] init];
+    
+    NSArray *colors = @[[UIColor orangeColor], [UIColor redColor], [UIColor blueColor], [UIColor darkGrayColor], [UIColor purpleColor]];
+    
+    int stop = MIN(5, [dataset.xValues count]);
+    for(int index = 0; index < stop; ++index){
+        NSString *xValue = dataset.xValues[index];
+        int yValue = [dataset.yValues[index] intValue];
+        
+        [itemsBrowser addObject:[PNPieChartDataItem dataItemWithValue:yValue color:colors[index] description:xValue]];
+    }
     
     
     int browserHeight = 240;
-    PNPieChart *browserPieChart = [[PNPieChart alloc] initWithFrame:CGRectMake(40.0, next_y, 240.0, browserHeight) items:itemsBrowser];
+    PNPieChart *browserPieChart = [[PNPieChart alloc] initWithFrame:CGRectMake(40.0, 860, 240.0, browserHeight) items:itemsBrowser];
     browserPieChart.descriptionTextColor = [UIColor whiteColor];
     browserPieChart.descriptionTextFont  = [UIFont fontWithName:@"Helvetica" size:14.0];
     browserPieChart.descriptionTextShadowColor = [UIColor clearColor];
@@ -239,14 +262,23 @@ int height = 100;
 }
 
 - (void) createCommonKeywordsChart:(GoogleDataArray *)dataset {
-    UILabel * commonKeywordsLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, next_y, SCREEN_WIDTH, label_size)];
+    UILabel * commonKeywordsLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 1140, SCREEN_WIDTH, label_size)];
     commonKeywordsLabel.text = @"Search Keywords";
     commonKeywordsLabel.font = [UIFont fontWithName:@"Helvetica" size:18];
     //    next_y += label_size + label_graph_margin;
-    next_y = [self getHeight:label_size + label_graph_margin];
+    next_y = 1160;
     
     [self.sv addSubview:commonKeywordsLabel];
-    NSArray *keywords = @[@[@"Mercedes-Benz", @20], @[@"marek", @10], @[@"yash", @10], @[@"megan", @10]];
+    NSMutableArray *keywords = [[NSMutableArray alloc] init];//@[@[@"Mercedes-Benz", @20], @[@"marek", @10], @[@"yash", @10], @[@"megan", @10]];
+
+    int stop = MIN(5, [dataset.xValues count]);
+    for(int index = 0; index < stop; ++index){
+        NSString *xValue = dataset.xValues[index];
+        NSNumber *yValue = [[NSNumber alloc] initWithInt:[dataset.yValues[index] intValue]];
+        NSArray *arr = @[xValue, yValue];
+        
+        [keywords addObject:arr];
+    }
     
     // shitty table view
     for (NSArray *obj in keywords) {
@@ -257,12 +289,12 @@ int height = 100;
         right.text = [obj[1] stringValue];
         right.font = [UIFont fontWithName:@"Helvetica" size:16];
         right.textAlignment = NSTextAlignmentRight;
-        next_y = [self getHeight:22];
-        //next_y += 22;
+        //next_y = [self getHeight:22];
+        next_y += 22;
         UILabel *separator = [[UILabel alloc] initWithFrame:CGRectMake(10, next_y, SCREEN_WIDTH - 20, 0.5)];
         separator.backgroundColor = [UIColor blackColor];
-        //      next_y += 2;
-        next_y = [self getHeight:2];
+              next_y += 2;
+        //next_y = [self getHeight:2];
         
         [self.sv addSubview:left];
         [self.sv addSubview:right];

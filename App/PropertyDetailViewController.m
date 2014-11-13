@@ -277,6 +277,9 @@ int height = 100;
     
 
 }
+-(void)viewDidDisappear:(BOOL)animated{
+    height=100;
+}
 
 /*
 #pragma mark - Navigation

@@ -26,7 +26,6 @@
 }
 
 
-
 -(void) loadUserRealTimeForActive{
     NSLog(@"User:loadUserRealTimeForActive:PropertiesCount:%d",[self.active.properties count]);
 
@@ -69,171 +68,92 @@
     }
 }
 
--(GoogleDataArray *) loadUsersByCountry:(NSNumber *)days forProfile:(GoogleProfile *)profile callback:(SEL)selector{
+-(void) loadDataQuery:(GTLQueryAnalytics *)query callback:(SEL){
+    NSLog(@"User:loadDataQuery:PropertiesCount");
+    [self.service executeQuery:query completionHandler:^(GTLServiceTicket *ticket, GTLAnalyticsGaData *data, NSError *error){
+        if (error == nil) {
+            
+            [ret setDataValues:data.rows];
+            GoogleDataArray *gArr = [[GoogleDataArray alloc] init];
+            [gArr setDataValues:data.rows];
+            
+            [_delegate performSelector: selector withObject:gArr];
+            
+        } else {
+            [ret setStatus:@0];
+            NSLog(@"An error occurred: %@", error);
+        }
+    }];
+}
+
+
+-(void) loadUsersByCountry:(NSNumber *)days forProfile:(GoogleProfile *)profile callback:(SEL)selector{
     NSLog(@"User:loadUsersByCountry:PropertiesCount:%@",[profile identifier]);
-    GoogleDataArray *ret= [[GoogleDataArray alloc] init];
     
-    NSString *req;
-    req = [[NSString alloc] initWithFormat:@"ga:%@",[profile identifier]];
-    
-    
+    NSString req = [NSString alloc] initWithFormat:@"ga:%@",[profile identifier]];
     NSString *start = [NSString stringWithFormat:@"%@daysAgo",days];
     NSString *profid = [NSString stringWithFormat:@"ga:%@",[profile identifier]];
     
     GTLQueryAnalytics *query = [GTLQueryAnalytics queryForDataGaGetWithIds:profid startDate:start endDate:@"today" metrics:@"ga:users"];
     [query setDimensions:@"ga:country"];
-    
-    [self.service executeQuery:query completionHandler:^(GTLServiceTicket *ticket, GTLAnalyticsGaData *data, NSError *error){
-        if (error == nil) {
-            
-            [ret setDataValues:data.rows];
-            GoogleDataArray *gArr = [[GoogleDataArray alloc] init];
-            [gArr setDataValues:data.rows];
-            
-            [_delegate performSelector: selector withObject:gArr];
-            
-        } else {
-            [ret setStatus:@0];
-            NSLog(@"An error occurred: %@", error);
-        }
-    }];
-    
-    return ret;
-    
+    [self loadDataQuery:query callback:selector];
 };
 
 
--(GoogleDataArray *) loadUsersByKeyword:(NSNumber *)days forProfile:(GoogleProfile *)profile callback:(SEL)selector{
+-(void) loadUsersByKeyword:(NSNumber *)days forProfile:(GoogleProfile *)profile callback:(SEL)selector{
     NSLog(@"User:loadUsersByCountry:PropertiesCount:%@",[profile identifier]);
-    GoogleDataArray *ret= [[GoogleDataArray alloc] init];
     
-    NSString *req;
-    req = [[NSString alloc] initWithFormat:@"ga:%@",[profile identifier]];
-    
-    
+    NSString *req = [[NSString alloc] initWithFormat:@"ga:%@",[profile identifier]];
     NSString *start = [NSString stringWithFormat:@"%@daysAgo",days];
     NSString *profid = [NSString stringWithFormat:@"ga:%@",[profile identifier]];
     
     GTLQueryAnalytics *query = [GTLQueryAnalytics queryForDataGaGetWithIds:profid startDate:start endDate:@"today" metrics:@"ga:users"];
     [query setDimensions:@"ga:keyword"];
-    
-    [self.service executeQuery:query completionHandler:^(GTLServiceTicket *ticket, GTLAnalyticsGaData *data, NSError *error){
-        if (error == nil) {
-            
-            [ret setDataValues:data.rows];
-            GoogleDataArray *gArr = [[GoogleDataArray alloc] init];
-            [gArr setDataValues:data.rows];
-            
-            [_delegate performSelector: selector withObject:gArr];
-            
-        } else {
-            [ret setStatus:@0];
-            NSLog(@"An error occurred: %@", error);
-        }
-    }];
-    
-    return ret;
+    [self loadDataQuery:query callback:selector];
     
 };
 
 
--(GoogleDataArray *) loadUsersByOS:(NSNumber *)days forProfile:(GoogleProfile *)profile callback:(SEL)selector{
+-(void) loadUsersByOS:(NSNumber *)days forProfile:(GoogleProfile *)profile callback:(SEL)selector{
     NSLog(@"User:loadUsersByKeyword:PropertiesCount:%@",[profile identifier]);
-    GoogleDataArray *ret= [[GoogleDataArray alloc] init];
-    
-    NSString *req;
-    req = [[NSString alloc] initWithFormat:@"ga:%@",[profile identifier]];
-    
-    
+   
+    NSString *req = [[NSString alloc] initWithFormat:@"ga:%@",[profile identifier]];
     NSString *start = [NSString stringWithFormat:@"%@daysAgo",days];
     NSString *profid = [NSString stringWithFormat:@"ga:%@",[profile identifier]];
     
     GTLQueryAnalytics *query = [GTLQueryAnalytics queryForDataGaGetWithIds:profid startDate:start endDate:@"today" metrics:@"ga:users"];
     [query setDimensions:@"ga:operatingSystem"];
-    
-    [self.service executeQuery:query completionHandler:^(GTLServiceTicket *ticket, GTLAnalyticsGaData *data, NSError *error){
-        if (error == nil) {
-            
-            [ret setDataValues:data.rows];
-            GoogleDataArray *gArr = [[GoogleDataArray alloc] init];
-            [gArr setDataValues:data.rows];
-            
-            [_delegate performSelector: selector withObject:gArr];
-            
-        } else {
-            [ret setStatus:@0];
-            NSLog(@"An error occurred: %@", error);
-        }
-    }];
-    
-    return ret;
+    [self loadDataQuery:query callback:selector];
     
 };
 
--(GoogleDataArray *) loadUsersByBrowser:(NSNumber *)days forProfile:(GoogleProfile *)profile callback:(SEL)selector{
+
+-(void) loadUsersByBrowser:(NSNumber *)days forProfile:(GoogleProfile *)profile callback:(SEL)selector{
     NSLog(@"User:loadUsersByBrowser:PropertiesCount:%@",[profile identifier]);
-    GoogleDataArray *ret= [[GoogleDataArray alloc] init];
     
-    NSString *req;
-    req = [[NSString alloc] initWithFormat:@"ga:%@",[profile identifier]];
-    
-    
+    NSString *req = [[NSString alloc] initWithFormat:@"ga:%@",[profile identifier]];
     NSString *start = [NSString stringWithFormat:@"%@daysAgo",days];
     NSString *profid = [NSString stringWithFormat:@"ga:%@",[profile identifier]];
     
     GTLQueryAnalytics *query = [GTLQueryAnalytics queryForDataGaGetWithIds:profid startDate:start endDate:@"today" metrics:@"ga:users"];
     [query setDimensions:@"ga:browser"];
-    
-    [self.service executeQuery:query completionHandler:^(GTLServiceTicket *ticket, GTLAnalyticsGaData *data, NSError *error){
-        if (error == nil) {
-            
-            [ret setDataValues:data.rows];
-            GoogleDataArray *gArr = [[GoogleDataArray alloc] init];
-            [gArr setDataValues:data.rows];
-            
-            [_delegate performSelector: selector withObject:gArr];
-            
-        } else {
-            [ret setStatus:@0];
-            NSLog(@"An error occurred: %@", error);
-        }
-    }];
-    
-    return ret;
+    [self loadDataQuery:query callback:selector];
 
 };
 
 
--(GoogleDataArray *) loadDailyVisitorCount:(NSNumber *)days forProfile:(GoogleProfile *)profile callback:(SEL)selector{
+-(void) loadDailyVisitorCount:(NSNumber *)days forProfile:(GoogleProfile *)profile callback:(SEL)selector{
     NSLog(@"User:loadDailyVisitorCount:PropertiesCount:%@",[profile identifier]);
     GoogleDataArray *ret= [[GoogleDataArray alloc] init];
     
-    NSString *req;
-    req = [[NSString alloc] initWithFormat:@"ga:%@",[profile identifier]];
-                
-    
+    NSString *req = [[NSString alloc] initWithFormat:@"ga:%@",[profile identifier]];
     NSString *start = [NSString stringWithFormat:@"%@daysAgo",days];
     NSString *profid = [NSString stringWithFormat:@"ga:%@",[profile identifier]];
     
     GTLQueryAnalytics *query = [GTLQueryAnalytics queryForDataGaGetWithIds:profid startDate:start endDate:@"today" metrics:@"ga:users"];
     [query setDimensions:@"ga:date"];
-                
-    [self.service executeQuery:query completionHandler:^(GTLServiceTicket *ticket, GTLAnalyticsGaData *data, NSError *error){
-        if (error == nil) {
-            
-            [ret setDataValues:data.rows];
-            GoogleDataArray *gArr = [[GoogleDataArray alloc] init];
-            [gArr setDataValues:data.rows];
-            
-            [_delegate performSelector: selector withObject:gArr];
-            
-       } else {
-           [ret setStatus:@0];
-           NSLog(@"An error occurred: %@", error);
-       }
-    }];
+    [self loadDataQuery:query callback:selector];
 
-  return ret;
 }
 
 

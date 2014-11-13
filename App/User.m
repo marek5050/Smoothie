@@ -68,19 +68,18 @@
     }
 }
 
--(void) loadDataQuery:(GTLQueryAnalytics *)query callback:(SEL){
+-(void) loadDataQuery:(GTLQueryAnalytics *)query callback:(SEL)selector{
     NSLog(@"User:loadDataQuery:PropertiesCount");
+    
     [self.service executeQuery:query completionHandler:^(GTLServiceTicket *ticket, GTLAnalyticsGaData *data, NSError *error){
         if (error == nil) {
             
-            [ret setDataValues:data.rows];
             GoogleDataArray *gArr = [[GoogleDataArray alloc] init];
             [gArr setDataValues:data.rows];
             
             [_delegate performSelector: selector withObject:gArr];
             
         } else {
-            [ret setStatus:@0];
             NSLog(@"An error occurred: %@", error);
         }
     }];
@@ -90,7 +89,6 @@
 -(void) loadUsersByCountry:(NSNumber *)days forProfile:(GoogleProfile *)profile callback:(SEL)selector{
     NSLog(@"User:loadUsersByCountry:PropertiesCount:%@",[profile identifier]);
     
-    NSString req = [NSString alloc] initWithFormat:@"ga:%@",[profile identifier]];
     NSString *start = [NSString stringWithFormat:@"%@daysAgo",days];
     NSString *profid = [NSString stringWithFormat:@"ga:%@",[profile identifier]];
     
@@ -103,7 +101,6 @@
 -(void) loadUsersByKeyword:(NSNumber *)days forProfile:(GoogleProfile *)profile callback:(SEL)selector{
     NSLog(@"User:loadUsersByCountry:PropertiesCount:%@",[profile identifier]);
     
-    NSString *req = [[NSString alloc] initWithFormat:@"ga:%@",[profile identifier]];
     NSString *start = [NSString stringWithFormat:@"%@daysAgo",days];
     NSString *profid = [NSString stringWithFormat:@"ga:%@",[profile identifier]];
     
@@ -117,7 +114,6 @@
 -(void) loadUsersByOS:(NSNumber *)days forProfile:(GoogleProfile *)profile callback:(SEL)selector{
     NSLog(@"User:loadUsersByKeyword:PropertiesCount:%@",[profile identifier]);
    
-    NSString *req = [[NSString alloc] initWithFormat:@"ga:%@",[profile identifier]];
     NSString *start = [NSString stringWithFormat:@"%@daysAgo",days];
     NSString *profid = [NSString stringWithFormat:@"ga:%@",[profile identifier]];
     
@@ -131,7 +127,6 @@
 -(void) loadUsersByBrowser:(NSNumber *)days forProfile:(GoogleProfile *)profile callback:(SEL)selector{
     NSLog(@"User:loadUsersByBrowser:PropertiesCount:%@",[profile identifier]);
     
-    NSString *req = [[NSString alloc] initWithFormat:@"ga:%@",[profile identifier]];
     NSString *start = [NSString stringWithFormat:@"%@daysAgo",days];
     NSString *profid = [NSString stringWithFormat:@"ga:%@",[profile identifier]];
     
@@ -144,9 +139,7 @@
 
 -(void) loadDailyVisitorCount:(NSNumber *)days forProfile:(GoogleProfile *)profile callback:(SEL)selector{
     NSLog(@"User:loadDailyVisitorCount:PropertiesCount:%@",[profile identifier]);
-    GoogleDataArray *ret= [[GoogleDataArray alloc] init];
     
-    NSString *req = [[NSString alloc] initWithFormat:@"ga:%@",[profile identifier]];
     NSString *start = [NSString stringWithFormat:@"%@daysAgo",days];
     NSString *profid = [NSString stringWithFormat:@"ga:%@",[profile identifier]];
     

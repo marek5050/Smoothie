@@ -39,7 +39,7 @@ int height = 100;
 }
 
 -(void) create90DayChart:(GoogleDataArray *)dataset{
-    NSLog(@"create90DayChart: ");
+    NSLog(@"create90DayChart: %@",dataset);
     /**
      Write Users for last 90 days - line chart
      **/
@@ -56,16 +56,17 @@ int height = 100;
     next_y = [self getHeight: recentHeight + graph_graph_margin];
 
     //WILL BE REPLACED WITH IN FORM API - LOGIC TO NOT HAVE TO SHOW ALL THE LABELS
-    [recentUsersLineChart setXLabels:@[@"SEP 1",@"",@"",@"",@"SEP 5",@"",@"", @"SEP 1",@"",@"",@"",@"SEP 5",@"",@""]];
+    //[recentUsersLineChart setXLabels:@[@"SEP 1",@"",@"SEP 3",@"",@"SEP 5",@"",@"SEP 7"]];
+    [recentUsersLineChart setXLabels:dataset.xValues];
     
     //WILL BE REPLACED WITH REAL DATA FROM THE GOOGLE API
-    NSArray * data01Array = @[@0, @160.1, @126.4, @262.2, @0, @127.2, @176.2,@0, @160.1, @126.4, @262.2, @0, @127.2, @176.2];
+  //  NSArray * data01Array = @[@60.1, @160.1, @126.4, @262.2, @186.2, @127.2, @176.2];
     
     PNLineChartData *data01 = [PNLineChartData new];
     data01.color = PNFreshGreen;
     data01.itemCount = recentUsersLineChart.xLabels.count;
     data01.getData = ^(NSUInteger index) {
-        CGFloat yValue = [data01Array[index] floatValue];
+        CGFloat yValue = [dataset.yValues[index] floatValue];
         return [PNLineChartDataItem dataItemWithY:yValue];
     };
     

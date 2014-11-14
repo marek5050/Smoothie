@@ -90,6 +90,7 @@
             NSLog(@"IS DOING THE SEGUE TO THE PROPERTY DETAILS");
             PropertyDetailViewController *pdvc = segue.destinationViewController;
             
+            
             GoogleProperty *prop = [self.user.active.properties objectAtIndex:pathOfTheCell.section];
             GoogleProfile *prof = [prop.profiles objectAtIndex:pathOfTheCell.row];
             
@@ -137,8 +138,9 @@
         cell.url.text = [p websiteUrl];
         cell.name.text = [prof name];
         cell.name.textColor = [UIColor blackColor];
-        
         cell.property.text = [prof identifier];
+        [cell setUserInteractionEnabled:YES];
+
     }
     else{
         cell.name.text = @"ADD PROFILE";
@@ -146,6 +148,7 @@
         cell.activeUsers.text = @"";
         cell.url.text = @"";
         cell.property.text = @"";
+        [cell setUserInteractionEnabled:NO];
     }
         return cell;
     }

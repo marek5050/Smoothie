@@ -12,6 +12,7 @@
 #import "InfoTableViewCell.h"
 #import "GoogleAccount.h"
 #import "ColorSchemeViewController.h"
+#import "AddProfileViewController.h"
 #import "PNChart.h"
 
 
@@ -82,7 +83,8 @@
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if([sender isKindOfClass:[UITableViewCell class]])
+    NSLog(@"SEGUE: %@", segue.identifier);
+    if([segue.identifier isEqualToString:@"propertyDetails"])
     {
         UITableViewCell *cell = sender;
         NSIndexPath* pathOfTheCell = [self.tableView indexPathForCell:cell];
@@ -100,6 +102,16 @@
         
             NSLog(@"AFTER SETTING THE PROPERTY SUMMARY");
         }
+    }
+    
+    if([segue.identifier isEqualToString:@"AddProfileSegue"]){
+        UITableViewCell *cell = sender;
+        NSIndexPath* pathOfTheCell = [self.tableView indexPathForCell:cell];
+
+        AddProfileViewController *remote = segue.destinationViewController;
+        GoogleProperty *prop = [self.user.active.properties objectAtIndex:pathOfTheCell.section];
+        [remote setUser:_user];
+        [remote setProperty:prop];
     }
     
     if([segue.identifier isEqualToString:@"addPropertySegue"]){
@@ -138,7 +150,7 @@
         cell.name.text = [prof name];
         cell.name.textColor = [UIColor blackColor];
         cell.property.text = [prof identifier];
-        [cell setUserInteractionEnabled:YES];
+       // [cell setUserInteractionEnabled:YES];
         return cell;
         
     }else{
@@ -147,7 +159,7 @@
         
         cell.textLabel.text = @"ADD PROFILE";
         cell.textLabel.textColor = [UIColor colorWithRed:.51 green:.8 blue:0.0 alpha:1.0];
-        [cell setUserInteractionEnabled:NO];
+      //  [cell setUserInteractionEnabled:NO];
         }
     }
     else {
@@ -164,6 +176,12 @@
 
     return cell;
 
+}
+
+
+-(BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender{
+    
+    return YES;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath

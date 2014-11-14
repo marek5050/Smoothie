@@ -85,6 +85,32 @@
     }];
 }
 
+-(void) receiveResponse:(GTLQueryAnalytics *)query{
+    NSLog(@"User:ReceiveResponse:");
+    
+    [self.service executeQuery:query completionHandler:^(GTLServiceTicket *ticket, GTLAnalyticsProfile *data, NSError *error){
+        if (error == nil) {
+            
+//            GoogleDataArray *gArr = [[GoogleDataArray alloc] init];
+//            [gArr setDataValues:data.rows];
+            NSLog(@"Received: %@", [data identifier]);
+                        
+        } else {
+            NSLog(@"An error occurred: %@", error);
+        }
+    }];
+}
+
+-(void) addProfileFor:(GoogleProperty *)property{
+    NSLog(@"User:addProfileFor:PropertiesCount:%@",[property identifier]);
+    GTLAnalyticsProfile *profile = [GTLAnalyticsProfile new];
+    [profile setName:@"AccountPersonelProfile1"];
+    [profile setWebsiteUrl:@"http://www.1xcloud.com/"];
+    GTLQueryAnalytics *query = [GTLQueryAnalytics queryForManagementProfilesInsertWithObject:profile accountId:[_active identifier] webPropertyId:[property identifier]];
+    [self receiveResponse:query];
+    
+    
+}
 
 -(void) loadUsersByCountry:(NSNumber *)days forProfile:(GoogleProfile *)profile callback:(SEL)selector{
     NSLog(@"User:loadUsersByCountry:PropertiesCount:%@",[profile identifier]);

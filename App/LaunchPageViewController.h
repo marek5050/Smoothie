@@ -22,7 +22,6 @@
 
 @property (nonatomic, strong) User *user;
 
-- (IBAction)NextAccount:(UIButton *)sender;
 
 /* Required for GoogleUserDelegate */
 -(void) interfaceUpdate;

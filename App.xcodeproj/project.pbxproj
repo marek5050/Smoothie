@@ -15,6 +15,7 @@
 		2FE53A6B1A12F52D005A0F38 /* GoogleDataArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FE53A6A1A12F52D005A0F38 /* GoogleDataArray.m */; };
 		2FE53A6E1A12FC41005A0F38 /* GoogleDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FE53A6D1A12FC41005A0F38 /* GoogleDataController.m */; };
 		A206E7E11A042EE8003DE3D0 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = A206E7E01A042EE8003DE3D0 /* README.md */; };
+		A226D8FE1A16B43900C166CE /* AddProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A226D8FD1A16B43900C166CE /* AddProfileViewController.m */; };
 		A23629EF1A03ECBA00659A3F /* GTMOAuth2Window.xib in Resources */ = {isa = PBXBuildFile; fileRef = A23629651A03ECBA00659A3F /* GTMOAuth2Window.xib */; };
 		A23629F31A03ECBA00659A3F /* GTMOAuth2ViewTouch.xib in Resources */ = {isa = PBXBuildFile; fileRef = A236296C1A03ECBA00659A3F /* GTMOAuth2ViewTouch.xib */; };
 		A2362A111A03ECFC00659A3F /* GTLDefines.h in Sources */ = {isa = PBXBuildFile; fileRef = A23628BF1A03ECBA00659A3F /* GTLDefines.h */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -125,6 +126,8 @@
 		8767794D19F03B780031D63A /* SettingsControllerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsControllerViewController.h; sourceTree = "<group>"; };
 		8767794E19F03B780031D63A /* SettingsControllerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsControllerViewController.m; sourceTree = "<group>"; };
 		A206E7E01A042EE8003DE3D0 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		A226D8FC1A16B43900C166CE /* AddProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AddProfileViewController.h; path = ../AddProfileViewController.h; sourceTree = "<group>"; };
+		A226D8FD1A16B43900C166CE /* AddProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AddProfileViewController.m; path = ../AddProfileViewController.m; sourceTree = "<group>"; };
 		A23628BF1A03ECBA00659A3F /* GTLDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTLDefines.h; sourceTree = "<group>"; };
 		A23628C01A03ECBA00659A3F /* GTLNetworking_Sources.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTLNetworking_Sources.m; sourceTree = "<group>"; };
 		A23628C11A03ECBA00659A3F /* GTLCommon_Sources.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTLCommon_Sources.m; sourceTree = "<group>"; };
@@ -750,6 +753,8 @@
 			isa = PBXGroup;
 			children = (
 				A2704BAE1A080DD9005450A8 /* ColorScheme.h */,
+				A226D8FC1A16B43900C166CE /* AddProfileViewController.h */,
+				A226D8FD1A16B43900C166CE /* AddProfileViewController.m */,
 				A2704BAF1A080DD9005450A8 /* ColorScheme.m */,
 				08AD3F611A06D82200D50F07 /* ColorSchemeViewController.h */,
 				08AD3F5F1A06D81300D50F07 /* ColorSchemeViewController.m */,
@@ -962,6 +967,7 @@
 				A2362A1B1A03ED1E00659A3F /* LaunchPageViewController.m in Sources */,
 				A2362A1C1A03ED1E00659A3F /* addPropertyController.h in Sources */,
 				A2362A1D1A03ED1E00659A3F /* addPropertyController.m in Sources */,
+				A226D8FE1A16B43900C166CE /* AddProfileViewController.m in Sources */,
 				2FE53A6B1A12F52D005A0F38 /* GoogleDataArray.m in Sources */,
 				A2362A1E1A03ED1E00659A3F /* SettingsControllerViewController.h in Sources */,
 				A2362A1F1A03ED1E00659A3F /* SettingsControllerViewController.m in Sources */,

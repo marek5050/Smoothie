@@ -133,23 +133,11 @@ int height = 100;
 
     
     //next_y = [self getHeight:55];
-    next_y += 50;
-    self.ID = [[UILabel alloc] initWithFrame:CGRectMake(50, next_y, SCREEN_WIDTH, label_size)];
-    self.ID.text = [NSString stringWithFormat: @"ID: %@", self.profile.identifier];
-    [self.sv addSubview:self.ID];
 
-    self.emailButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    self.emailButton.frame = CGRectMake(50, next_y, SCREEN_WIDTH, label_size);
-    [self.emailButton setTitle:@"Email JS" forState:UIControlStateNormal];
-    [self.emailButton addTarget:self
-               action:@selector(emailJS:)
-     forControlEvents:UIControlEventTouchUpInside];
-//    self.emailButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentRight;
-    [self.sv addSubview:self.emailButton];
 //    next_y += label_size + 25;
     //next_y = [self getHeight:label_size + 25];
   
-    viewFrame.size.height = 5000;  // 400 is arbitrary
+    viewFrame.size.height = 1500;  // 400 is arbitrary
     self.sv.contentSize = viewFrame.size;
 
     NSLog(@"Next_y: %d", next_y);
@@ -301,6 +289,19 @@ int height = 100;
         [self.sv addSubview:separator];
         
     }
+    next_y += 50;
+    self.ID = [[UILabel alloc] initWithFrame:CGRectMake(50, next_y, SCREEN_WIDTH, label_size)];
+    self.ID.text = [NSString stringWithFormat: @"ID: %@", self.profile.identifier];
+    [self.sv addSubview:self.ID];
+    
+    self.emailButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    self.emailButton.frame = CGRectMake(50, next_y, SCREEN_WIDTH, label_size);
+    [self.emailButton setTitle:@"Email JS" forState:UIControlStateNormal];
+    [self.emailButton addTarget:self
+                         action:@selector(emailJS:)
+               forControlEvents:UIControlEventTouchUpInside];
+    //    self.emailButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentRight;
+    [self.sv addSubview:self.emailButton];
 }
 - (void) emailJS: (UIButton*)button{
     NSLog(@"EMAILING JS");
@@ -324,7 +325,7 @@ int height = 100;
 
 }
 -(void)viewDidDisappear:(BOOL)animated{
-    height=100;
+    //height=100;
 }
 
 /*

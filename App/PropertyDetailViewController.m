@@ -80,6 +80,12 @@ int height = 100;
     //CGSize size =  CGSizeMake(self.sv.frame.size.width,next_y+50);
    // self.sv.contentSize=size;
 }
+-(void)createDataCharts:(GoogleDataArray *)dataset{
+    NSLog(@"DataSet: ");
+
+}
+
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -110,6 +116,8 @@ int height = 100;
     self.url.text = [NSString stringWithFormat:@"URL: %@", self.property.websiteUrl];
     self.url.font = [UIFont fontWithName:@"Helvetica" size:16];
     [self.sv addSubview:self.url];
+    
+    //[_user loadDataFor:@90 forProfile:_profile callback:@selector(createDataCharts:)];
     
     [_user loadDailyVisitorCount:@90 forProfile:_profile callback:@selector(create90DayChart:)];
     

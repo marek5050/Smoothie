@@ -43,8 +43,8 @@
 
 -(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
     if([keyPath isEqualToString:@"active"]){
-        _ddMenuShowButton.titleLabel.text = _user.active.name;
-        [_ddMenuShowButton setTitle:_user.active.name forState:UIControlStateNormal];
+        NSString *arrow = @"\u2B07\U0000FE0E";
+       [_ddMenuShowButton setTitle:[[NSString alloc] initWithFormat:@"%@ %@",_user.active.name, arrow] forState:UIControlStateNormal];
         
         [_tableView reloadData];
         [_otherAccounts reloadData];
@@ -118,21 +118,20 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
 //    NSLog(@"cellForRowAtIndexPath:Section: %d Row: %d",indexPath.section,indexPath.row );
+    UITableViewCell *cell;
+    NSString *CellIdentifier = @"cellid";
     
     if([tableView isEqual: _tableView]){
-    static NSString *CellIdentifier = @"cellid";
-    InfoTableViewCell *cell = (InfoTableViewCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
-    
-    [self tableView:tableView heightForRowAtIndexPath:indexPath];
-  
-//    NSLog(@"Count %d ",[self.user.active.properties count]);
-    
-    GoogleProperty *p = [self.user.active.properties objectAtIndex:indexPath.section];
 
-//    NSLog(@"ProfileCount %d ",[p.profiles count]);
+        [self tableView:tableView heightForRowAtIndexPath:indexPath];
+  
+    GoogleProperty *p = [self.user.active.properties objectAtIndex:indexPath.section];
     
     int section_count = [[[self.user.active.properties objectAtIndex:indexPath.section] profiles] count];
+        
     if(indexPath.row < section_count){
+        InfoTableViewCell *cell = (InfoTableViewCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+
         GoogleProfile  *prof = [p.profiles objectAtIndex:indexPath.row];
         cell.activeUsers.text = [NSString stringWithFormat:@"Users: %@", [prof activeVisitors]];
         cell.url.text = [p websiteUrl];
@@ -140,22 +139,20 @@
         cell.name.textColor = [UIColor blackColor];
         cell.property.text = [prof identifier];
         [cell setUserInteractionEnabled:YES];
-
-    }
-    else{
-        cell.name.text = @"ADD PROFILE";
-        cell.name.textColor = [UIColor colorWithRed:.51 green:.8 blue:0.0 alpha:1.0];
-        cell.activeUsers.text = @"";
-        cell.url.text = @"";
-        cell.property.text = @"";
-        [cell setUserInteractionEnabled:NO];
-    }
         return cell;
+        
+    }else{
+        CellIdentifier = @"addProfileCell";
+        cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+        
+        cell.textLabel.text = @"ADD PROFILE";
+        cell.textLabel.textColor = [UIColor colorWithRed:.51 green:.8 blue:0.0 alpha:1.0];
+        [cell setUserInteractionEnabled:NO];
+        }
     }
-    
     else {
-        static NSString *CellIdentifier = @"accountCell";
-        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+        CellIdentifier = @"accountCell";
+        cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
         
         NSString *name = [[self.user.accounts objectAtIndex:indexPath.row] name];
         
@@ -163,9 +160,9 @@
             cell.textLabel.text = [NSString stringWithFormat:@"** %@ **", name];
         else
             cell.textLabel.text = name;
-        return cell;
     }
 
+    return cell;
 
 }
 
@@ -176,7 +173,7 @@
     if(indexPath.row < section_count)
         return 80;
     else
-        return 30;
+        return 35;
     }
     else
         return 25;

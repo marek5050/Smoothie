@@ -38,5 +38,6 @@
   -(void) loadDailyVisitorCount:(NSNumber *)days forProfile:(GoogleProfile *)profile callback:(SEL)selector;
   -(void) loadUsersByCountry:(NSNumber *)days forProfile:(GoogleProfile *)profile callback:(SEL)selector;
   -(void) loadUsersByBrowser:(NSNumber *)days forProfile:(GoogleProfile *)profile callback:(SEL)selector;
+  -(void) loadDataFor:(NSNumber *)days forProfile:(GoogleProfile *)profile callback:(SEL)selector;
 
 @end

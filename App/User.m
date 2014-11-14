@@ -95,7 +95,7 @@
     GTLQueryAnalytics *query = [GTLQueryAnalytics queryForDataGaGetWithIds:profid startDate:start endDate:@"today" metrics:@"ga:users"];
     [query setDimensions:@"ga:country"];
     [self loadDataQuery:query callback:selector];
-};
+}
 
 
 -(void) loadUsersByKeyword:(NSNumber *)days forProfile:(GoogleProfile *)profile callback:(SEL)selector{
@@ -107,8 +107,7 @@
     GTLQueryAnalytics *query = [GTLQueryAnalytics queryForDataGaGetWithIds:profid startDate:start endDate:@"today" metrics:@"ga:users"];
     [query setDimensions:@"ga:keyword"];
     [self loadDataQuery:query callback:selector];
-    
-};
+}
 
 
 -(void) loadUsersByOS:(NSNumber *)days forProfile:(GoogleProfile *)profile callback:(SEL)selector{
@@ -121,7 +120,7 @@
     [query setDimensions:@"ga:operatingSystem"];
     [self loadDataQuery:query callback:selector];
     
-};
+}
 
 
 -(void) loadUsersByBrowser:(NSNumber *)days forProfile:(GoogleProfile *)profile callback:(SEL)selector{
@@ -133,8 +132,20 @@
     GTLQueryAnalytics *query = [GTLQueryAnalytics queryForDataGaGetWithIds:profid startDate:start endDate:@"today" metrics:@"ga:users"];
     [query setDimensions:@"ga:browser"];
     [self loadDataQuery:query callback:selector];
+}
 
-};
+
+-(void) loadDataFor:(NSNumber *)days forProfile:(GoogleProfile *)profile callback:(SEL)selector{
+    NSLog(@"User:loadUsersByBrowser:PropertiesCount:%@",[profile identifier]);
+    
+   NSString *start = [NSString stringWithFormat:@"%@daysAgo",days];
+   NSString *profid = [NSString stringWithFormat:@"ga:%@",[profile identifier]];
+    
+   GTLQueryAnalytics *query = [GTLQueryAnalytics queryForDataGaGetWithIds:profid startDate:start endDate:@"today" metrics:@"ga:users"];
+   [query setDimensions:@"ga:browser,ga:country, ga:operatingSystem, ga:date"];
+   [self loadDataQuery:query callback:selector];
+}
+
 
 
 -(void) loadDailyVisitorCount:(NSNumber *)days forProfile:(GoogleProfile *)profile callback:(SEL)selector{
@@ -146,7 +157,6 @@
     GTLQueryAnalytics *query = [GTLQueryAnalytics queryForDataGaGetWithIds:profid startDate:start endDate:@"today" metrics:@"ga:users"];
     [query setDimensions:@"ga:date"];
     [self loadDataQuery:query callback:selector];
-
 }
 
 

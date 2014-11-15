@@ -51,7 +51,12 @@
 
 - (IBAction)CreateProfile:(id)sender {
     NSLog(@"CreateProfile: %@", _user);
-    [_user addProfileFor:_property]; //will be adding name, type, currency and timezone as parameters
+  //  [_user addProfileFor:_property name:_name.text _typ]; //will be adding name, type, currency and timezone as parameters
+    [_user addProfileFor:_property withName:_name.text type:[_type titleForSegmentAtIndex:_type.selectedSegmentIndex] timeZone:@"UTC" currency:@"USD"];
+}
+
+-(void) displayCreateMessage:(NSString*)message{
+    _createMessage.text = message;
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField{

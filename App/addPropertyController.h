@@ -16,7 +16,7 @@
 @property (strong, nonatomic) IBOutlet UITextField *url;
 @property (strong, nonatomic) IBOutlet UILabel *propertyid1;
 @property (strong, nonatomic) IBOutlet UITextView *script;
-@property (strong, nonatomic) GTLAnalyticsAccountSummary *summary;
+@property (strong, nonatomic) GoogleAccount *account;
 
 @property (strong,nonatomic) User *user;
 

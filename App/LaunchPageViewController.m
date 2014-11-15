@@ -116,12 +116,7 @@
     
     if([segue.identifier isEqualToString:@"addPropertySegue"]){
        addPropertyController *remote = segue.destinationViewController;
-        //NEED TO FIX THIS, ADDING A PROPERTY NO LONGER WORKS
-       //NSLog(@"Property Id: %@", [[self.accountList objectAtIndex:0] identifier]);
-       //remote.summary = [self.accountList objectAtIndex:0];
-       // remote.propertyID= [[self.accountList objectAtIndex:0] identifier];
-        
-      //  remote.propertyid1.text = [[self.accountList objectAtIndex:0] identifier];
+        remote.account = _user.active;
         
         [remote setUser:self.user];
     }

@@ -489,12 +489,19 @@
                                     <segment title="App"/>
                                 </segments>
                             </segmentedControl>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Mb-kC-L0f">
+                                <rect key="frame" x="27" y="359" width="273" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Add New Profile" id="NNe-9R-GEy"/>
                     <size key="freeformSize" width="320" height="568"/>
                     <connections>
+                        <outlet property="createMessage" destination="6Mb-kC-L0f" id="wrJ-Vb-Dxs"/>
                         <outlet property="name" destination="YvP-8Z-2wA" id="6Uc-eb-QCF"/>
                         <outlet property="type" destination="eZ7-gn-xno" id="aTX-06-5ud"/>
                     </connections>

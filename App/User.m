@@ -100,15 +100,17 @@
         }
     }];
 }
+-(void) addProfileFor:(GoogleProperty *)property withName:(NSString *)name type:(NSString *)type timeZone:(NSString *)time currency:(NSString *)currency{
 
--(void) addProfileFor:(GoogleProperty *)property{
     NSLog(@"User:addProfileFor:PropertiesCount:%@",[property identifier]);
     GTLAnalyticsProfile *profile = [GTLAnalyticsProfile new];
-    [profile setName:@"AccountPersonelProfile1"];
-    [profile setWebsiteUrl:@"http://www.1xcloud.com/"];
+    [profile setName:name];
+    [profile setType:type];
+    [profile setTimezone:time];
+    [profile setCurrency:currency];
+//    [profile setWebsiteUrl:@"http://www.1xcloud.com/"];
     GTLQueryAnalytics *query = [GTLQueryAnalytics queryForManagementProfilesInsertWithObject:profile accountId:[_active identifier] webPropertyId:[property identifier]];
     [self receiveResponse:query];
-    
     
 }
 

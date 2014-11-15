@@ -28,6 +28,7 @@
 {
     [super viewDidLoad];
     self.name.delegate = self;
+    _user.delegate = self;
 
     // Do any additional setup after loading the view.
 }
@@ -52,7 +53,7 @@
 - (IBAction)CreateProfile:(id)sender {
     NSLog(@"CreateProfile: %@", _user);
   //  [_user addProfileFor:_property name:_name.text _typ]; //will be adding name, type, currency and timezone as parameters
-    [_user addProfileFor:_property withName:_name.text type:[_type titleForSegmentAtIndex:_type.selectedSegmentIndex] timeZone:@"UTC" currency:@"USD"];
+    [_user addProfileFor:_property withName:_name.text type:[_type titleForSegmentAtIndex:_type.selectedSegmentIndex] timeZone:@"UTC" currency:@"USD" callback:@selector(displayCreateMessage:)];
 }
 
 -(void) displayCreateMessage:(NSString*)message{

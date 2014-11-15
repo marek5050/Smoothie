@@ -9,9 +9,11 @@
 #import <UIKit/UIKit.h>
 #import "User.h"
 
-@interface AddProfileViewController : UIViewController
+@interface AddProfileViewController : UIViewController <UITextFieldDelegate>
 @property (strong,nonatomic) User *user;
 @property (strong,nonatomic) GoogleProperty *property;
+@property (weak, nonatomic) IBOutlet UITextField *name;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *type;
 
 - (IBAction)CreateProfile:(id)sender;
 @end

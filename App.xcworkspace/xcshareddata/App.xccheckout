@@ -5,19 +5,19 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>0640E3EE-087E-4ECA-A378-99CF3DEB6E4C</string>
+	<string>C9C80B2C-F3B3-444D-A87D-365194CA0528</string>
 	<key>IDESourceControlProjectName</key>
 	<string>App</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>D7A92CAE-306C-43BE-A899-95BC5335E83E</key>
+		<key>3CDFC488-BC02-4EA9-8F97-5885B13AC67C</key>
 		<string>https://github.com/marek5050/Smoothie.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>App.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>D7A92CAE-306C-43BE-A899-95BC5335E83E</key>
+		<key>3CDFC488-BC02-4EA9-8F97-5885B13AC67C</key>
 		<string>..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
@@ -25,14 +25,14 @@
 	<key>IDESourceControlProjectVersion</key>
 	<integer>110</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>D7A92CAE-306C-43BE-A899-95BC5335E83E</string>
+	<string>3CDFC488-BC02-4EA9-8F97-5885B13AC67C</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>D7A92CAE-306C-43BE-A899-95BC5335E83E</string>
+			<string>3CDFC488-BC02-4EA9-8F97-5885B13AC67C</string>
 			<key>IDESourceControlWCCName</key>
 			<string>Smoothie</string>
 		</dict>

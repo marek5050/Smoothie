@@ -19,6 +19,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
+        self.name.delegate = self;
     }
     return self;
 }
@@ -26,6 +27,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.name.delegate = self;
+
     // Do any additional setup after loading the view.
 }
 
@@ -48,6 +51,12 @@
 
 - (IBAction)CreateProfile:(id)sender {
     NSLog(@"CreateProfile: %@", _user);
-    [_user addProfileFor:_property];
+    [_user addProfileFor:_property]; //will be adding name, type, currency and timezone as parameters
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField{
+    NSLog(@"inside textFieldShouldReturn");
+    [textField resignFirstResponder];
+    return YES;
 }
 @end

@@ -18,8 +18,8 @@
     _name.delegate = self;
     _url.delegate = self;
     
-    self.propertyID = _summary.identifier;
-    self.propertyid1.text = _summary.name;
+    self.propertyID = _account.identifier;
+    self.propertyid1.text = _account.name;
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField{

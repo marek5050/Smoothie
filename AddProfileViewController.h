@@ -14,6 +14,7 @@
 @property (strong,nonatomic) GoogleProperty *property;
 @property (weak, nonatomic) IBOutlet UITextField *name;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *type;
+@property (weak, nonatomic) IBOutlet UILabel *createMessage;
 
 - (IBAction)CreateProfile:(id)sender;
 @end

@@ -39,6 +39,7 @@
   -(void) loadUsersByCountry:(NSNumber *)days forProfile:(GoogleProfile *)profile callback:(SEL)selector;
   -(void) loadUsersByBrowser:(NSNumber *)days forProfile:(GoogleProfile *)profile callback:(SEL)selector;
   -(void) loadDataFor:(NSNumber *)days forProfile:(GoogleProfile *)profile callback:(SEL)selector;
--(void) addProfileFor:(GoogleProperty *)property withName:(NSString *)name type:(NSString *)type timeZone:(NSString *)time currency:(NSString *)currency;
+  -(void) addProfileFor:(GoogleProperty *)property withName:(NSString *)name type:(NSString *)type timeZone:(NSString *)time currency:(NSString *)currency callback: (SEL) selector;
+
 
 @end

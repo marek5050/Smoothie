@@ -85,22 +85,21 @@
     }];
 }
 
--(void) receiveResponse:(GTLQueryAnalytics *)query{
+-(void) receiveResponse:(GTLQueryAnalytics *)query callback:(SEL) selector{
     NSLog(@"User:ReceiveResponse:");
     
     [self.service executeQuery:query completionHandler:^(GTLServiceTicket *ticket, GTLAnalyticsProfile *data, NSError *error){
         if (error == nil) {
             
-//            GoogleDataArray *gArr = [[GoogleDataArray alloc] init];
-//            [gArr setDataValues:data.rows];
             NSLog(@"Received: %@", [data identifier]);
-                        
+            [_delegate performSelector: selector withObject:[data identifier]];
         } else {
             NSLog(@"An error occurred: %@", error);
+            [_delegate performSelector: selector withObject:@"Error"];
         }
     }];
 }
--(void) addProfileFor:(GoogleProperty *)property withName:(NSString *)name type:(NSString *)type timeZone:(NSString *)time currency:(NSString *)currency{
+-(void) addProfileFor:(GoogleProperty *)property withName:(NSString *)name type:(NSString *)type timeZone:(NSString *)time currency:(NSString *)currency callback:(SEL)selector{
 
     NSLog(@"User:addProfileFor:PropertiesCount:%@",[property identifier]);
     GTLAnalyticsProfile *profile = [GTLAnalyticsProfile new];
@@ -110,7 +109,7 @@
     [profile setCurrency:currency];
 //    [profile setWebsiteUrl:@"http://www.1xcloud.com/"];
     GTLQueryAnalytics *query = [GTLQueryAnalytics queryForManagementProfilesInsertWithObject:profile accountId:[_active identifier] webPropertyId:[property identifier]];
-    [self receiveResponse:query];
+    [self receiveResponse:query callback:selector];
     
 }
 
@@ -196,7 +195,6 @@
       _active = act;
     }
 }
-
 
 -(void)loadUserSummary{
     GTLQueryAnalytics *query = [GTLQueryAnalytics queryForManagementAccountSummariesList];

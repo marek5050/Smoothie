@@ -92,7 +92,7 @@
         if (error == nil) {
             
             NSLog(@"Received: %@", [data identifier]);
-            [_delegate performSelector: selector withObject:[data identifier]];
+            [_delegate performSelector: selector withObject:@"Succesfully created profile. You might have to restart the application to view the new profile in the list."];
         } else {
             NSLog(@"An error occurred: %@", error);
             [_delegate performSelector: selector withObject:@"Error"];

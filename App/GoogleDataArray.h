@@ -17,4 +17,5 @@
     @property (atomic, strong) NSNumber *status;
 
 -(instancetype) init;
+-(void) setDataValues:(NSArray *)dataValues withSkip:(BOOL)skip;
 @end

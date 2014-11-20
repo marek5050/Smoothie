@@ -42,6 +42,13 @@ int height = 100;
     /**
      Write Users for last 90 days - line chart
      **/
+    if([dataset.xValues count] == 0) {
+        UILabel * errorLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 120, SCREEN_WIDTH, label_size)];
+        errorLabel.text = @"No data yet :(";
+        errorLabel.font = [UIFont fontWithName:@"Helvetica" size:16];
+        errorLabel.textColor = [UIColor blueColor];
+        [self.sv addSubview:errorLabel];
+    }
     int recentHeight = 120;
     UILabel * lineChartLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 100, SCREEN_WIDTH-10, label_size)];
     lineChartLabel.text = @"Users: Last 90 Days";
@@ -152,11 +159,19 @@ int height = 100;
 }
 
 -(void) createUserByCountryChart:(GoogleDataArray *)dataset{
+    NSLog(@"dataset count %d\n", [dataset.xValues count]);
     UILabel * countryPieChartLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 260, SCREEN_WIDTH, label_size)];
     countryPieChartLabel.text = @"Users: By Country";
     countryPieChartLabel.font = [UIFont fontWithName:@"Helvetica" size:18];
     //    next_y += label_size + label_graph_margin;
-    next_y = [self getHeight:label_size + label_graph_margin];
+    //next_y = [self getHeight:label_size + label_graph_margin];
+    if([dataset.xValues count] == 0) {
+        UILabel * errorLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 300, SCREEN_WIDTH, label_size)];
+        errorLabel.text = @"No data yet :(";
+        errorLabel.font = [UIFont fontWithName:@"Helvetica" size:16];
+        errorLabel.textColor = [UIColor blueColor];
+        [self.sv addSubview:errorLabel];
+    }
     
     NSMutableArray *items = [[NSMutableArray alloc] init];
     
@@ -176,7 +191,7 @@ int height = 100;
     countryPieChart.descriptionTextFont  = [UIFont fontWithName:@"Helvetica" size:14.0];
     countryPieChart.descriptionTextShadowColor = [UIColor clearColor];
     [countryPieChart strokeChart];
-    next_y = [self getHeight:countryHeight + graph_graph_margin];
+    //next_y = [self getHeight:countryHeight + graph_graph_margin];
     //  next_y += countryHeight + graph_graph_margin;
     
     
@@ -185,18 +200,19 @@ int height = 100;
 }
 
 -(void) createUsersByOSChart:(GoogleDataArray *)dataset {
+    if([dataset.xValues count] == 0) {
+        UILabel * errorLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 560, SCREEN_WIDTH, label_size)];
+        errorLabel.text = @"No data yet :(";
+        errorLabel.font = [UIFont fontWithName:@"Helvetica" size:16];
+        errorLabel.textColor = [UIColor blueColor];
+        [self.sv addSubview:errorLabel];
+    }
     UILabel * OSPieChartLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 540, SCREEN_WIDTH, label_size)];
     OSPieChartLabel.text = @"Users: By OS";
     OSPieChartLabel.font = [UIFont fontWithName:@"Helvetica" size:18];
     //    next_y += label_size + label_graph_margin;
-    next_y = [self getHeight:label_size + label_graph_margin];
+    //next_y = [self getHeight:label_size + label_graph_margin];
     
-    //WILL BE REPLACED BY DATA FORM API
-//    NSArray *itemsOS = @[[PNPieChartDataItem dataItemWithValue:25 color:[UIColor greenColor]],
-//                         [PNPieChartDataItem dataItemWithValue:50 color:[UIColor redColor] description:@"WWDC"],
-//                         [PNPieChartDataItem dataItemWithValue:25 color:[UIColor blueColor] description:@"GOOL I/O"],
-//                         ];
-//
     
     NSMutableArray *itemsOS = [[NSMutableArray alloc] init];
     
@@ -224,6 +240,13 @@ int height = 100;
 }
 
 -(void) createUsersByBrowserChart:(GoogleDataArray *)dataset {
+    if([dataset.xValues count] == 0) {
+        UILabel * errorLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 860, SCREEN_WIDTH, label_size)];
+        errorLabel.text = @"No data yet :(";
+        errorLabel.font = [UIFont fontWithName:@"Helvetica" size:16];
+        errorLabel.textColor = [UIColor blueColor];
+        [self.sv addSubview:errorLabel];
+    }
     UILabel * browserPieChartLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 820, SCREEN_WIDTH, label_size)];
     browserPieChartLabel.text = @"Users: By Browser";
     browserPieChartLabel.font = [UIFont fontWithName:@"Helvetica" size:18];
@@ -258,6 +281,13 @@ int height = 100;
 }
 
 - (void) createCommonKeywordsChart:(GoogleDataArray *)dataset {
+    if([dataset.xValues count] == 0) {
+        UILabel * errorLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 1160, SCREEN_WIDTH, label_size)];
+        errorLabel.text = @"No data yet :(";
+        errorLabel.font = [UIFont fontWithName:@"Helvetica" size:16];
+        errorLabel.textColor = [UIColor blueColor];
+        [self.sv addSubview:errorLabel];
+    }
     UILabel * commonKeywordsLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 1140, SCREEN_WIDTH, label_size)];
     commonKeywordsLabel.text = @"Search Keywords";
     commonKeywordsLabel.font = [UIFont fontWithName:@"Helvetica" size:18];

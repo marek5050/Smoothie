@@ -753,9 +753,9 @@
 			isa = PBXGroup;
 			children = (
 				A2704BAE1A080DD9005450A8 /* ColorScheme.h */,
+				A2704BAF1A080DD9005450A8 /* ColorScheme.m */,
 				A226D8FC1A16B43900C166CE /* AddProfileViewController.h */,
 				A226D8FD1A16B43900C166CE /* AddProfileViewController.m */,
-				A2704BAF1A080DD9005450A8 /* ColorScheme.m */,
 				08AD3F611A06D82200D50F07 /* ColorSchemeViewController.h */,
 				08AD3F5F1A06D81300D50F07 /* ColorSchemeViewController.m */,
 				A28FCA0D19D3353000F9FB01 /* ViewController.h */,

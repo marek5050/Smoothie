@@ -21,4 +21,6 @@
 @property (strong,nonatomic)  User *user;
 @property (strong,nonatomic)  GoogleDataController *dataController;
 
+@property (nonatomic, strong) NSDictionary *selectedScheme;
+
 @end

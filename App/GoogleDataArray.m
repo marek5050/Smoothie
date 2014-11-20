@@ -23,7 +23,7 @@
   return self;
 }
 
--(void) setDataValues:(NSArray *)dataValues{
+-(void) setDataValues:(NSArray *)dataValues withSkip:(BOOL)skip {
     if(dataValues.count==0) {
         _status = @0;
         return;
@@ -33,16 +33,17 @@
     _xValues = [[NSMutableArray alloc] initWithCapacity:dataValues.count];
     _yValues = [[NSMutableArray alloc] initWithCapacity:dataValues.count];
     for(int i=0;i < dataValues.count; i++){
-       // if(i%20==0){
+       if(i%20 == 0 || !skip){
             [_xValues addObject: [[dataValues objectAtIndex:i] objectAtIndex:0]];
-       // }else{
-        //    [_xValues addObject:@""];
-      //  }
+       } else{
+            [_xValues addObject:@""];
+       }
         [_yValues addObject: [[dataValues objectAtIndex:i] objectAtIndex:1]];
     
     }
     _status = @1;
 }
-
-
+-(void) setDataValues:(NSArray *)dataValues {
+    [self setDataValues:dataValues withSkip:false];
+}
 @end

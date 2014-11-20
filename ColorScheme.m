@@ -26,16 +26,20 @@
 
 -(void) setForest {
     [self.forest setObject:[UIColor greenColor]  forKey:@"backgroundColor"];
+    [self.forest setObject:@"forest"  forKey:@"name"];
+    [self.forest setObject:[UIColor blackColor]  forKey:@"textColor"];
 }
 
 -(void) setSunrise {
     [self.sunrise setObject:[UIColor orangeColor]  forKey:@"backgroundColor"];
-    
+    [self.sunrise setObject:@"sunrise" forKey:@"name"];
+    [self.sunrise setObject:[UIColor blackColor]  forKey:@"textColor"];
 }
 
 -(void) setMidnight {
     [self.midnight setObject:[UIColor blackColor]  forKey:@"backgroundColor"];
-    
+    [self.midnight setObject:@"midnight"  forKey:@"name"];
+    [self.midnight setObject:[UIColor whiteColor]  forKey:@"textColor"];
 }
 
 @end

@@ -14,6 +14,8 @@
 
 @property (strong, nonatomic) IBOutlet UINavigationItem *accountName;
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
+@property (nonatomic, strong) NSDictionary *selectedScheme;
+
 
 @property (strong, nonatomic) IBOutlet UIButton *ddMenuShowButton;
 - (IBAction)ddMenuShow:(id)sender;

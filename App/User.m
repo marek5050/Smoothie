@@ -68,14 +68,14 @@
     }
 }
 
--(void) loadDataQuery:(GTLQueryAnalytics *)query callback:(SEL)selector{
+-(void) loadDataQuery:(GTLQueryAnalytics *)query withSkip:(BOOL)skip callback:(SEL)selector{
     NSLog(@"User:loadDataQuery:PropertiesCount");
     
     [self.service executeQuery:query completionHandler:^(GTLServiceTicket *ticket, GTLAnalyticsGaData *data, NSError *error){
         if (error == nil) {
             
             GoogleDataArray *gArr = [[GoogleDataArray alloc] init];
-            [gArr setDataValues:data.rows];
+            [gArr setDataValues:data.rows withSkip:skip];
             
             [_delegate performSelector: selector withObject:gArr];
             
@@ -121,7 +121,7 @@
     
     GTLQueryAnalytics *query = [GTLQueryAnalytics queryForDataGaGetWithIds:profid startDate:start endDate:@"today" metrics:@"ga:users"];
     [query setDimensions:@"ga:country"];
-    [self loadDataQuery:query callback:selector];
+    [self loadDataQuery:query withSkip:false callback:selector];
 }
 
 
@@ -133,7 +133,7 @@
     
     GTLQueryAnalytics *query = [GTLQueryAnalytics queryForDataGaGetWithIds:profid startDate:start endDate:@"today" metrics:@"ga:users"];
     [query setDimensions:@"ga:keyword"];
-    [self loadDataQuery:query callback:selector];
+    [self loadDataQuery:query withSkip:false callback:selector];
 }
 
 
@@ -145,7 +145,7 @@
     
     GTLQueryAnalytics *query = [GTLQueryAnalytics queryForDataGaGetWithIds:profid startDate:start endDate:@"today" metrics:@"ga:users"];
     [query setDimensions:@"ga:operatingSystem"];
-    [self loadDataQuery:query callback:selector];
+    [self loadDataQuery:query withSkip:false callback:selector];
     
 }
 
@@ -158,7 +158,7 @@
     
     GTLQueryAnalytics *query = [GTLQueryAnalytics queryForDataGaGetWithIds:profid startDate:start endDate:@"today" metrics:@"ga:users"];
     [query setDimensions:@"ga:browser"];
-    [self loadDataQuery:query callback:selector];
+    [self loadDataQuery:query withSkip:false callback:selector];
 }
 
 
@@ -170,7 +170,7 @@
     
    GTLQueryAnalytics *query = [GTLQueryAnalytics queryForDataGaGetWithIds:profid startDate:start endDate:@"today" metrics:@"ga:users"];
    [query setDimensions:@"ga:browser,ga:country, ga:operatingSystem, ga:date"];
-   [self loadDataQuery:query callback:selector];
+    [self loadDataQuery:query withSkip:false callback:selector];
 }
 
 
@@ -183,7 +183,7 @@
     
     GTLQueryAnalytics *query = [GTLQueryAnalytics queryForDataGaGetWithIds:profid startDate:start endDate:@"today" metrics:@"ga:users"];
     [query setDimensions:@"ga:date"];
-    [self loadDataQuery:query callback:selector];
+    [self loadDataQuery:query withSkip:true callback:selector];
 }
 
 

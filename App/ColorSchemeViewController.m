@@ -10,6 +10,7 @@
 
 #import "ColorSchemeViewController.h"
 #import "ColorScheme.h"
+#import "AppDelegate.h"
 
 @interface ColorSchemeViewController ()
 
@@ -32,11 +33,11 @@
     self.scheme = [[ColorScheme alloc] init];
     [self.schemes addObjectsFromArray: self.scheme.options];
     
-    self.selectedScheme = self.scheme.forest;
+    AppDelegate* appDelegate = (AppDelegate*)[[UIApplication sharedApplication]delegate];
+    self.selectedScheme = appDelegate.selectedScheme;
     
     NSLog(@"%@", [self.selectedScheme valueForKey:@"backgroundColor"]);
-    self.tableView.backgroundColor = [self.scheme.forest valueForKey:@"backgroundColor"];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(changedColors) name:changeScheme object:nil];
+    self.tableView.backgroundColor = [self.selectedScheme valueForKey:@"backgroundColor"];
 }
 
 //these methods are required for the tableview protocol stuff
@@ -65,6 +66,7 @@
     cell.textLabel.text=[self.schemes objectAtIndex:indexPath.row];
     cell.textLabel.backgroundColor = [UIColor clearColor];
     cell.backgroundColor = [self.selectedScheme valueForKey:@"backgroundColor"];
+    cell.textLabel.textColor = [self. selectedScheme valueForKey:@"textColor"];
     
     return cell;
 }
@@ -83,7 +85,6 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
     [self updateColors];
-
 }
 
 -(void) updateColors {
@@ -94,14 +95,12 @@
     for(int i = 0; i < cells.count; ++i){
         UITableViewCell *cell = [cells objectAtIndex: i];
         cell.backgroundColor = [self.selectedScheme valueForKey:@"backgroundColor"];
+        cell.textLabel.textColor = [self.selectedScheme valueForKey:@"textColor"];
     }
     
     self.tableView.backgroundColor = [self.selectedScheme valueForKey:@"backgroundColor"];
-
-}
-
-- (void) changedColors {
-    NSLog(@"changed the color schemes");
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:changeScheme object:nil userInfo:self.selectedScheme];
 }
 
 @end

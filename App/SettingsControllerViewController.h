@@ -15,4 +15,6 @@
 
 - (IBAction)feedbackButton;
 - (IBAction)logoutButton;
+@property (nonatomic, strong) NSDictionary *selectedScheme;
+
 @end

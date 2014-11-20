@@ -153,13 +153,23 @@
         if(indexPath.row < section_count){
             InfoTableViewCell *cell = (InfoTableViewCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
 
+            //setting the information
             GoogleProfile  *prof = [p.profiles objectAtIndex:indexPath.row];
             cell.activeUsers.text = [NSString stringWithFormat:@"Current Users: %@", [prof activeVisitors]];
             cell.url.text = [p websiteUrl];
             cell.name.text = [prof name];
-            cell.name.textColor = [UIColor blackColor];
             cell.property.text = [prof identifier];
             // [cell setUserInteractionEnabled:YES];
+            
+            //setting the colors
+            UIColor *textColor = [self.selectedScheme valueForKey:@"textColor"];
+            cell.name.textColor = textColor;
+            cell.url.textColor = textColor;
+            cell.property.textColor = textColor;
+            cell.textLabel.backgroundColor = [UIColor clearColor];
+            cell.backgroundColor = [self.selectedScheme valueForKey:@"backgroundColor"];
+            cell.textLabel.textColor = textColor;
+            
             return cell;
         
         }else{
@@ -167,7 +177,8 @@
             cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
         
             cell.textLabel.text = @"ADD PROFILE";
-            cell.textLabel.textColor = [UIColor colorWithRed:.51 green:.8 blue:0.0 alpha:1.0];
+            cell.backgroundColor = [self.selectedScheme valueForKey:@"backgroundColor"];
+            cell.textLabel.textColor = [UIColor redColor];
             //  [cell setUserInteractionEnabled:NO];
         }
     }
@@ -233,5 +244,12 @@
 
 - (IBAction)ddMenuShow:(id)sender {
     _otherAccounts.hidden = NO;
+}
+
+- (void) changedColors:(NSNotification *)notification {
+    NSLog(@"changed the color schemes IN APP DELEGATE");
+    
+    self.selectedScheme = [notification userInfo];
+    [self.tableView reloadData];
 }
 @end

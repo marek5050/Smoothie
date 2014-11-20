@@ -12,10 +12,12 @@
 #import "PNLineChartData.h"
 #import "PNLineChartDataItem.h"
 #import "PNColor.h"
+#import "AppDelegate.h"
 
 
 @interface PropertyDetailViewController ()
 
+//ARE CREATED PROGRAMATICCALY LATER
 @property (strong, nonatomic) IBOutlet UILabel *propertyName;
 @property (strong, nonatomic) IBOutlet UILabel *url;
 @property (strong, nonatomic) IBOutlet UILabel *ID;
@@ -24,6 +26,7 @@
 @end
 
 @implementation PropertyDetailViewController
+
 int next_y = 90;
 int label_graph_margin = 20;
 int label_size = 23;
@@ -42,6 +45,13 @@ int height = 100;
     /**
      Write Users for last 90 days - line chart
      **/
+    if([dataset.xValues count] == 0) {
+        UILabel * errorLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 120, SCREEN_WIDTH, label_size)];
+        errorLabel.text = @"No data yet :(";
+        errorLabel.font = [UIFont fontWithName:@"Helvetica" size:16];
+        errorLabel.textColor = [UIColor blueColor];
+        [self.sv addSubview:errorLabel];
+    }
     int recentHeight = 120;
     UILabel * lineChartLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 100, SCREEN_WIDTH-10, label_size)];
     lineChartLabel.text = @"Users: Last 90 Days";
@@ -82,7 +92,6 @@ int height = 100;
 }
 -(void)createDataCharts:(GoogleDataArray *)dataset{
     NSLog(@"DataSet: ");
-
 }
 
 
@@ -147,16 +156,40 @@ int height = 100;
   
     viewFrame.size.height = 1500;  // 400 is arbitrary
     self.sv.contentSize = viewFrame.size;
+    
+    AppDelegate* appDelegate = (AppDelegate*)[[UIApplication sharedApplication]delegate];
+    self.selectedScheme = appDelegate.selectedScheme;
+    [self setColors];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(changedColors:) name:changeScheme object:nil];
 
     NSLog(@"Next_y: %d", next_y);
 }
 
+-(void) setColors {
+    UIColor *textColor = [self.selectedScheme valueForKey:@"textColor"];
+    
+    self.propertyName.textColor = textColor;
+    self.url.textColor = textColor;
+    self.ID.textColor = textColor;
+    
+    self.view.backgroundColor = [self.selectedScheme valueForKey:@"backgroundColor"];
+}
+
 -(void) createUserByCountryChart:(GoogleDataArray *)dataset{
+    NSLog(@"dataset count %d\n", [dataset.xValues count]);
     UILabel * countryPieChartLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 260, SCREEN_WIDTH, label_size)];
     countryPieChartLabel.text = @"Users: By Country";
+    countryPieChartLabel.textColor = [self.selectedScheme valueForKey:@"textColor"];
     countryPieChartLabel.font = [UIFont fontWithName:@"Helvetica" size:18];
     //    next_y += label_size + label_graph_margin;
-    next_y = [self getHeight:label_size + label_graph_margin];
+    //next_y = [self getHeight:label_size + label_graph_margin];
+    if([dataset.xValues count] == 0) {
+        UILabel * errorLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 300, SCREEN_WIDTH, label_size)];
+        errorLabel.text = @"No data yet :(";
+        errorLabel.font = [UIFont fontWithName:@"Helvetica" size:16];
+        errorLabel.textColor = [UIColor blueColor];
+        [self.sv addSubview:errorLabel];
+    }
     
     NSMutableArray *items = [[NSMutableArray alloc] init];
     
@@ -176,7 +209,7 @@ int height = 100;
     countryPieChart.descriptionTextFont  = [UIFont fontWithName:@"Helvetica" size:14.0];
     countryPieChart.descriptionTextShadowColor = [UIColor clearColor];
     [countryPieChart strokeChart];
-    next_y = [self getHeight:countryHeight + graph_graph_margin];
+    //next_y = [self getHeight:countryHeight + graph_graph_margin];
     //  next_y += countryHeight + graph_graph_margin;
     
     
@@ -185,18 +218,20 @@ int height = 100;
 }
 
 -(void) createUsersByOSChart:(GoogleDataArray *)dataset {
+    if([dataset.xValues count] == 0) {
+        UILabel * errorLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 560, SCREEN_WIDTH, label_size)];
+        errorLabel.text = @"No data yet :(";
+        errorLabel.font = [UIFont fontWithName:@"Helvetica" size:16];
+        errorLabel.textColor = [UIColor blueColor];
+        [self.sv addSubview:errorLabel];
+    }
     UILabel * OSPieChartLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 540, SCREEN_WIDTH, label_size)];
     OSPieChartLabel.text = @"Users: By OS";
+    OSPieChartLabel.textColor = [self.selectedScheme valueForKey:@"textColor"];
     OSPieChartLabel.font = [UIFont fontWithName:@"Helvetica" size:18];
     //    next_y += label_size + label_graph_margin;
-    next_y = [self getHeight:label_size + label_graph_margin];
+    //next_y = [self getHeight:label_size + label_graph_margin];
     
-    //WILL BE REPLACED BY DATA FORM API
-//    NSArray *itemsOS = @[[PNPieChartDataItem dataItemWithValue:25 color:[UIColor greenColor]],
-//                         [PNPieChartDataItem dataItemWithValue:50 color:[UIColor redColor] description:@"WWDC"],
-//                         [PNPieChartDataItem dataItemWithValue:25 color:[UIColor blueColor] description:@"GOOL I/O"],
-//                         ];
-//
     
     NSMutableArray *itemsOS = [[NSMutableArray alloc] init];
     
@@ -224,8 +259,16 @@ int height = 100;
 }
 
 -(void) createUsersByBrowserChart:(GoogleDataArray *)dataset {
+    if([dataset.xValues count] == 0) {
+        UILabel * errorLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 860, SCREEN_WIDTH, label_size)];
+        errorLabel.text = @"No data yet :(";
+        errorLabel.font = [UIFont fontWithName:@"Helvetica" size:16];
+        errorLabel.textColor = [UIColor blueColor];
+        [self.sv addSubview:errorLabel];
+    }
     UILabel * browserPieChartLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 820, SCREEN_WIDTH, label_size)];
     browserPieChartLabel.text = @"Users: By Browser";
+    browserPieChartLabel.textColor = [self.selectedScheme valueForKey:@"textColor"];
     browserPieChartLabel.font = [UIFont fontWithName:@"Helvetica" size:18];
     //next_y += label_size + label_graph_margin;
     next_y = [self getHeight:label_size + label_graph_margin];
@@ -258,8 +301,16 @@ int height = 100;
 }
 
 - (void) createCommonKeywordsChart:(GoogleDataArray *)dataset {
+    if([dataset.xValues count] == 0) {
+        UILabel * errorLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 1160, SCREEN_WIDTH, label_size)];
+        errorLabel.text = @"No data yet :(";
+        errorLabel.font = [UIFont fontWithName:@"Helvetica" size:16];
+        errorLabel.textColor = [UIColor blueColor];
+        [self.sv addSubview:errorLabel];
+    }
     UILabel * commonKeywordsLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 1140, SCREEN_WIDTH, label_size)];
     commonKeywordsLabel.text = @"Search Keywords";
+    commonKeywordsLabel.textColor = [self.selectedScheme valueForKey:@"textColor"];
     commonKeywordsLabel.font = [UIFont fontWithName:@"Helvetica" size:18];
     //    next_y += label_size + label_graph_margin;
     next_y = 1160;
@@ -300,6 +351,7 @@ int height = 100;
     next_y += 50;
     self.ID = [[UILabel alloc] initWithFrame:CGRectMake(50, next_y, SCREEN_WIDTH, label_size)];
     self.ID.text = [NSString stringWithFormat: @"ID: %@", self.profile.identifier];
+    self.ID.textColor = [self.selectedScheme valueForKey:@"textColor"];
     [self.sv addSubview:self.ID];
     
     self.emailButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
@@ -334,6 +386,13 @@ int height = 100;
 }
 -(void)viewDidDisappear:(BOOL)animated{
     //height=100;
+}
+
+- (void) changedColors:(NSNotification *)notification {
+    NSLog(@"changed the color schemes IN APP DELEGATE");
+    
+    self.selectedScheme = [notification userInfo];
+    [self setColors];
 }
 
 /*

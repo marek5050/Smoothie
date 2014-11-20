@@ -187,7 +187,6 @@
 }
 
 
-
 - (void)setActive:(GoogleAccount *)act{
     if(act == nil){
        _active = [_accounts objectAtIndex:0];
@@ -222,9 +221,10 @@
             }
 
         //NSLog(@"Size of accounts..%d", [self.accounts count]);
-        [self setActive:[self.accounts objectAtIndex:0]];
+        if(_active==nil)
+            [self setActive:[self.accounts objectAtIndex:0]];
         [self loadUserRealTimeForActive];
-        [_delegate interfaceUpdate];
+            [_delegate interfaceUpdate];
         } else {
             NSLog(@"An error occurred: %@", error);
         }

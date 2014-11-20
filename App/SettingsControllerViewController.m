@@ -8,7 +8,13 @@
 
 #import "SettingsControllerViewController.h"
 #import "ColorSchemeViewController.h"
+#import "ViewController.h"
+#import "GTMOAuth2ViewControllerTouch.h"
+#import "LaunchPageViewController.h"
 #import "AppDelegate.h"
+
+static NSString *const kKeychainItemName = @"SmoothieGA:Auth";
+
 
 
 @interface SettingsControllerViewController ()
@@ -61,6 +67,21 @@
 }
 
 - (IBAction)logoutButton {
+
+//    [GTMOAuth2ViewControllerTouch removeAuthFromKeychainForName:kKeychainItemName];
+
+//    [self performSegueWithIdentifier: @"LoginController" sender: self];
+//    _user =  [[User alloc] init];
+//    _user.auth = nil;
+//    _user.authorized=NO;
+//    NSLog(@"Arrays: %@ %d ",_user, _user.accounts.count);
+
+    [self.navigationController popToRootViewControllerAnimated:YES];
+    ViewController *rootController =
+    (ViewController *)
+    [self.navigationController.viewControllers objectAtIndex: 0];
+    [rootController authButtonClicked:nil];
+    
     NSLog(@"logout button in settings pressed");
 }
 

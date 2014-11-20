@@ -278,6 +278,13 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Settings" id="HuK-Vj-l3V"/>
+                    <connections>
+                        <outlet property="colorSchemeButton" destination="xjZ-RW-5G0" id="HyQ-yq-IQJ"/>
+                        <outlet property="feedbackButtonLabel" destination="cMx-zX-1M7" id="TFZ-7E-nPP"/>
+                        <outlet property="helpButton" destination="hOs-bs-wAE" id="cSP-6k-ouf"/>
+                        <outlet property="underbar1" destination="vNo-4k-RhF" id="0M1-9x-z8c"/>
+                        <outlet property="underbar2" destination="IoM-cf-uGj" id="jtJ-Ac-DtP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Boe-n8-5gh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -407,8 +414,8 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xib-BC-wJw">
-                                <rect key="frame" x="240" y="98" width="201" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="middleTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xib-BC-wJw">
+                                <rect key="frame" x="153" y="98" width="147" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>

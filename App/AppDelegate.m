@@ -9,6 +9,8 @@
 #import "AppDelegate.h"
 #import <Parse/Parse.h>
 #import "ViewController.h"
+#import "ColorScheme.h"
+
 @interface AppDelegate ()
             
 
@@ -28,6 +30,11 @@
                   clientKey:@"H3pAAulLEdtElgRwvx2fBaPKAR0ZAjGh1SrGgeg7"];
 
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
+    
+     ColorScheme *scheme = [[ColorScheme alloc] init];
+     self.selectedScheme = scheme.forest;
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(changedColors:) name:changeScheme object:nil];
     
     return YES;
 }
@@ -144,6 +151,13 @@
 // Returns the URL to the application's Documents directory.
 - (NSURL *)applicationDocumentsDirectory {
     return [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
+}
+
+- (void) changedColors:(NSNotification *)notification {
+    NSLog(@"changed the color schemes IN APP DELEGATE");
+    
+    self.selectedScheme = [notification userInfo];
+    UIColor *background = [self.selectedScheme objectForKey:@"backgroundColor"];
 }
 
 @end

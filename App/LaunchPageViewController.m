@@ -14,7 +14,7 @@
 #import "ColorSchemeViewController.h"
 #import "AddProfileViewController.h"
 #import "PNChart.h"
-
+#import "SettingsControllerViewController.h"
 
 @interface LaunchPageViewController ()
 
@@ -34,23 +34,32 @@
     _otherAccounts.hidden = YES;
     
     
-    [self.user setDelegate:self];
-    [self.user loadUserSummary];
-    [_user addObserver:self forKeyPath:@"active" options:NSKeyValueObservingOptionOld|NSKeyValueObservingOptionNew context:nil];
-    
     // Do any additional setup after loading the view, typically from a nib.
     // need to call some method to populate the propertyList based on some database/backend
 }
 
+-(void)viewDidAppear:(BOOL)animated{
+    [_user addObserver:self forKeyPath:@"active" options:NSKeyValueObservingOptionNew context:nil];
+
+    [self.user setDelegate:self];
+
+    [_user loadUserSummary];
+}
+
+-(void) viewDidDisappear:(BOOL)animated{
+    
+    [_user removeObserver:self forKeyPath:@"active" context:nil];
+}
+
 -(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
-    if([keyPath isEqualToString:@"active"]){
+
+    if(object!=nil && [keyPath isEqualToString:@"active"]){
         NSString *arrow = @"\u2B07\U0000FE0E";
        [_ddMenuShowButton setTitle:[[NSString alloc] initWithFormat:@"%@ %@",_user.active.name, arrow] forState:UIControlStateNormal];
         
         [_tableView reloadData];
         [_otherAccounts reloadData];
-        
-        
+    
     }
 };
 
@@ -76,7 +85,7 @@
     if([tableView isEqual: _tableView])
         return [[[self.user.active.properties objectAtIndex:section] profiles] count] + 1;
     else{
-        NSLog(@"NUMBER OF ACCOUNTS: %d", [self.user.accounts count]);
+//        NSLog(@"NUMBER OF ACCOUNTS: %d", [self.user.accounts count]);
         return [self.user.accounts count];
     }
 }
@@ -119,6 +128,11 @@
         remote.account = _user.active;
         
         [remote setUser:self.user];
+    }
+    
+    if([segue.identifier isEqualToString:@"settings"]){
+    SettingsControllerViewController *remote = segue.destinationViewController;
+        [remote setUser:_user];
     }
 }
 

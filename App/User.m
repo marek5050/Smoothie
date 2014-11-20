@@ -187,7 +187,6 @@
 }
 
 
-
 - (void)setActive:(GoogleAccount *)act{
     if(act == nil){
        _active = [_accounts objectAtIndex:0];

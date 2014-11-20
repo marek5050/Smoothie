@@ -280,6 +280,11 @@
                     <navigationItem key="navigationItem" title="Settings" id="HuK-Vj-l3V"/>
                     <connections>
                         <segue destination="d99-kC-LMG" kind="push" identifier="LoginController" id="5us-Xv-aQc"/>
+                        <outlet property="colorSchemeButton" destination="xjZ-RW-5G0" id="HyQ-yq-IQJ"/>
+                        <outlet property="feedbackButtonLabel" destination="cMx-zX-1M7" id="TFZ-7E-nPP"/>
+                        <outlet property="helpButton" destination="hOs-bs-wAE" id="cSP-6k-ouf"/>
+                        <outlet property="underbar1" destination="vNo-4k-RhF" id="0M1-9x-z8c"/>
+                        <outlet property="underbar2" destination="IoM-cf-uGj" id="jtJ-Ac-DtP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Boe-n8-5gh" userLabel="First Responder" sceneMemberID="firstResponder"/>

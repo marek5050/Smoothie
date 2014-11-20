@@ -11,6 +11,7 @@
 #import "ViewController.h"
 #import "GTMOAuth2ViewControllerTouch.h"
 #import "LaunchPageViewController.h"
+#import "AppDelegate.h"
 
 static NSString *const kKeychainItemName = @"SmoothieGA:Auth";
 
@@ -23,7 +24,6 @@ static NSString *const kKeychainItemName = @"SmoothieGA:Auth";
 
 @property (weak, nonatomic) IBOutlet UILabel *underbar1;
 @property (weak, nonatomic) IBOutlet UILabel *underbar2;
-
 
 @end
 
@@ -85,5 +85,11 @@ static NSString *const kKeychainItemName = @"SmoothieGA:Auth";
     NSLog(@"logout button in settings pressed");
 }
 
+- (void) changedColors:(NSNotification *)notification {
+    NSLog(@"changed the color schemes IN APP DELEGATE");
+    
+    self.selectedScheme = [notification userInfo];
+    [self setColors];
+}
 @end
 

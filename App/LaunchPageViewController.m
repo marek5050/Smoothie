@@ -15,6 +15,7 @@
 #import "AddProfileViewController.h"
 #import "PNChart.h"
 #import "SettingsControllerViewController.h"
+#import "AppDelegate.h"
 
 @interface LaunchPageViewController ()
 
@@ -34,6 +35,16 @@
     _otherAccounts.hidden = YES;
     
     
+    [self.user setDelegate:self];
+    [self.user loadUserSummary];
+    [_user addObserver:self forKeyPath:@"active" options:NSKeyValueObservingOptionOld|NSKeyValueObservingOptionNew context:nil];
+    
+    AppDelegate* appDelegate = (AppDelegate*)[[UIApplication sharedApplication]delegate];
+    self.selectedScheme = appDelegate.selectedScheme;
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(changedColors:) name:changeScheme object:nil];
+    
+    self.view.backgroundColor = [self.selectedScheme valueForKey:@"background"];
+    
     // Do any additional setup after loading the view, typically from a nib.
     // need to call some method to populate the propertyList based on some database/backend
 }
@@ -52,8 +63,7 @@
 }
 
 -(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
-
-    if(object!=nil && [keyPath isEqualToString:@"active"]){
+    if([keyPath isEqualToString:@"active"]){
         NSString *arrow = @"\u2B07\U0000FE0E";
        [_ddMenuShowButton setTitle:[[NSString alloc] initWithFormat:@"%@ %@",_user.active.name, arrow] forState:UIControlStateNormal];
         

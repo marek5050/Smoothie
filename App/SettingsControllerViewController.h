@@ -7,8 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import  "User.h"
+
 
 @interface SettingsControllerViewController : UIViewController
+@property (nonatomic) User *user;
+
 - (IBAction)feedbackButton;
 - (IBAction)logoutButton;
 @property (nonatomic, strong) NSDictionary *selectedScheme;

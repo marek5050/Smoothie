@@ -52,6 +52,16 @@ int height = 100;
         errorLabel.textColor = [UIColor blueColor];
         [self.sv addSubview:errorLabel];
     }
+    for(int i = 0; i < [dataset.xValues count]; i++) {
+        if(((NSString*)dataset.xValues[i]).length != 0) {
+            NSString *date = (NSString*)[dataset.xValues objectAtIndex:i];
+            NSRange monthRange = NSMakeRange(4, 2);
+            NSRange dayRange = NSMakeRange(6, 2);
+            NSString *month = [date substringWithRange:monthRange];
+            NSString *day = [date substringWithRange:dayRange];
+            dataset.xValues[i] = [[NSString alloc] initWithFormat:@"%@/%@", month, day];
+        }
+    }
     int recentHeight = 120;
     UILabel * lineChartLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 100, SCREEN_WIDTH-10, label_size)];
     lineChartLabel.text = @"Users: Last 90 Days";

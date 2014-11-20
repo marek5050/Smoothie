@@ -127,13 +127,14 @@ NSString *kGTLAuthScopeAnalyticsEdit1 = @"https://www.googleapis.com/auth/analyt
         [self presentModalViewController:authViewController animated:YES];
     } else {
         // Sign out
-        [GTMOAuth2ViewControllerTouch removeAuthFromKeychainForName:kKeychainItemName];
+    //    [GTMOAuth2ViewControllerTouch removeAuthFromKeychainForName:kKeychainItemName];
         //    [[self driveService] setAuthorizer:nil];
         self.authButton.titleLabel.text = @"Sign in";
         self.user.authorized = NO;
         //    [self toggleActionButtons:NO];
-        //   [self.driveFiles removeAllObjects];
-        //   [self.tableView reloadData];
+//           [self.user
+  //          .accounts removeAllObjects];
+//           [self.tableView reloadData];
     }
 }
 

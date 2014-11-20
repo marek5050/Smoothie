@@ -14,5 +14,7 @@
 
 @property (nonatomic, strong) User *user;
 
+- (IBAction)authButtonClicked:(id)sender;
+
 @end
 

@@ -118,7 +118,7 @@
                                 <sections/>
                             </tableView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="o6e-dr-5GA">
-                                <rect key="frame" x="83" y="65" width="164" height="147"/>
+                                <rect key="frame" x="83" y="63" width="164" height="147"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -431,10 +431,13 @@
                     </view>
                     <navigationItem key="navigationItem" title="Add Property" id="DiC-hz-Tg9"/>
                     <connections>
+                        <outlet property="accountNameLabel" destination="qC0-5R-2dK" id="msd-pY-cix"/>
                         <outlet property="name" destination="1Kp-zv-YPJ" id="XOs-tp-URF"/>
+                        <outlet property="nameLabel" destination="47Z-Hn-pyM" id="Ndz-Qv-S3W"/>
                         <outlet property="propertyid1" destination="Xib-BC-wJw" id="g9n-el-2CM"/>
                         <outlet property="script" destination="SQd-a9-umv" id="d0F-D8-bCz"/>
                         <outlet property="url" destination="JHu-W0-O0m" id="y5Z-ft-SY3"/>
+                        <outlet property="urlLabel" destination="uYi-hu-W6w" id="mYb-z9-hT4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="clV-93-LeX" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -510,7 +513,9 @@
                     <connections>
                         <outlet property="createMessage" destination="6Mb-kC-L0f" id="wrJ-Vb-Dxs"/>
                         <outlet property="name" destination="YvP-8Z-2wA" id="6Uc-eb-QCF"/>
+                        <outlet property="nameLabel" destination="nJo-t1-TVo" id="e8Z-R0-KHs"/>
                         <outlet property="type" destination="eZ7-gn-xno" id="aTX-06-5ud"/>
+                        <outlet property="typeLabel" destination="qjs-IQ-PTs" id="LbF-dX-vn1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Z6-cx-r5o" userLabel="First Responder" sceneMemberID="firstResponder"/>

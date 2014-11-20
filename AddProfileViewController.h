@@ -16,6 +16,10 @@
 @property (weak, nonatomic) IBOutlet UISegmentedControl *type;
 @property (weak, nonatomic) IBOutlet UILabel *createMessage;
 
+@property (nonatomic, strong) NSDictionary *selectedScheme;
+@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *typeLabel;
+
 - (IBAction)CreateProfile:(id)sender;
 @end
  

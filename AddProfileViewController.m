@@ -7,6 +7,7 @@
 //
 
 #import "AddProfileViewController.h"
+#import "AppDelegate.h"
 
 @interface AddProfileViewController ()
 
@@ -29,8 +30,23 @@
     [super viewDidLoad];
     self.name.delegate = self;
     _user.delegate = self;
+    
+    
+    AppDelegate* appDelegate = (AppDelegate*)[[UIApplication sharedApplication]delegate];
+    self.selectedScheme = appDelegate.selectedScheme;
+    [self setColors];
 
     // Do any additional setup after loading the view.
+}
+
+-(void) setColors {
+    UIColor *textColor = [self.selectedScheme valueForKey:@"textColor"];
+    self.type.tintColor = textColor;
+    self.nameLabel.textColor = textColor;
+    self.typeLabel.textColor = textColor;
+    self.createMessage.textColor = textColor;
+    
+    self.view.backgroundColor = [self.selectedScheme valueForKey:@"backgroundColor"];
 }
 
 - (void)didReceiveMemoryWarning

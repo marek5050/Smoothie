@@ -55,12 +55,15 @@ int height = 100;
     int recentHeight = 120;
     UILabel * lineChartLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 100, SCREEN_WIDTH-10, label_size)];
     lineChartLabel.text = @"Users: Last 90 Days";
+    lineChartLabel.textColor = [self.selectedScheme valueForKey:@"textColor"];
     lineChartLabel.font = [UIFont fontWithName:@"Helvetica" size:18];
 //    next_y += label_size + label_graph_margin;
     next_y = [self getHeight: label_size + label_graph_margin];
 
     PNLineChart * recentUsersLineChart = [[PNLineChart alloc] initWithFrame:CGRectMake(0, 120, SCREEN_WIDTH-10, recentHeight)];
     recentUsersLineChart.backgroundColor = [UIColor clearColor];
+    recentUsersLineChart.tintColor = [self.selectedScheme valueForKey:@"textColor"];
+    
   //  next_y += recentHeight + graph_graph_margin;
     next_y = [self getHeight: recentHeight + graph_graph_margin];
 

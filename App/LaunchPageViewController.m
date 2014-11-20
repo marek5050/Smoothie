@@ -42,7 +42,7 @@
     self.selectedScheme = appDelegate.selectedScheme;
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(changedColors:) name:changeScheme object:nil];
     
-    self.view.backgroundColor = [self.selectedScheme valueForKey:@"background"];
+    self.view.backgroundColor = [self.selectedScheme valueForKey:@"backgroundColor"];
     
     // Do any additional setup after loading the view, typically from a nib.
     // need to call some method to populate the propertyList based on some database/backend

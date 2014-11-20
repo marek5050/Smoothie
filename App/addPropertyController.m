@@ -8,6 +8,7 @@
 
 #import "addPropertyController.h"
 #import "ColorSchemeViewController.h"
+#import "AppDelegate.h"
 
 
 @implementation addPropertyController
@@ -20,6 +21,27 @@
     
     self.propertyID = _account.identifier;
     self.propertyid1.text = _account.name;
+    
+    AppDelegate* appDelegate = (AppDelegate*)[[UIApplication sharedApplication]delegate];
+    self.selectedScheme = appDelegate.selectedScheme;
+    [self setColors];
+
+     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(changedColors:) name:changeScheme object:nil];
+    
+}
+
+-(void) setColors {
+    NSLog(@"CALLING SET COLORS");
+    self.view.backgroundColor = [self.selectedScheme valueForKey:@"backgroundColor"];
+    self.script.backgroundColor = [self.selectedScheme valueForKey:@"backgroundColor"];
+
+    
+    UIColor *textColor = [self.selectedScheme valueForKey:@"textColor"];
+    self.nameLabel.textColor = textColor;
+    self.urlLabel.textColor = textColor;
+    self.accountNameLabel.textColor = textColor;
+    self.script.textColor = textColor;
+    self.propertyid1.textColor = textColor;
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField{
@@ -80,4 +102,12 @@
     
     return YES;
 }
+
+- (void) changedColors:(NSNotification *)notification {
+    NSLog(@"changed the color schemes add property");
+    
+    self.selectedScheme = [notification userInfo];
+    [self setColors];
+}
+
 @end

@@ -17,6 +17,11 @@
 @property (strong, nonatomic) IBOutlet UILabel *propertyid1;
 @property (strong, nonatomic) IBOutlet UITextView *script;
 @property (strong, nonatomic) GoogleAccount *account;
+@property (nonatomic, strong) NSDictionary *selectedScheme;
+
+@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *urlLabel;
+@property (weak, nonatomic) IBOutlet UILabel *accountNameLabel;
 
 @property (strong,nonatomic) User *user;
 

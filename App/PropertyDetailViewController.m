@@ -85,7 +85,8 @@ int height = 100;
   //  NSArray * data01Array = @[@60.1, @160.1, @126.4, @262.2, @186.2, @127.2, @176.2];
     
     PNLineChartData *data01 = [PNLineChartData new];
-    data01.color = PNFreshGreen;
+    NSArray *colors = [self.selectedScheme valueForKey:@"colorsArray"];
+    data01.color = [colors objectAtIndex:0];
     data01.itemCount = recentUsersLineChart.xLabels.count;
     data01.getData = ^(NSUInteger index) {
         CGFloat yValue = [dataset.yValues[index] floatValue];
@@ -209,7 +210,7 @@ int height = 100;
     
     NSMutableArray *items = [[NSMutableArray alloc] init];
     
-    NSArray *colors = @[[UIColor orangeColor], [UIColor redColor], [UIColor blueColor], [UIColor darkGrayColor], [UIColor purpleColor]];
+    NSArray *colors = [self.selectedScheme valueForKey:@"colorsArray"];
     
     int stop = MIN(5, [dataset.xValues count]);
     for(int index = 0; index < stop; ++index){
@@ -251,7 +252,7 @@ int height = 100;
     
     NSMutableArray *itemsOS = [[NSMutableArray alloc] init];
     
-    NSArray *colors = @[[UIColor orangeColor], [UIColor redColor], [UIColor blueColor], [UIColor darkGrayColor], [UIColor purpleColor]];
+    NSArray *colors = [self.selectedScheme valueForKey:@"colorsArray"];
     
     int stop = MIN(5, [dataset.xValues count]);
     for(int index = 0; index < stop; ++index){
@@ -292,7 +293,7 @@ int height = 100;
     
     NSMutableArray *itemsBrowser = [[NSMutableArray alloc] init];
     
-    NSArray *colors = @[[UIColor orangeColor], [UIColor redColor], [UIColor blueColor], [UIColor darkGrayColor], [UIColor purpleColor]];
+    NSArray *colors = [self.selectedScheme valueForKey:@"colorsArray"];
     
     int stop = MIN(5, [dataset.xValues count]);
     for(int index = 0; index < stop; ++index){

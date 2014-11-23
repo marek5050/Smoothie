@@ -12,6 +12,7 @@
 @interface ColorScheme : NSObject
 
 @property (nonatomic, strong) NSArray *options;
+@property (nonatomic, strong) NSMutableDictionary *basic;
 @property (nonatomic, strong) NSMutableDictionary *forest;
 @property (nonatomic, strong) NSMutableDictionary *sunrise;
 @property (nonatomic, strong) NSMutableDictionary *midnight;

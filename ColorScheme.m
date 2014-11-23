@@ -11,17 +11,29 @@
 @implementation ColorScheme
 
 -(id) init {
-    self.options = @[@"Forest", @"Sunrise", @"Midnight"];
+    self.options = @[@"Basic", @"Forest", @"Sunrise", @"Midnight"];
     
+    self.basic = [[NSMutableDictionary alloc] init];
     self.forest = [[NSMutableDictionary alloc] init];
     self.sunrise = [[NSMutableDictionary alloc] init];
     self.midnight = [[NSMutableDictionary alloc] init];
     
+    [self setBasic];
     [self setForest];
     [self setSunrise];
     [self setMidnight];
     
     return self;
+}
+
+-(void) setBasic {
+    [self.basic setObject:[UIColor whiteColor]  forKey:@"backgroundColor"];
+    [self.basic setObject:@"basic"  forKey:@"name"];
+    [self.basic setObject:[UIColor blackColor]  forKey:@"textColor"];
+    
+    NSArray *colors = @[[UIColor blueColor], [UIColor greenColor], [UIColor redColor], [UIColor orangeColor], [UIColor blackColor]];
+    
+    [self.basic setObject:colors forKey:@"colorsArray"];
 }
 
 -(void) setForest {
@@ -39,8 +51,8 @@
     [self.sunrise setObject:@"sunrise" forKey:@"name"];
     [self.sunrise setObject:[UIColor blackColor]  forKey:@"textColor"];
     
-    NSArray *colors = @[[UIColor redColor], [UIColor magentaColor], [UIColor purpleColor], [UIColor yellowColor], [UIColor cyanColor]];
-    
+    NSArray *colors = @[[UIColor redColor], [UIColor magentaColor], [UIColor purpleColor], [UIColor blueColor], [UIColor cyanColor]];
+        
     [self.sunrise setObject:colors forKey:@"colorsArray"];
     
     

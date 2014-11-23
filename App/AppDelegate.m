@@ -32,7 +32,7 @@
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
     
      ColorScheme *scheme = [[ColorScheme alloc] init];
-     self.selectedScheme = scheme.forest;
+     self.selectedScheme = scheme.basic;
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(changedColors:) name:changeScheme object:nil];
     

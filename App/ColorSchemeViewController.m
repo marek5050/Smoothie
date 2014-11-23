@@ -75,6 +75,8 @@
 {
     NSString *selection = [self.schemes objectAtIndex:indexPath.row];
     
+    if([selection isEqual: @"Basic"])
+        self.selectedScheme = self.scheme.basic;
     if([selection isEqual:  @"Forest"])
         self.selectedScheme = self.scheme.forest;
     if([selection  isEqual: @"Sunrise"])

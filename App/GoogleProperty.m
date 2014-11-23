@@ -21,6 +21,20 @@
     return self;
 }
 
+-(instancetype) initWithProperty:(GTLAnalyticsWebproperty *) property{
+    self = [self init];
+    if(self){
+        //   NSLog(@"GoogleProperty:initWithSummary:%@",summary);
+        [self setName:property.name];
+        [self setIdentifier:property.identifier];
+        [self setInternalWebPropertyId:property.internalWebPropertyId];
+        [self setWebsiteUrl:property.websiteUrl];
+        [self setLevel:property.level];
+        
+    }
+    return self;
+}
+
 -(instancetype) initWithSummary:(GTLAnalyticsWebPropertySummary *)summary{
     self = [self init];
     if(self){

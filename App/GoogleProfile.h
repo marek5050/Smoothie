@@ -5,6 +5,7 @@
 
 #import <Foundation/Foundation.h>
 #import "GTLAnalyticsProfileSummary.h"
+#import "GTLAnalyticsProfile.h"
 
 @interface GoogleProfile : NSObject
 
@@ -18,5 +19,7 @@
 
 
 -(id) initWithSummary:(GTLAnalyticsProfileSummary *)summary;
+
+-(id) initWithProfile:(GTLAnalyticsProfile *)profile;
 
 @end

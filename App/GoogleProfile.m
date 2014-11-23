@@ -19,6 +19,19 @@
     return self;
 }
 
+
+-(id) initWithProfile:(GTLAnalyticsProfile *)profile{
+    self = [self init];
+    if(self){
+
+        [self setIdentifier:[profile identifier]];
+        [self setName:[profile name]];
+        [self setType:[profile type]];
+        
+    }
+    return self;
+}
+
 -(id) initWithSummary:(GTLAnalyticsProfileSummary *)summary{
     self = [self init];
     if(self){

@@ -171,7 +171,7 @@ int height = 100;
 //    next_y += label_size + 25;
     //next_y = [self getHeight:label_size + 25];
   
-    viewFrame.size.height = 1300;  // 400 is arbitrary
+    viewFrame.size.height = 1500;  // 400 is arbitrary
     self.sv.contentSize = viewFrame.size;
     
     AppDelegate* appDelegate = (AppDelegate*)[[UIApplication sharedApplication]delegate];
@@ -391,40 +391,18 @@ int height = 100;
     MFMailComposeViewController *picker = [[MFMailComposeViewController alloc] init];
     picker.mailComposeDelegate = self;
     
-    [picker setSubject:@"Smoothie GA feedback"];
+    NSString *subject = [NSString stringWithFormat:@"Analytics code for property: %@",[_property identifier]];
+    [picker setSubject:subject];
     
-    // Set up the recipients.
-    NSArray *toRecipients = [NSArray arrayWithObjects:@"Support@smoothie.rocks",
-                             nil];
-    /*
-     NSArray *ccRecipients = [NSArray arrayWithObjects:@"second@example.com",
-     @"third@example.com", nil];
-     NSArray *bccRecipients = [NSArray arrayWithObjects:@"four@example.com",
-     nil];
-     */
-    [picker setToRecipients:toRecipients];
-    
-    /*
-     [picker setCcRecipients:ccRecipients];
-     [picker setBccRecipients:bccRecipients];
-     */
-    
-    // Attach an image to the email.
-    /*NSString *path = [[NSBundle mainBundle] pathForResource:@"ipodnano"
-     ofType:@"png"];
-     NSData *myData = [NSData dataWithContentsOfFile:path];
-     [picker addAttachmentData:myData mimeType:@"image/png"
-     fileName:@"ipodnano"];
-     */
     // Fill out the email body text.
-    NSString *stri = [NSString stringWithFormat:@" **** Property was created succesfully, restart the app to see the new property. **** \n<script>\
+    NSString *stri = [NSString stringWithFormat:@"<script>\
                       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){\
                       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),\
                       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)\
                       })(window,document,'script','//www.google-analytics.com/analytics.js','ga');\
                       ga('create', ' %@ ','auto'); ga('send', 'pageview'); </script>",[_property identifier]];
     
-    NSString *emailBody = @"It is raining in sunny California and I love Smoothie!";
+    NSString *emailBody = stri;
     [picker setMessageBody:emailBody isHTML:NO];
     
     // Present the mail composition interface.

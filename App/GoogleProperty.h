@@ -6,6 +6,7 @@
 #import <Foundation/Foundation.h>
 #import "GoogleProfile.h"
 #import "GTLAnalyticsWebPropertySummary.h"
+#import "GTLAnalyticsWebproperty.h"
 
 @interface GoogleProperty : NSObject
 
@@ -17,4 +18,5 @@
 
 @property (nonatomic, strong) NSMutableArray *profiles;
 -(instancetype) initWithSummary:(GTLAnalyticsWebPropertySummary *) summary;
+-(instancetype) initWithProperty:(GTLAnalyticsWebproperty *) property;
 @end

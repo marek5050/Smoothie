@@ -9,6 +9,7 @@
 #import "addPropertyController.h"
 #import "ColorSchemeViewController.h"
 #import "AppDelegate.h"
+#import "GoogleProperty.h"
 
 
 @implementation addPropertyController
@@ -74,13 +75,18 @@
     [web setWebsiteUrl:url];
     
     NSLog(@"Name: %@  Url: %@ PropertyID: %@",name, url, _propertyID);
-    
+
+//    [p setName:name];
+//    [p setWebsiteUrl:p]
+
     GTLQueryAnalytics *query = [GTLQueryAnalytics queryForManagementWebpropertiesInsertWithObject:web accountId:[self propertyID]];
     [self.user.service executeQuery:query completionHandler:^(GTLServiceTicket *ticket,                                                        GTLAnalyticsWebproperty *property,
         NSError *error) {
         if (error == nil) {
             
             NSLog(@"files: %@",property);
+            GoogleProperty *p = [[GoogleProperty alloc] initWithProperty:property];
+            [_user.active.properties addObject:p];
            // [self showEmail:[property identifier]];
             NSString *stri = [NSString stringWithFormat:@" **** Property was created succesfully, restart the app to see the new property. **** \n<script>\
                               (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){\

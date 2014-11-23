@@ -381,7 +381,63 @@ int height = 100;
 }
 - (void) emailJS: (UIButton*)button{
     NSLog(@"EMAILING JS");
+    [self pressentMailController:nil];
 }
+
+
+- (IBAction)pressentMailController:(id)sender {
+    
+    MFMailComposeViewController *picker = [[MFMailComposeViewController alloc] init];
+    picker.mailComposeDelegate = self;
+    
+    [picker setSubject:@"Smoothie GA feedback"];
+    
+    // Set up the recipients.
+    NSArray *toRecipients = [NSArray arrayWithObjects:@"Support@smoothie.rocks",
+                             nil];
+    /*
+     NSArray *ccRecipients = [NSArray arrayWithObjects:@"second@example.com",
+     @"third@example.com", nil];
+     NSArray *bccRecipients = [NSArray arrayWithObjects:@"four@example.com",
+     nil];
+     */
+    [picker setToRecipients:toRecipients];
+    
+    /*
+     [picker setCcRecipients:ccRecipients];
+     [picker setBccRecipients:bccRecipients];
+     */
+    
+    // Attach an image to the email.
+    /*NSString *path = [[NSBundle mainBundle] pathForResource:@"ipodnano"
+     ofType:@"png"];
+     NSData *myData = [NSData dataWithContentsOfFile:path];
+     [picker addAttachmentData:myData mimeType:@"image/png"
+     fileName:@"ipodnano"];
+     */
+    // Fill out the email body text.
+    NSString *stri = [NSString stringWithFormat:@" **** Property was created succesfully, restart the app to see the new property. **** \n<script>\
+                      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){\
+                      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),\
+                      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)\
+                      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');\
+                      ga('create', ' %@ ','auto'); ga('send', 'pageview'); </script>",[_property identifier]];
+    
+    NSString *emailBody = @"It is raining in sunny California and I love Smoothie!";
+    [picker setMessageBody:emailBody isHTML:NO];
+    
+    // Present the mail composition interface.
+    [self presentModalViewController:picker animated:YES];
+}
+
+// The mail compose view controller delegate method
+- (void)mailComposeController:(MFMailComposeViewController *)controller
+          didFinishWithResult:(MFMailComposeResult)result
+                        error:(NSError *)error
+{
+    [self dismissModalViewControllerAnimated:YES];
+}
+
 
 - (void)didReceiveMemoryWarning
 {

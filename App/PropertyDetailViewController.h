@@ -11,8 +11,10 @@
 #import "User.h"
 #import "PNChart.h"
 #import "GoogleDataController.h"
+#import <MessageUI/MessageUI.h>
+#import <MessageUI/MFMailComposeViewController.h>
 
-@interface PropertyDetailViewController : UIViewController <PNChartDelegate, UIScrollViewDelegate, GoogleDataDelegate, GoogleUserDelegate, GoogleUserDelegate>
+@interface PropertyDetailViewController : UIViewController <PNChartDelegate, UIScrollViewDelegate, GoogleDataDelegate, GoogleUserDelegate, GoogleUserDelegate,MFMailComposeViewControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UIScrollView *sv;
 @property (strong, nonatomic) IBOutlet UINavigationItem *profileName;

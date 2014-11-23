@@ -96,7 +96,7 @@
             
             NSLog(@"Received: %@", [profile identifier]);
             
-            [_delegate performSelector: selector withObject:@"Succesfully created profile. You might have to restart the application to view the new profile in the list."];
+          [_delegate performSelector: selector withObject:@"Succesfully created profile. You might have to restart the application to view the new profile in the list."];
         } else {
             NSLog(@"An error occurred: %@", error);
             [_delegate performSelector: selector withObject:@"Error"];
@@ -227,7 +227,7 @@
         //NSLog(@"Size of accounts..%d", [self.accounts count]);
         if(_active==nil)
             [self setActive:[self.accounts objectAtIndex:0]];
-        [self loadUserRealTimeForActive];
+//        [self loadUserRealTimeForActive];
             [_delegate interfaceUpdate];
         } else {
             NSLog(@"An error occurred: %@", error);

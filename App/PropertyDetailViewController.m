@@ -171,7 +171,7 @@ int height = 100;
 //    next_y += label_size + 25;
     //next_y = [self getHeight:label_size + 25];
   
-    viewFrame.size.height = 1500;  // 400 is arbitrary
+    viewFrame.size.height = 1300;  // 400 is arbitrary
     self.sv.contentSize = viewFrame.size;
     
     AppDelegate* appDelegate = (AppDelegate*)[[UIApplication sharedApplication]delegate];

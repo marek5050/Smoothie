@@ -409,6 +409,21 @@
                                     <action selector="createButtonPressed" destination="3qr-Bb-vR4" eventType="touchUpInside" id="4gb-Ma-TiV"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cCR-R5-6RC">
+                                <rect key="frame" x="16" y="292" width="288" height="30"/>
+                                <color key="backgroundColor" red="0.67609690659999999" green="0.5498524040557109" blue="0.14196859093782963" alpha="1" colorSpace="calibratedRGB"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" none="YES" button="YES" notEnabled="YES"/>
+                                    <bool key="isElement" value="NO"/>
+                                </accessibility>
+                                <color key="tintColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Email Script">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="EmailJS:" destination="3qr-Bb-vR4" eventType="touchUpInside" id="iot-28-Zcu"/>
+                                </connections>
+                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Account Name:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qC0-5R-2dK">
                                 <rect key="frame" x="26" y="98" width="119" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -422,7 +437,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SQd-a9-umv">
-                                <rect key="frame" x="16" y="311" width="288" height="237"/>
+                                <rect key="frame" x="16" y="331" width="288" height="217"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -433,6 +448,7 @@
                     <navigationItem key="navigationItem" title="Add Property" id="DiC-hz-Tg9"/>
                     <connections>
                         <outlet property="accountNameLabel" destination="qC0-5R-2dK" id="msd-pY-cix"/>
+                        <outlet property="emailscript" destination="cCR-R5-6RC" id="bcf-pJ-lxO"/>
                         <outlet property="name" destination="1Kp-zv-YPJ" id="XOs-tp-URF"/>
                         <outlet property="nameLabel" destination="47Z-Hn-pyM" id="Ndz-Qv-S3W"/>
                         <outlet property="propertyid1" destination="Xib-BC-wJw" id="g9n-el-2CM"/>

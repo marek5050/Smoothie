@@ -171,7 +171,7 @@ int height = 100;
 //    next_y += label_size + 25;
     //next_y = [self getHeight:label_size + 25];
   
-    viewFrame.size.height = 1500;  // 400 is arbitrary
+    viewFrame.size.height = 1300;  // 400 is arbitrary
     self.sv.contentSize = viewFrame.size;
     
     AppDelegate* appDelegate = (AppDelegate*)[[UIApplication sharedApplication]delegate];
@@ -367,8 +367,9 @@ int height = 100;
     }
     next_y += 50;
     self.ID = [[UILabel alloc] initWithFrame:CGRectMake(50, next_y, SCREEN_WIDTH, label_size)];
-    self.ID.text = [NSString stringWithFormat: @"ID: %@", self.profile.identifier];
+    self.ID.text = [NSString stringWithFormat: @"Profile ID: %@", self.profile.identifier];
     self.ID.textColor = [self.selectedScheme valueForKey:@"textColor"];
+    self.ID.font = [UIFont fontWithName:@"Helvetica-Bold" size:12];
     [self.sv addSubview:self.ID];
     
     self.emailButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
@@ -380,6 +381,7 @@ int height = 100;
     //    self.emailButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentRight;
     [self.sv addSubview:self.emailButton];
 }
+
 - (void) emailJS: (UIButton*)button{
     NSLog(@"EMAILING JS");
     [self pressentMailController:nil];

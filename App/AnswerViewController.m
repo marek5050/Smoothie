@@ -33,7 +33,7 @@
     questionLabel.textColor = [self.selectedScheme valueForKey:@"textColor"];
     [self.view addSubview:questionLabel];
     
-    UILabel *answerLabel = [[UILabel alloc] initWithFrame:CGRectMake(15, 50, self.view.bounds.size.width-15, 300)];
+    UILabel *answerLabel = [[UILabel alloc] initWithFrame:CGRectMake(15, 100, self.view.bounds.size.width-15, 400)];
     answerLabel.text = self.answer;
     answerLabel.numberOfLines = 0;
     answerLabel.textAlignment = NSTextAlignmentCenter;

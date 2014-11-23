@@ -69,7 +69,7 @@
 }
 
 -(void) loadDataQuery:(GTLQueryAnalytics *)query withSkip:(BOOL)skip callback:(SEL)selector{
-    NSLog(@"User:loadDataQuery:PropertiesCount");
+    NSLog(@"User:loadDataQuery: %@",query);
     
     [self.service executeQuery:query completionHandler:^(GTLServiceTicket *ticket, GTLAnalyticsGaData *data, NSError *error){
         if (error == nil) {
@@ -85,14 +85,18 @@
     }];
 }
 
--(void) receiveResponse:(GTLQueryAnalytics *)query callback:(SEL) selector{
+-(void) receiveResponse:(GTLQueryAnalytics *)query callback:(SEL) selector property:(GoogleProperty *)property{
     NSLog(@"User:ReceiveResponse:");
     
-    [self.service executeQuery:query completionHandler:^(GTLServiceTicket *ticket, GTLAnalyticsProfile *data, NSError *error){
+    [self.service executeQuery:query completionHandler:^(GTLServiceTicket *ticket, GTLAnalyticsProfile *profile, NSError *error){
         if (error == nil) {
             
-            NSLog(@"Received: %@", [data identifier]);
-            [_delegate performSelector: selector withObject:@"Succesfully created profile. You might have to restart the application to view the new profile in the list."];
+            GoogleProfile *prof = [[GoogleProfile alloc] initWithProfile: profile];
+            [property.profiles addObject:prof];
+            
+            NSLog(@"Received: %@", [profile identifier]);
+            
+          [_delegate performSelector: selector withObject:@"Succesfully created profile. You might have to restart the application to view the new profile in the list."];
         } else {
             NSLog(@"An error occurred: %@", error);
             [_delegate performSelector: selector withObject:@"Error"];
@@ -109,7 +113,7 @@
     [profile setCurrency:currency];
 //    [profile setWebsiteUrl:@"http://www.1xcloud.com/"];
     GTLQueryAnalytics *query = [GTLQueryAnalytics queryForManagementProfilesInsertWithObject:profile accountId:[_active identifier] webPropertyId:[property identifier]];
-    [self receiveResponse:query callback:selector];
+    [self receiveResponse:query callback:selector property:property];
     
 }
 
@@ -223,7 +227,7 @@
         //NSLog(@"Size of accounts..%d", [self.accounts count]);
         if(_active==nil)
             [self setActive:[self.accounts objectAtIndex:0]];
-        [self loadUserRealTimeForActive];
+//        [self loadUserRealTimeForActive];
             [_delegate interfaceUpdate];
         } else {
             NSLog(@"An error occurred: %@", error);

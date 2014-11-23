@@ -171,7 +171,7 @@ int height = 100;
 //    next_y += label_size + 25;
     //next_y = [self getHeight:label_size + 25];
   
-    viewFrame.size.height = 1300;  // 400 is arbitrary
+    viewFrame.size.height = 1500;  // 400 is arbitrary
     self.sv.contentSize = viewFrame.size;
     
     AppDelegate* appDelegate = (AppDelegate*)[[UIApplication sharedApplication]delegate];
@@ -382,7 +382,41 @@ int height = 100;
 }
 - (void) emailJS: (UIButton*)button{
     NSLog(@"EMAILING JS");
+    [self pressentMailController:nil];
 }
+
+
+- (IBAction)pressentMailController:(id)sender {
+    
+    MFMailComposeViewController *picker = [[MFMailComposeViewController alloc] init];
+    picker.mailComposeDelegate = self;
+    
+    NSString *subject = [NSString stringWithFormat:@"Analytics code for property: %@",[_property identifier]];
+    [picker setSubject:subject];
+    
+    // Fill out the email body text.
+    NSString *stri = [NSString stringWithFormat:@"<script>\
+                      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){\
+                      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),\
+                      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)\
+                      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');\
+                      ga('create', ' %@ ','auto'); ga('send', 'pageview'); </script>",[_property identifier]];
+    
+    NSString *emailBody = stri;
+    [picker setMessageBody:emailBody isHTML:NO];
+    
+    // Present the mail composition interface.
+    [self presentModalViewController:picker animated:YES];
+}
+
+// The mail compose view controller delegate method
+- (void)mailComposeController:(MFMailComposeViewController *)controller
+          didFinishWithResult:(MFMailComposeResult)result
+                        error:(NSError *)error
+{
+    [self dismissModalViewControllerAnimated:YES];
+}
+
 
 - (void)didReceiveMemoryWarning
 {

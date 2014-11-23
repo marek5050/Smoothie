@@ -34,6 +34,7 @@
     _otherAccounts.dataSource = self;
     _otherAccounts.hidden = YES;
     
+    [self loadRealtimeData];
     
     [self.user setDelegate:self];
     [self.user loadUserSummary];
@@ -73,6 +74,17 @@
     }
 };
 
+-(void)loadRealtimeData{
+    NSLog(@"loadRealtimeData");
+    
+    if(_user.active != nil){
+        [_user loadUserRealTimeForActive];
+    }
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(20 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [self loadRealtimeData];
+    });
+    
+}
 
 -(void)interfaceUpdate{
     NSLog(@"LaunchPageViewController:interfaceUpdate:");
@@ -251,6 +263,9 @@
     }
     
 }
+
+
+
 
 - (IBAction)ddMenuShow:(id)sender {
     _otherAccounts.hidden = NO;

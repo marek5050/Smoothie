@@ -14,6 +14,8 @@
 		2FC3FDCE1A12C2ED00E330B3 /* libPods-App.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FC3FDCD1A12C2ED00E330B3 /* libPods-App.a */; };
 		2FE53A6B1A12F52D005A0F38 /* GoogleDataArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FE53A6A1A12F52D005A0F38 /* GoogleDataArray.m */; };
 		2FE53A6E1A12FC41005A0F38 /* GoogleDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FE53A6D1A12FC41005A0F38 /* GoogleDataController.m */; };
+		87689DD51A2270A90067E9CD /* HelpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 87689DD41A2270A90067E9CD /* HelpViewController.m */; };
+		87689DD81A22789E0067E9CD /* AnswerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 87689DD71A22789E0067E9CD /* AnswerViewController.m */; };
 		A206E7E11A042EE8003DE3D0 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = A206E7E01A042EE8003DE3D0 /* README.md */; };
 		A226D8FE1A16B43900C166CE /* AddProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A226D8FD1A16B43900C166CE /* AddProfileViewController.m */; };
 		A23629EF1A03ECBA00659A3F /* GTMOAuth2Window.xib in Resources */ = {isa = PBXBuildFile; fileRef = A23629651A03ECBA00659A3F /* GTMOAuth2Window.xib */; };
@@ -125,6 +127,10 @@
 		8767794B19F0347C0031D63A /* addPropertyController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = addPropertyController.m; sourceTree = "<group>"; };
 		8767794D19F03B780031D63A /* SettingsControllerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsControllerViewController.h; sourceTree = "<group>"; };
 		8767794E19F03B780031D63A /* SettingsControllerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsControllerViewController.m; sourceTree = "<group>"; };
+		87689DD31A2270A90067E9CD /* HelpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelpViewController.h; sourceTree = "<group>"; };
+		87689DD41A2270A90067E9CD /* HelpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelpViewController.m; sourceTree = "<group>"; };
+		87689DD61A22789E0067E9CD /* AnswerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnswerViewController.h; sourceTree = "<group>"; };
+		87689DD71A22789E0067E9CD /* AnswerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnswerViewController.m; sourceTree = "<group>"; };
 		A206E7E01A042EE8003DE3D0 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		A226D8FC1A16B43900C166CE /* AddProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AddProfileViewController.h; path = ../AddProfileViewController.h; sourceTree = "<group>"; };
 		A226D8FD1A16B43900C166CE /* AddProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AddProfileViewController.m; path = ../AddProfileViewController.m; sourceTree = "<group>"; };
@@ -788,6 +794,10 @@
 				2FE53A6A1A12F52D005A0F38 /* GoogleDataArray.m */,
 				E79A3B289F981ECDC4B42138 /* User.m */,
 				E79A3FDCE0C0DC50695B37AC /* User.h */,
+				87689DD31A2270A90067E9CD /* HelpViewController.h */,
+				87689DD41A2270A90067E9CD /* HelpViewController.m */,
+				87689DD61A22789E0067E9CD /* AnswerViewController.h */,
+				87689DD71A22789E0067E9CD /* AnswerViewController.m */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -979,6 +989,7 @@
 				2FE53A6E1A12FC41005A0F38 /* GoogleDataController.m in Sources */,
 				A2362A131A03ECFC00659A3F /* GTLCommon_Sources.m in Sources */,
 				A2362A141A03ED0400659A3F /* GTLAnalytics.h in Sources */,
+				87689DD81A22789E0067E9CD /* AnswerViewController.m in Sources */,
 				A2362A151A03ED0400659A3F /* GTLAnalytics_Sources.m in Sources */,
 				A206E7E11A042EE8003DE3D0 /* README.md in Sources */,
 				A2362A161A03ED1300659A3F /* ViewController.h in Sources */,
@@ -988,6 +999,7 @@
 				A2362A191A03ED1300659A3F /* AppDelegate.m in Sources */,
 				A2362A221A03ED2300659A3F /* main.m in Sources */,
 				E79A3EF6F2CFE583AD5DF1F1 /* GoogleAccount.m in Sources */,
+				87689DD51A2270A90067E9CD /* HelpViewController.m in Sources */,
 				E79A392B6B68E64A5A493FB4 /* GoogleProperty.m in Sources */,
 				E79A3FEA8090851FE750CCDF /* GoogleProfile.m in Sources */,
 				A2704BB01A080DD9005450A8 /* ColorScheme.m in Sources */,

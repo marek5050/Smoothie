@@ -12,7 +12,7 @@
 #import "PNChart.h"
 #import "GoogleDataController.h"
 
-@interface PropertyDetailViewController : UIViewController <PNChartDelegate, UIScrollViewDelegate, GoogleDataDelegate, GoogleUserDelegate>
+@interface PropertyDetailViewController : UIViewController <PNChartDelegate, UIScrollViewDelegate, GoogleDataDelegate, GoogleUserDelegate, GoogleUserDelegate>
 
 @property (weak, nonatomic) IBOutlet UIScrollView *sv;
 @property (strong, nonatomic) IBOutlet UINavigationItem *profileName;
@@ -22,5 +22,6 @@
 @property (strong,nonatomic)  GoogleDataController *dataController;
 
 @property (nonatomic, strong) NSDictionary *selectedScheme;
+-(void) interfaceUpdate;
 
 @end

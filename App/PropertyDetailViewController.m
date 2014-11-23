@@ -107,6 +107,9 @@ int height = 100;
     NSLog(@"DataSet: ");
 }
 
+-(void) interfaceUpdate{
+    
+}
 
 - (void)viewDidLoad
 {

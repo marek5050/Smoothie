@@ -8,9 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import  "User.h"
+#import <MessageUI/MessageUI.h>
+#import <MessageUI/MFMailComposeViewController.h>
 
 
-@interface SettingsControllerViewController : UIViewController
+@interface SettingsControllerViewController : UIViewController<MFMailComposeViewControllerDelegate>
 @property (nonatomic) User *user;
 
 - (IBAction)feedbackButton;

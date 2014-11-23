@@ -63,6 +63,8 @@ static NSString *const kKeychainItemName = @"SmoothieGA:Auth";
 
 - (IBAction)feedbackButton {
     NSLog(@"feedback button in settings pressed");
+  //   [self pressentMailController:nil];
+    
     //NEED TO REROUTE TO THE FEEDBACK EMAIL SCREEN
 }
 
@@ -91,5 +93,6 @@ static NSString *const kKeychainItemName = @"SmoothieGA:Auth";
     self.selectedScheme = [notification userInfo];
     [self setColors];
 }
+
 @end
 

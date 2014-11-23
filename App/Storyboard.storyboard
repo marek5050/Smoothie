@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="14A388a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="wCl-s6-8x6">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="wCl-s6-8x6">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
@@ -156,7 +156,7 @@
                             <rect key="frame" x="80" y="6" width="161" height="33"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                            <state key="normal" title="&lt;Account Name&gt;">
+                            <state key="normal" title="&lt;Account Name>">
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                             <connections>
@@ -199,7 +199,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="&lt;Profile Name&gt;" id="87i-RH-qZU"/>
+                    <navigationItem key="navigationItem" title="&lt;Profile Name>" id="87i-RH-qZU"/>
                     <connections>
                         <outlet property="profileName" destination="87i-RH-qZU" id="exy-dx-j9A"/>
                         <outlet property="sv" destination="gon-jo-bWc" id="ZC5-EC-9C3"/>
@@ -279,17 +279,17 @@
                     </view>
                     <navigationItem key="navigationItem" title="Settings" id="HuK-Vj-l3V"/>
                     <connections>
-                        <segue destination="d99-kC-LMG" kind="push" identifier="LoginController" id="5us-Xv-aQc"/>
                         <outlet property="colorSchemeButton" destination="xjZ-RW-5G0" id="HyQ-yq-IQJ"/>
                         <outlet property="feedbackButtonLabel" destination="cMx-zX-1M7" id="TFZ-7E-nPP"/>
                         <outlet property="helpButton" destination="hOs-bs-wAE" id="cSP-6k-ouf"/>
                         <outlet property="underbar1" destination="vNo-4k-RhF" id="0M1-9x-z8c"/>
                         <outlet property="underbar2" destination="IoM-cf-uGj" id="jtJ-Ac-DtP"/>
+                        <segue destination="d99-kC-LMG" kind="push" identifier="LoginController" id="5us-Xv-aQc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Boe-n8-5gh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1842" y="1165"/>
+            <point key="canvasLocation" x="1506" y="549"/>
         </scene>
         <!--Color Scheme View Controller - Color Scheme-->
         <scene sceneID="Lld-2B-qP7">

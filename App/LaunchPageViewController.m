@@ -192,6 +192,7 @@
             cell.name.textColor = textColor;
             cell.url.textColor = textColor;
             cell.property.textColor = textColor;
+            cell.activeUsers.textColor = textColor;
             cell.textLabel.backgroundColor = [UIColor clearColor];
             cell.backgroundColor = [self.selectedScheme valueForKey:@"backgroundColor"];
             cell.textLabel.textColor = textColor;

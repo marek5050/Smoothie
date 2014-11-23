@@ -26,6 +26,13 @@
 - (void)viewDidLoad
 {
     NSLog(@"LaunchPageViewController:viewDidLoad");
+    UITapGestureRecognizer *recognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTapBehind:)];
+    
+    
+    [recognizer setNumberOfTapsRequired:1];
+    recognizer.cancelsTouchesInView = NO; //So the user can still interact with controls in the modal view
+    [self.tableView addGestureRecognizer:recognizer];
+    
     
     [super viewDidLoad];
     [self.tableView setDelegate:self];
@@ -33,6 +40,7 @@
     [self.otherAccounts setDelegate:self];
     _otherAccounts.dataSource = self;
     _otherAccounts.hidden = YES;
+    recognizer.delegate = self;
     
     [self loadRealtimeData];
     
@@ -48,6 +56,25 @@
     
     // Do any additional setup after loading the view, typically from a nib.
     // need to call some method to populate the propertyList based on some database/backend
+}
+
+- (void)handleTapBehind:(UITapGestureRecognizer *)sender
+{
+    if (sender.state == UIGestureRecognizerStateEnded)
+    {
+        CGPoint location = [sender locationInView:nil]; //Passing nil gives us coordinates in the window
+        
+        //Then we convert the tap's location into the local view's coordinate system, and test to see if it's in or outside. If outside, dismiss the view.
+//        if (![self.view pointInside:[self.view convertPoint:location fromView:self.view.window] withEvent:nil])
+//        {
+//            // Remove the recognizer first so it's view.window is valid.
+//         //   [self.view.window removeGestureRecognizer:sender];
+//        //    [self dismissModalViewControllerAnimated:YES];
+//            NSLog(@"DEF NOT here ") ;
+
+                    _otherAccounts.hidden = YES;
+//        }
+    }
 }
 
 -(void)viewDidAppear:(BOOL)animated{
@@ -157,6 +184,14 @@
         [remote setUser:_user];
     }
 }
+
+
+-(BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer*)otherGestureRecognizer
+{
+    return YES;
+}
+
+
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {

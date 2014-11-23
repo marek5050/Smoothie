@@ -13,5 +13,6 @@
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) NSArray *questions;
 @property (strong, nonatomic) NSArray *answers;
+@property (nonatomic, strong) NSDictionary *selectedScheme;
 
 @end

@@ -12,5 +12,6 @@
 
 @property (strong, nonatomic) NSString *question;
 @property (strong, nonatomic) NSString *answer;
+@property (nonatomic, strong) NSDictionary *selectedScheme;
 
 @end

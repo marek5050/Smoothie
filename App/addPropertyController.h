@@ -10,8 +10,13 @@
 #import "GTLAnalytics.h"
 #import <MessageUI/MessageUI.h>
 #import "User.h"
+#import <MessageUI/MessageUI.h>
+#import <MessageUI/MFMailComposeViewController.h>
 
-@interface addPropertyController : UIViewController <UITextFieldDelegate>
+@interface addPropertyController : UIViewController <UITextFieldDelegate,MFMailComposeViewControllerDelegate>
+- (IBAction)EmailJS:(id)sender;
+@property (weak, nonatomic) IBOutlet UIButton *emailscript;
+
 @property (strong, nonatomic) IBOutlet UITextField *name;
 @property (strong, nonatomic) IBOutlet UITextField *url;
 @property (strong, nonatomic) IBOutlet UILabel *propertyid1;

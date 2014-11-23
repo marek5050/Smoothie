@@ -80,7 +80,7 @@
     if(_user.active != nil){
         [_user loadUserRealTimeForActive];
     }
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(20 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(10 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [self loadRealtimeData];
     });
     
@@ -177,7 +177,11 @@
 
             //setting the information
             GoogleProfile  *prof = [p.profiles objectAtIndex:indexPath.row];
-            cell.activeUsers.text = [NSString stringWithFormat:@"Current Users: %@", [prof activeVisitors]];
+            if([prof activeVisitors]!=nil){
+                cell.activeUsers.text = [NSString stringWithFormat:@"Current Users: %@", [prof activeVisitors]];
+            }else{
+                cell.activeUsers.text = @"Current Users: 0";
+            }
             cell.url.text = [p websiteUrl];
             cell.name.text = [prof name];
             cell.property.text = [prof identifier];

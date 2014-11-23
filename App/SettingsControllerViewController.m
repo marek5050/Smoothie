@@ -63,10 +63,64 @@ static NSString *const kKeychainItemName = @"SmoothieGA:Auth";
 
 - (IBAction)feedbackButton {
     NSLog(@"feedback button in settings pressed");
-  //   [self pressentMailController:nil];
+    [self pressentMailController:nil];
     
     //NEED TO REROUTE TO THE FEEDBACK EMAIL SCREEN
 }
+
+
+
+
+
+- (IBAction)pressentMailController:(id)sender {
+    
+    MFMailComposeViewController *picker = [[MFMailComposeViewController alloc] init];
+    picker.mailComposeDelegate = self;
+    
+    [picker setSubject:@"Smoothie GA feedback"];
+    
+    // Set up the recipients.
+    NSArray *toRecipients = [NSArray arrayWithObjects:@"Support@smoothie.rocks",
+     nil];
+    /*
+     NSArray *ccRecipients = [NSArray arrayWithObjects:@"second@example.com",
+     @"third@example.com", nil];
+     NSArray *bccRecipients = [NSArray arrayWithObjects:@"four@example.com",
+     nil];
+     */
+     [picker setToRecipients:toRecipients];
+    
+    /*
+      [picker setCcRecipients:ccRecipients];
+     [picker setBccRecipients:bccRecipients];
+     */
+    
+    // Attach an image to the email.
+    /*NSString *path = [[NSBundle mainBundle] pathForResource:@"ipodnano"
+     ofType:@"png"];
+     NSData *myData = [NSData dataWithContentsOfFile:path];
+     [picker addAttachmentData:myData mimeType:@"image/png"
+     fileName:@"ipodnano"];
+     */
+    // Fill out the email body text.
+    NSString *emailBody = @"It is raining in sunny California and I love Smoothie!";
+    [picker setMessageBody:emailBody isHTML:NO];
+    
+    // Present the mail composition interface.
+    [self presentModalViewController:picker animated:YES];
+}
+
+// The mail compose view controller delegate method
+- (void)mailComposeController:(MFMailComposeViewController *)controller
+          didFinishWithResult:(MFMailComposeResult)result
+                        error:(NSError *)error
+{
+    [self dismissModalViewControllerAnimated:YES];
+}
+
+
+
+
 
 - (IBAction)logoutButton {
 

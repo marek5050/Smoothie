@@ -15,6 +15,7 @@
 @interface ColorSchemeViewController ()
 
 
+@property (nonatomic, strong) ColorScheme *scheme;
 
 @end
 

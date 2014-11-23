@@ -76,7 +76,7 @@
             
             GoogleDataArray *gArr = [[GoogleDataArray alloc] init];
             [gArr setDataValues:data.rows withSkip:skip];
-            
+            if([_delegate respondsToSelector:selector] )
             [_delegate performSelector: selector withObject:gArr];
             
         } else {

@@ -177,7 +177,11 @@
 
             //setting the information
             GoogleProfile  *prof = [p.profiles objectAtIndex:indexPath.row];
-            cell.activeUsers.text = [NSString stringWithFormat:@"Current Users: %@", [prof activeVisitors]];
+            if([prof activeVisitors]!=nil){
+                cell.activeUsers.text = [NSString stringWithFormat:@"Current Users: %@", [prof activeVisitors]];
+            }else{
+                cell.activeUsers.text = @"Current Users: 0";
+            }
             cell.url.text = [p websiteUrl];
             cell.name.text = [prof name];
             cell.property.text = [prof identifier];

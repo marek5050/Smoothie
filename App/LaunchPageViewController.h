@@ -10,7 +10,7 @@
 #import "GTLAnalytics.h"
 #import "User.h"
 
-@interface LaunchPageViewController : UIViewController <UITableViewDataSource, UITableViewDelegate,GoogleUserDelegate>
+@interface LaunchPageViewController : UIViewController <UITableViewDataSource, UITableViewDelegate,GoogleUserDelegate,UIGestureRecognizerDelegate>
 
 @property (strong, nonatomic) IBOutlet UINavigationItem *accountName;
 @property (strong, nonatomic) IBOutlet UITableView *tableView;

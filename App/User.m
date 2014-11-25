@@ -228,7 +228,9 @@
         if(_active==nil)
             [self setActive:[self.accounts objectAtIndex:0]];
 //        [self loadUserRealTimeForActive];
-            [_delegate interfaceUpdate];
+
+            if([_delegate respondsToSelector:@selector(interfaceUpdate:)] )
+                [_delegate interfaceUpdate];
         } else {
             NSLog(@"An error occurred: %@", error);
         }

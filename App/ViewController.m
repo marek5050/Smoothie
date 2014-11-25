@@ -131,7 +131,10 @@ NSString *kGTLAuthScopeAnalyticsEdit1 = @"https://www.googleapis.com/auth/analyt
         //    [[self driveService] setAuthorizer:nil];
         self.authButton.titleLabel.text = @"Sign in";
         self.user.authorized = NO;
-        //    [self toggleActionButtons:NO];
+        self.user = nil;
+        self.user = [[User alloc] init];
+
+//    [self toggleActionButtons:NO];
 //           [self.user
   //          .accounts removeAllObjects];
 //           [self.tableView reloadData];

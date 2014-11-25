@@ -41,6 +41,17 @@ int height = 100;
     return height;
 }
 
+-(UIImage *)captureScreenInRect:(CGRect)captureFrame {
+    CALayer *layer;
+    layer = self.view.layer;
+    UIGraphicsBeginImageContext(self.view.bounds.size);
+    CGContextClipToRect (UIGraphicsGetCurrentContext(),captureFrame);
+    [layer renderInContext:UIGraphicsGetCurrentContext()];
+    UIImage *screenImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return screenImage;
+}
+
 -(void) create90DayChart:(GoogleDataArray *)dataset{
     /**
      Write Users for last 90 days - line chart
@@ -374,7 +385,7 @@ int height = 100;
     
     self.emailButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     self.emailButton.frame = CGRectMake(50, next_y, SCREEN_WIDTH, label_size);
-    [self.emailButton setTitle:@"Email JS" forState:UIControlStateNormal];
+    [self.emailButton setTitle:@"Email" forState:UIControlStateNormal];
     [self.emailButton addTarget:self
                          action:@selector(emailJS:)
                forControlEvents:UIControlEventTouchUpInside];
@@ -384,9 +395,22 @@ int height = 100;
 
 - (void) emailJS: (UIButton*)button{
     NSLog(@"EMAILING JS");
+    
+    
     [self pressentMailController:nil];
 }
 
+static NSString *EmailBody(NSString *description, UIImage *image)
+{
+    NSString *format = @"<html>"
+    @"<body>"
+    @"<p>%@</p>"
+    @"<p><b><img src='data:image/png;base64,%@'></b></p>"
+    @"</body>"
+    @"</html>";
+    NSData *imageData = UIImagePNGRepresentation(image);
+    return [NSString stringWithFormat:format, description, [imageData base64Encoding]];
+}
 
 - (IBAction)pressentMailController:(id)sender {
     
@@ -404,9 +428,31 @@ int height = 100;
                       })(window,document,'script','//www.google-analytics.com/analytics.js','ga');\
                       ga('create', ' %@ ','auto'); ga('send', 'pageview'); </script>",[_property identifier]];
     
-    NSString *emailBody = stri;
-    [picker setMessageBody:emailBody isHTML:NO];
+    UIImage* image = nil;
     
+    UIGraphicsBeginImageContext(self.sv.contentSize);
+    {
+        CGPoint savedContentOffset = self.sv.contentOffset;
+        CGRect savedFrame = self.sv.frame;
+        
+        self.sv.contentOffset = CGPointZero;
+        self.sv.frame = CGRectMake(0, 0, self.sv.contentSize.width, self.sv.contentSize.height);
+        
+        [self.sv.layer renderInContext: UIGraphicsGetCurrentContext()];
+        image = UIGraphicsGetImageFromCurrentImageContext();
+        
+        self.sv.contentOffset = savedContentOffset;
+        self.sv.frame = savedFrame;
+    }
+    UIGraphicsEndImageContext();
+    
+    
+    NSString *emailBody = stri;
+    NSData *imageData = UIImageJPEGRepresentation(image, 1);
+  
+    [picker addAttachmentData:imageData mimeType:@"image/jpg" fileName:@"anImage.jpg"];
+    
+    [picker setMessageBody:emailBody isHTML:NO];
     // Present the mail composition interface.
     [self presentModalViewController:picker animated:YES];
 }

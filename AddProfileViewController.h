@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "User.h"
 
-@interface AddProfileViewController : UIViewController <UITextFieldDelegate>
+@interface AddProfileViewController : UIViewController <UITextFieldDelegate, GoogleUserDelegate>
 @property (strong,nonatomic) User *user;
 @property (strong,nonatomic) GoogleProperty *property;
 @property (weak, nonatomic) IBOutlet UITextField *name;

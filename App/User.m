@@ -57,6 +57,7 @@
                             [prof setActiveVisitors:@0];
                         }
                         
+                        if([_delegate respondsToSelector:@selector(interfaceUpdate:)] )
                         [_delegate interfaceUpdate];
 
                     } else {

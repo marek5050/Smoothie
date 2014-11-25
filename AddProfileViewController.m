@@ -25,6 +25,11 @@
     return self;
 }
 
+
+-(void) interfaceUpdate{
+    
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];

@@ -80,9 +80,13 @@
 -(void)viewDidAppear:(BOOL)animated{
     [_user addObserver:self forKeyPath:@"active" options:NSKeyValueObservingOptionNew context:nil];
 
-    [self.user setDelegate:self];
+    [_user setDelegate:self];
 
     [_user loadUserSummary];
+    if(_user.active != nil){
+        [_tableView reloadData];
+        [_otherAccounts reloadData];
+    }
 }
 
 -(void) viewDidDisappear:(BOOL)animated{
@@ -131,7 +135,9 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
+    NSLog(@" numberOfRowsInSection: %d ", [[[self.user.active.properties objectAtIndex:section] profiles] count] + 1);
     if([tableView isEqual: _tableView])
+        
         return [[[self.user.active.properties objectAtIndex:section] profiles] count] + 1;
     else{
 //        NSLog(@"NUMBER OF ACCOUNTS: %d", [self.user.accounts count]);

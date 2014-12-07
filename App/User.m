@@ -201,6 +201,7 @@
 }
 
 -(void)loadUserSummary{
+    NSLog(@"loadUserSummary");
     GTLQueryAnalytics *query = [GTLQueryAnalytics queryForManagementAccountSummariesList];
 
     [self.service executeQuery:query completionHandler:^(GTLServiceTicket *ticket, GTLAnalyticsAccountSummaries *accountSummaries,
